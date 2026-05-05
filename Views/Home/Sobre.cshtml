@@ -1,0 +1,100 @@
+@model List<PaulaPresentesWebMVC.Models.Produto>
+
+@{
+    ViewData["Title"] = "Sobre Nós";
+}
+
+<main >
+
+    <!-- HERO -->
+    <section class="relative h-[700px] w-full overflow-hidden">
+        <img class="w-full h-full object-cover"
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjCOqBiOiBRFikgkEw-VlyLF4jJRNTEfAgt_uoSZiQDlXyF_s-6PSxgLQ1hDapkQ4cUoIPj8Mh_9lfofrs-IAEXjNUFJslq4p0rWoHm9jb6HvP3h5XAnuZLLjCDr2qRF_WJwmG9zKSkp7dQI5T8UZRIef3L3EshouVXBeMSX7nyoRAFNAJlu-EeLz1CrcSofE57ybOGE2tGnTB8oiMdTnmBPUMu1qlt1U-c_ma6w43N0cxuVAcL2B2ruN0y1UkLS-SG5FEoxkCXwo" />
+
+        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+            <div class="text-center">
+                <h1 class="font-display-lg text-white text-6xl mb-4">Nossa História</h1>
+                <div class="w-12 h-1 bg-white mx-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTÓRIA -->
+    <section class="max-w-[1440px] mx-auto px-16 py-stack-lg flex flex-col md:flex-row gap-gutter items-center">
+
+        <div class="md:w-1/2 space-y-stack-md">
+            <h2 class="font-headline-lg text-primary">Curadoria com Propósito</h2>
+
+            <p class="font-body-lg text-on-surface-variant leading-relaxed">
+                A Paula Presentes nasceu do desejo de transformar o ato de presentear em algo único.
+                Mais do que produtos, entregamos experiências, sentimentos e memórias.
+            </p>
+
+            <p class="font-body-lg text-on-surface-variant italic border-l-4 border-primary pl-6">
+                "Acreditamos que um presente carrega emoção, intenção e significado."
+            </p>
+        </div>
+
+        <div class="md:w-1/2">
+            <img class="w-full rounded-lg shadow-md"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiL-YBGm9JgvuKApODrnocvc37VPoOO_qdy-Cbu75ZFp19Q1D7qhcOhQ_DcMI9iaZELmfR73TA4dosssIzrI9gELq9P6hJ1U96ZXAXbwH9Hvj2uaWQoHYErRmmSF-5h2fv4m2Xriz-rNlFtRUxjP7bYi3JDKLRuuVnw0AqtDzfGj4D3yR4ieEygCKnKcUXxPiDDBsCKrMrLxK9biDKOAd1AfLsXSbb9kI1Bidr6y_PUQPrLlpU9iM13PV-a5pgOrm0TbRlez4zLOU" />
+        </div>
+
+    </section>
+
+    <!-- VALORES -->
+    <section class="bg-surface-container-low py-stack-lg">
+
+        <div class="max-w-[1440px] mx-auto px-16 text-center mb-16">
+            <h2 class="font-headline-lg text-primary">Nossos Valores</h2>
+        </div>
+
+        <div class="max-w-[1440px] mx-auto px-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <div class="bg-white p-8 rounded-xl shadow-sm text-center">
+                <span class="material-symbols-outlined text-4xl text-primary">workspace_premium</span>
+                <h3 class="mt-4 font-headline-md">Excelência</h3>
+                <p class="text-sm text-neutral-500">Produtos selecionados com padrão premium.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-sm text-center">
+                <span class="material-symbols-outlined text-4xl text-primary">auto_awesome</span>
+                <h3 class="mt-4 font-headline-md">Curadoria</h3>
+                <p class="text-sm text-neutral-500">Escolhemos cada detalhe com cuidado.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-sm text-center">
+                <span class="material-symbols-outlined text-4xl text-primary">favorite</span>
+                <h3 class="mt-4 font-headline-md">Experiência</h3>
+                <p class="text-sm text-neutral-500">Encantar quem dá e quem recebe.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FUNDADORA -->
+    <section class="max-w-[1440px] mx-auto px-16 py-stack-lg flex flex-col md:flex-row gap-20 items-center">
+
+        <div class="md:w-1/2">
+            <img class="w-full rounded-lg shadow-md"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn27YpearSA4BCiY7LU9MBcEHLavqwNc_647xCjl_OxFgeJAb23q2iRK8D7O6s744kUJEGt2vo0Ut4_9X5rRzM8pcE6EZ3c4eK3a3pyvgDhSfRTg6baaK5eYIKnhw25p_bSr7SNoNoHxeJvDF80lCbIPLspe0jE1Wt8ZuuAj7HlvyeIJv5k79IxznkX_vKhRrtWoG9YSU61KD44ERhwkQiyfl6jzbt6x0YG-5_a8Iz0bhyweqe_Mmjv-IpQCAvq2oaD8prEPRy5F0" />
+        </div>
+
+        <div class="md:w-1/2 space-y-6">
+            <h2 class="font-headline-lg text-primary">A Alma da Marca</h2>
+
+            <p class="text-neutral-600">
+                Paula criou a marca com a missão de trazer significado ao ato de presentear.
+                Cada detalhe é pensado para criar uma experiência única.
+            </p>
+
+            <a asp-controller="Home" asp-action="Index"
+               class="inline-block bg-primary text-white px-8 py-3 uppercase tracking-widest hover:opacity-80 transition">
+                Ver Produtos
+            </a>
+        </div>
+
+    </section>
+
+</main>

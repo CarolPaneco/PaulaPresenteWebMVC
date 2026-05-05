@@ -1,0 +1,452 @@
+@model PaulaPresentesWebMVC.Models.Produto
+
+<main class="pt-10 max-w-[1440px] mx-auto px-16">
+
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+
+        <!-- GALERIA -->
+        <div class="lg:col-span-7 flex flex-col md:flex-row gap-4">
+
+            <!-- THUMBNAILS -->
+            <div class="flex md:flex-col gap-4 overflow-auto max-h-[500px]">
+
+                @if (Model.Imagens != null && Model.Imagens.Any())
+                {
+                    foreach (var img in Model.Imagens)
+                    {
+                        <div class="w-20 h-24 border overflow-hidden">
+                            <img src="/images/produtos/@img.CaminhoImagem" class="w-full h-full object-cover" />
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="w-20 h-24 border overflow-hidden">
+                        <img src="/images/produto.jpg" class="w-full h-full object-cover" />
+                    </div>
+                }
+
+            </div>
+
+            <!-- IMAGEM PRINCIPAL -->
+            <div class="flex-1 aspect-[4/5] bg-gray-100 overflow-hidden">
+
+                <img src="@(Model.Imagens != null && Model.Imagens.Any()
+                                                                                                                                                  ? "/images/produtos/" + Model.Imagens.First().CaminhoImagem
+                                                                                                                                                  : "/images/produto.jpg")"
+                    class="w-full h-full object-cover" />
+
+            </div>
+
+        </div>
+
+
+        <!-- INFO -->
+        <div class="lg:col-span-5 flex flex-col gap-6">
+
+            <div>
+                <p class="text-sm text-gray-400 uppercase">@Model.Marca</p>
+
+                <h1 class="text-3xl font-semibold text-red-900">
+                    @(string.IsNullOrEmpty(Model.Nome) ? "Produto" : Model.Nome)
+                </h1>
+
+                <p class="text-gray-500 mt-2">
+                    @(string.IsNullOrEmpty(Model.Descricao) ? "Sem descrição" : Model.Descricao)
+                </p>
+            </div>
+
+            <!-- PREÇO -->
+            <div class="border-y py-4">
+
+                <p class="text-2xl font-bold text-red-900">
+                    @(Model.PrecoVenda != null ? $"R$ {Model.PrecoVenda}" : "Preço indisponível")
+                </p>
+
+                @{
+                    int parcelas = 1;
+                    decimal valorParcela = 0;
+
+                    if (Model.PrecoVenda != null)
+                    {
+                        decimal preco = Model.PrecoVenda.Value;
+
+                        parcelas = (int)(preco / 50);
+                        if (parcelas < 1) parcelas = 1;
+                        if (parcelas > 10) parcelas = 10;
+
+                        valorParcela = preco / parcelas;
+                    }
+                }
+
+                @if (Model.PrecoVenda != null)
+                {
+                    <p class="text-sm text-gray-500">
+                        Ou em até @parcelas x de R$ @valorParcela.ToString("F2") sem juros
+                    </p>
+                }
+
+            </div>
+
+            <!-- VARIAÇÕES -->
+            <div>
+
+
+                <div class="flex flex-wrap gap-2">
+
+                    @if (ViewBag.Variacoes != null && ViewBag.Variacoes.Count > 0)
+                    {
+                        <div>
+                            <p class="text-sm mb-2">Cor:</p>
+
+                            <div class="flex flex-wrap gap-2">
+
+                                <!-- PRODUTO ATUAL -->
+                                <span class="px-3 py-1 border rounded-full text-sm bg-black text-white">
+                                    @Model.Cor
+                                </span>
+
+                                <!-- OUTRAS CORES -->
+                                @foreach (var v in ViewBag.Variacoes)
+                                {
+                                    <a href="/Produto/Detalhes/@v.IdProduto" class="px-3 py-1 border rounded-full text-sm bg-white text-black hover:bg-gray-100
+                                                                ">
+
+                                        @v.Cor
+
+                                    </a>
+                                }
+
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+
+            <!-- QUANTIDADE + CARRINHO -->
+            <form method="post" action="/Carrinho/Adicionar" class="flex flex-col gap-4 pt-4">
+
+                <input type="hidden" name="produtoId" value="@Model.IdProduto" />
+
+                <!-- QUANTIDADE -->
+
+                <p id="avisoEstoque" class="text-sm text-red-900 mt-2 hidden"></p>
+                <div class="flex gap-4">
+
+                    @{
+                        var estoqueDisponivel = Model.Estoque?.Quantidade ?? 0;
+                    }
+
+                    <div class="flex items-center border border-neutral-300 rounded">
+
+                        <button type="button" onclick="diminuirQtd()" class="px-4 py-3 hover:bg-neutral-100">
+                            -
+                        </button>
+
+                        <input type="text" id="quantidade" name="quantidade" value="1" data-estoque="@estoqueDisponivel"
+                            class="w-12 text-center outline-none font-medium" readonly />
+
+                        <button type="button" onclick="aumentarQtd()" class="px-4 py-3 hover:bg-neutral-100">
+                            +
+                        </button>
+
+
+
+                    </div>
+
+                    <!-- ADD CARRINHO -->
+                    <button type="submit"
+                        class="flex-1 bg-red-900 text-white font-label-caps text-sm tracking-widest py-4 hover:opacity-90 transition uppercase">
+                        Adicionar ao carrinho
+                    </button>
+
+                </div>
+
+                <!-- COMPRAR AGORA -->
+                <button type="button"
+                    class="w-full border border-black py-4 font-label-caps text-sm tracking-widest hover:bg-black hover:text-white transition uppercase">
+                    Comprar agora
+                </button>
+
+            </form>
+
+            <!-- ENTREGA -->
+            <div class="bg-surface-container-low p-6 mt-6 rounded-lg">
+
+                <h3 class="font-headline-md text-red-900 mb-4">Entrega</h3>
+
+                <!-- RETIRADA -->
+                <label
+                    class="flex items-start gap-4 border border-neutral-200 p-4 rounded cursor-pointer hover:border-primary transition">
+
+                    <input type="radio" name="frete" value="0|0|Retirada na loja" class="mt-1 accent-red-900"
+                        onchange="salvarFreteDireto(this)" />
+
+                    <span class="text-xl">📍</span>
+
+                    <div>
+                        <p class="font-medium text-red-900">Retirada grátis</p>
+                        <p class="text-sm text-neutral-500">Disponível em loja</p>
+                    </div>
+
+                </label>
+
+                <!-- CALCULAR FRETE -->
+                <div class="mt-6">
+
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-xl">🚚</span>
+                        <p class="font-medium text-red-900">Calcular frete</p>
+                    </div>
+
+                    <div class="flex gap-2">
+                        <input type="text" id="cep"
+                            class="flex-1 border border-neutral-300 px-3 py-2 text-sm rounded focus:outline-none focus:border-primary"
+                            placeholder="Digite seu CEP" />
+
+                        <button onclick="calcularFrete()"
+                            class="bg-primary text-white px-4 text-sm rounded hover:bg-secondary transition">
+                            OK
+                        </button>
+                    </div>
+
+                    <!-- RESULTADO -->
+                    <div id="resultadoFrete" class="mt-4 text-sm text-neutral-600"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Related Products -->
+    <section class="mt-stack-lg pt-stack-lg border-t border-neutral-100">
+
+        @{
+            var relacionados = ViewBag.Relacionados as List<PaulaPresentesWebMVC.Models.Produto>;
+        }
+
+        @if (relacionados != null && relacionados.Any())
+        {
+            <section class="mt-stack-lg pt-stack-lg border-t border-neutral-100">
+
+                <h2 class="font-headline-lg text-headline-lg text-center mb-12">
+                    Pode combinar com
+                </h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+
+                    @foreach (var item in relacionados)
+                    {
+                        if (item.IdProduto == Model.IdProduto || item.Cor != Model.Cor)
+                        {
+                            continue;
+                        }
+
+                        <div class="group cursor-pointer">
+
+                            <a href="/Produto/Detalhes/@item.IdProduto">
+
+                                <div class="relative aspect-[3/4] overflow-hidden mb-4 bg-surface-container-low">
+
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                        src="@(item.Imagens != null && item.Imagens.Any()
+                                                                                                                            ? "/images/produtos/" + item.Imagens.First().CaminhoImagem
+                                                                                                                            : "/images/produto.jpg")" />
+
+                                    <div
+                                        class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-white/90 backdrop-blur-sm">
+
+                                        <button type="button" onclick="window.location.href='/Produto/Detalhes/@item.IdProduto'"
+                                            class="w-full py-2 bg-primary-container text-white text-[10px] uppercase tracking-widest">
+
+                                            Espiada Rápida
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                                <p class="text-[10px] text-neutral-400 mb-1 uppercase">
+                                    @item.Categoria
+                                </p>
+
+                                <h3 class="text-base mb-1 text-red-900">
+                                    @(string.IsNullOrEmpty(item.Nome) ? "Produto" : item.Nome)
+                                </h3>
+
+                                <p class="font-medium">
+                                    @(item.PrecoVenda != null ? $"R$ {item.PrecoVenda}" : "Preço indisponível")
+                                </p>
+
+                            </a>
+
+                        </div>
+                    }
+
+                </div>
+
+            </section>
+        }
+
+        </div>
+
+    </section>
+
+</main>
+
+<script>
+    function calcularFrete() {
+
+        const cep = document.getElementById("cep").value.replace(/\D/g, '');
+        const resultado = document.getElementById("resultadoFrete");
+
+        if (cep.length !== 8) {
+            resultado.innerHTML = "Digite um CEP válido";
+            return;
+        }
+
+        resultado.innerHTML = "Calculando...";
+
+        fetch(`/Carrinho/CalcularFreteMelhorEnvio?cepDestino=${cep}&produtoId=@Model.IdProduto`)
+            .then(async res => {
+
+                if (!res.ok) {
+                    const erro = await res.text();
+                    throw new Error(erro);
+                }
+
+                return res.json();
+            })
+            .then(data => {
+
+                console.log("RESPOSTA:", data);
+
+                if (!Array.isArray(data)) {
+                    console.log("Erro vindo da API:", data);
+                    resultado.innerHTML = "Erro ao calcular frete";
+                    return;
+                }
+
+                let html = "";
+
+                data.forEach(opcao => {
+
+                    if (!opcao.price) return;
+
+                    html += `
+        <label style="display:block; border:1px solid #ddd; padding:10px; margin-top:5px; cursor:pointer;">
+            
+            <input type="radio" name="frete" 
+                value="${opcao.price}|${opcao.delivery_time}|${opcao.name}" />
+
+            <strong>${opcao.name}</strong><br>
+            R$ ${opcao.price} - ${opcao.delivery_time} dias
+        </label>
+    `;
+                });
+                html += `
+    <button type="button" onclick="salvarFrete()" 
+        class="btn btn-dark w-100 mt-2">
+        Selecionar Frete
+    </button>
+`;
+
+                resultado.innerHTML = html || "Nenhum frete disponível";
+            })
+            .catch(err => {
+                console.log("ERRO COMPLETO:", err);
+                resultado.innerHTML = "Erro ao calcular frete";
+            });
+    }
+
+    function salvarFrete() {
+
+        const selecionado = document.querySelector('input[name="frete"]:checked');
+
+        if (!selecionado) {
+            alert("Selecione um frete");
+            return;
+        }
+
+        const [valor, prazo, tipo] = selecionado.value.split("|");
+
+        fetch('/Carrinho/SalvarFrete', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                valor: parseFloat(valor),
+                prazo: parseInt(prazo),
+                tipo: tipo
+            })
+        })
+            .then(() => {
+                alert("Frete salvo no carrinho!");
+            });
+    }
+</script>
+
+<script>
+    function aumentarQtd() {
+        let input = document.getElementById("quantidade");
+        let aviso = document.getElementById("avisoEstoque");
+
+        let estoque = parseInt(input.getAttribute("data-estoque"));
+        let atual = parseInt(input.value);
+
+        if (atual < estoque) {
+            input.value = atual + 1;
+
+            // esconde aviso se estiver ok
+            aviso.classList.add("hidden");
+            aviso.innerText = "";
+        } else {
+            aviso.innerText = "Somente " + estoque + " peça(s) em estoque";
+            aviso.classList.remove("hidden");
+        }
+    }
+
+    function diminuirQtd() {
+        let input = document.getElementById("quantidade");
+        let aviso = document.getElementById("avisoEstoque");
+
+        let atual = parseInt(input.value);
+
+        if (atual > 1) {
+            input.value = atual - 1;
+
+            // remove aviso ao diminuir
+            aviso.classList.add("hidden");
+            aviso.innerText = "";
+        }
+    }
+</script>
+
+<script>
+    function salvarFreteDireto(radio) {
+
+        const [valor, prazo, tipo] = radio.value.split("|");
+
+        fetch('/Carrinho/SalvarFrete', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                valor: parseFloat(valor),
+                prazo: parseInt(prazo),
+                tipo: tipo
+            })
+        })
+            .then(() => {
+                console.log("Frete salvo:", tipo);
+            })
+            .catch(() => {
+                console.log("Erro ao salvar frete");
+            });
+    }
+</script>

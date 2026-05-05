@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Meu Perfil";
+}
+
+<div class="container mt-5">
+
+    <h3>Meu Perfil</h3>
+
+    <p>Bem-vindo, <strong>@Context.Session.GetString("UsuarioNome")</strong></p>
+
+    <a href="/Conta/Logout" class="btn btn-outline-dark mt-3">
+        Sair
+    </a>
+
+</div>
