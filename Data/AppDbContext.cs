@@ -8,9 +8,11 @@ namespace PaulaPresentesWebMVC.Data
         public DbSet<Produto> Produto { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<ProdutoImagem> ProdutoImagem { get; set; }
-
         public DbSet<Carrinho> Carrinho { get; set; }
         public DbSet<CarrinhoItem> CarrinhoItem { get; set; }
+        public DbSet<Pedido> Pedido { get; set; }
+
+        public DbSet<Cupom> Cupom { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

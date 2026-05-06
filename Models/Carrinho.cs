@@ -21,6 +21,12 @@ namespace PaulaPresentesWebMVC.Models
         [Column("tipo_frete")]
         public string? TipoFrete { get; set; }
 
+        [Column("codigo_cupom")]
+        public string? CodigoCupom { get; set; }
+
+        [Column("desconto")]
+        public decimal? Desconto { get; set; }
+
         public List<CarrinhoItem>? Itens { get; set; }
     }
 }

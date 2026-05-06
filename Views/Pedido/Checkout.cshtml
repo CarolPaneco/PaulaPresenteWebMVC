@@ -1,0 +1,330 @@
+@model PaulaPresentesWebMVC.Models.Pedido
+
+@{
+    var itens = ViewBag.Itens as List<PaulaPresentesWebMVC.Models.CarrinhoItem>;
+    decimal subtotal = ViewBag.Subtotal ?? 0;
+    decimal frete = ViewBag.Frete ?? 0;
+    decimal total = ViewBag.Total ?? 0;
+    string tipoFrete = ViewBag.TipoFrete ?? "Não informado";
+}
+
+<main class="max-w-[1440px] mx-auto ">
+
+    <!-- TÍTULO -->
+    <h1 class="text-3xl text-primary mb-10">Finalizar Compra</h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+        <!-- ESQUERDA -->
+        <div class="lg:col-span-7 space-y-10">
+
+            <!-- ENVIO -->
+            <section class="bg-white p-6 shadow rounded">
+                <h2 class="text-lg text-primary mb-4">Informações de Envio</h2>
+
+                <form id="formPedido" method="post" action="/Pedido/Finalizar">
+
+                    <input name="Rua" class="w-full border p-2 mb-3" placeholder="Rua" />
+
+                    <input name="Numero" class="w-full border p-2 mb-3" placeholder="Número" />
+
+                    <input name="Bairro" class="w-full border p-2 mb-3" placeholder="Bairro" />
+
+                    <input name="Cidade" class="w-full border p-2 mb-3" placeholder="Cidade" />
+
+                    <input name="Estado" class="w-full border p-2 mb-3" placeholder="Estado" />
+
+                    <input name="CEP" class="w-full border p-2 mb-3" placeholder="CEP" />
+
+                </form>
+            </section>
+
+            <!-- FRETE -->
+            <!-- RETIRADA -->
+            <label
+                class="flex items-start gap-4 border border-neutral-200 p-4 rounded cursor-pointer hover:border-primary transition">
+
+                <input type="radio" name="frete" value="0|0|Retirada na loja" class="mt-1 accent-red-900"
+                    onchange="salvarFrete(this)" />
+
+                <span class="text-xl">📍</span>
+
+                <div>
+                    <p class="font-medium text-red-900">Retirada grátis</p>
+                    <p class="text-sm text-neutral-500">Disponível em loja - Olímpia SP</p>
+                </div>
+
+            </label>
+
+            <!-- CALCULAR FRETE -->
+            <div class="mt-6">
+
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-xl">🚚</span>
+                    <p class="font-medium text-red-900">Calcular frete</p>
+                </div>
+
+                <div class="flex gap-2">
+                    <input type="text" id="cep"
+                        class="flex-1 border border-neutral-300 px-3 py-2 text-sm rounded focus:outline-none focus:border-primary"
+                        placeholder="Digite seu CEP" />
+
+                    <button onclick="calcularFrete()"
+                        class="bg-primary text-white px-4 text-sm rounded hover:bg-secondary transition">
+                        OK
+                    </button>
+                </div>
+
+                <!-- RESULTADO -->
+                <div id="resultadoFrete" class="mt-4 text-sm text-neutral-600"></div>
+
+            </div>
+
+            <!-- PAGAMENTO (VISUAL) -->
+            <section class="bg-white p-6 shadow rounded">
+                <h2 class="text-lg text-primary mb-4">Pagamento</h2>
+
+                <p class="text-sm text-neutral-500">
+                    (Integração com pagamento será adicionada depois)
+                </p>
+            </section>
+
+        </div>
+
+        <!-- DIREITA -->
+        <div class="lg:col-span-5">
+
+            <div class="bg-white p-6 shadow rounded sticky top-32">
+
+                <h2 class="text-lg text-primary mb-6">Resumo do Pedido</h2>
+
+                <!-- ITENS -->
+                <div class="space-y-4 max-h-[300px] overflow-y-auto">
+
+                    @if (itens != null)
+                    {
+                        foreach (var item in itens)
+                        {
+                            var preco = item.Produto?.PrecoVenda ?? 0;
+                            var totalItem = preco * item.Quantidade;
+
+                            <div class="flex gap-4">
+
+                                <img class="w-16 h-20 object-cover"
+                                    src="@(item.Produto?.Imagens != null && item.Produto.Imagens.Any()
+                                                                                                                                                                                                                                                                                                                                    ? "/images/produtos/" + item.Produto.Imagens.First().CaminhoImagem
+                                                                                                                                                                                                                                                                                                                                    : "/images/produto.jpg")" />
+
+                                <div class="flex flex-col justify-between">
+
+                                    <div>
+                                        <p class="text-sm">@item.Produto?.Nome</p>
+                                        <p class="text-xs text-neutral-400">
+                                            Qtd: @item.Quantidade
+                                        </p>
+                                    </div>
+
+                                    <span class="font-semibold">
+                                        R$ @totalItem.ToString("F2")
+                                    </span>
+
+                                </div>
+
+                            </div>
+                        }
+                    }
+
+                </div>
+                <script>
+                    function calcularFrete() {
+
+                        const cep = document.getElementById("cep").value.replace(/\D/g, '');
+                        const resultado = document.getElementById("resultadoFrete");
+
+                        if (cep.length !== 8) {
+                            resultado.innerHTML = "Digite um CEP válido";
+                            return;
+                        }
+
+                        resultado.innerHTML = "Calculando...";
+
+                        fetch(`/Carrinho/CalcularFreteMelhorEnvio?cepDestino=${cep}`)
+                            .then(async res => {
+
+                                if (!res.ok) {
+                                    const erro = await res.text();
+                                    throw new Error(erro);
+                                }
+
+                                return res.json();
+                            })
+                            .then(data => {
+
+                                console.log("RESPOSTA:", data);
+
+                                if (!Array.isArray(data)) {
+                                    console.log("Erro vindo da API:", data);
+                                    resultado.innerHTML = "Erro ao calcular frete";
+                                    return;
+                                }
+
+                                let html = "";
+
+                                data.forEach(opcao => {
+
+                                    if (!opcao.price) return;
+
+                                    html += `
+        <label style="display:block; border:1px solid #ddd; padding:10px; margin-top:5px; cursor:pointer;">
+            
+            <input type="radio" name="frete" 
+                value="${opcao.price}|${opcao.delivery_time}|${opcao.name}" />
+
+            <strong>${opcao.name}</strong><br>
+            R$ ${opcao.price} - ${opcao.delivery_time} dias
+        </label>
+                `;
+                                });
+                                html += `
+                <button type="button" onclick="salvarFrete(this)" 
+                    class="btn btn-dark w-100 mt-2"
+                    onchange="salvarFrete(this)">
+                    Selecionar Frete
+                </button>
+            `;
+
+                                resultado.innerHTML = html || "Nenhum frete disponível";
+                            })
+                            .catch(err => {
+                                console.log("ERRO COMPLETO:", err);
+                                resultado.innerHTML = "Erro ao calcular frete";
+                            });
+                    }
+
+                    function salvarFrete() {
+
+                        const selecionado = document.querySelector('input[name="frete"]:checked');
+
+                        if (!selecionado) {
+                            alert("Selecione um frete");
+                            return;
+                        }
+
+                        const [valor, prazo, tipo] = selecionado.value.split("|");
+
+                        fetch('/Carrinho/SalvarFrete', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                valor: parseFloat(valor),
+                                prazo: parseInt(prazo),
+                                tipo: tipo
+                            })
+                        })
+                            .then(() => {
+                                alert("Frete salvo no carrinho!");
+                                location.reload();
+                            });
+                    }
+                </script>
+
+                <!-- VALORES -->
+                <div class="mt-6 border-t pt-4 space-y-2">
+
+                    <div class="flex justify-between">
+                        <span>Subtotal</span>
+                        <span>R$ @subtotal.ToString("F2")</span>
+                    </div>
+
+                    <div class="flex justify-between">
+                        <span>Frete</span>
+
+                        <span id="valorFrete">
+                            @if (frete > 0)
+                            {
+                                @:R$ @frete.ToString("F2")
+                            }
+                            else
+                            {
+                                @:Grátis
+                            }
+                        </span>
+                    </div>
+
+                    <div class="mt-4">
+                        <input type="text" id="cupom" placeholder="Digite seu cupom"
+                            class="border px-3 py-2 w-full mb-2" />
+
+                        <button type="button" onclick="aplicarCupom()"
+                            class="w-full bg-primary text-white py-2 mt-1 hover:opacity-90">
+                            Aplicar Cupom
+                        </button>
+
+                        <p id="msgCupom" class="text-sm mt-2"></p>
+                    </div>
+
+                    <span id="totalPedido">
+
+                        <div class="flex justify-between text-lg font-bold mt-4 border-t pt-3">
+                            <span>Total</span>
+                            <span class="text-primary">R$ @total.ToString("F2")</span>
+                        </div>
+                    </span>
+
+                </div>
+
+                <!-- BOTÃO -->
+                <button type="submit" form="formPedido" class="w-full bg-primary text-white py-4 mt-6 hover:opacity-90">
+                    FINALIZAR PEDIDO
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script>
+    function aplicarCupom() {
+        console.log("CLICOU NO BOTÃO");
+
+        const codigo = document.getElementById("cupom").value;
+        const totalTexto = document.getElementById("totalPedido").innerText;
+
+
+        let total = parseFloat(totalTexto.replace("R$", "").replace(",", "."));
+
+        fetch('/Pedido/AplicarCupom', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                codigo: codigo,
+                total: total
+            })
+        })
+            .then(async res => {
+    const texto = await res.text();
+    console.log("RESPOSTA BRUTA:", texto);
+    return JSON.parse(texto);
+})
+            .then(data => {
+
+                const msg = document.getElementById("msgCupom");
+
+                if (!data.sucesso) {
+                    msg.innerText = data.mensagem;
+                    msg.style.color = "red";
+                    return;
+                }
+
+                msg.innerText = "Cupom aplicado!";
+                msg.style.color = "green";
+
+
+                document.getElementById("totalPedido").innerText =
+                    "R$ " + data.totalFinal.toFixed(2);
+            });
+    }
+</script>

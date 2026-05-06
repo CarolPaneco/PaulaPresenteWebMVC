@@ -48,8 +48,8 @@
                         <div class="w-32 h-40 bg-surface-container-low overflow-hidden rounded">
                             <img class="w-full h-full object-cover"
                                 src="@(item.Produto?.Imagens != null && item.Produto.Imagens.Any()
-                                                                                                                                            ? "/images/produtos/" + item.Produto.Imagens.First().CaminhoImagem
-                                                                                                                                            : "/images/produto.jpg")" />
+                                                                                                                                                                                                            ? "/images/produtos/" + item.Produto.Imagens.First().CaminhoImagem
+                                                                                                                                                                                                            : "/images/produto.jpg")" />
                         </div>
 
                         <!-- INFO -->
@@ -127,22 +127,10 @@
 
                     <div class="space-y-4 mb-8 text-sm">
 
+
                         <div class="flex justify-between">
                             <span>Subtotal</span>
                             <span>R$ @subtotalGeral.ToString("F2")</span>
-                        </div>
-
-                        <div class="flex justify-between">
-                            <span>Entrega</span>
-
-                            @if (frete > 0)
-                            {
-                                <span>R$ @frete.ToString("F2")</span>
-                            }
-                            else
-                            {
-                                <span class="text-green-600">Grátis</span>
-                            }
                         </div>
 
                     </div>
@@ -160,7 +148,7 @@
 
                     </div>
 
-                    <button class="w-full bg-primary text-white py-5 uppercase tracking-widest hover:opacity-90">
+                    <button onclick="window.location.href='/Pedido/Checkout'" class="w-full bg-primary text-white py-5 uppercase tracking-widest hover:opacity-90">
                         Finalizar Compra
                     </button>
 
@@ -174,4 +162,6 @@
 
         </div>
     }
+
+    
 </main>

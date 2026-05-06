@@ -27,18 +27,16 @@ public class CarrinhoController : Controller
 
         var carrinho = _context.Carrinho
             .Include(c => c.Itens)
-                .ThenInclude(i => i.Produto)
-                    .ThenInclude(p => p.Imagens)
+            .ThenInclude(i => i.Produto)
+            .ThenInclude(p => p.Imagens)
             .Include(c => c.Itens)
-                .ThenInclude(i => i.Produto)
-                    .ThenInclude(p => p.Estoque)
+            .ThenInclude(i => i.Produto)
+            .ThenInclude(p => p.Estoque)
             .FirstOrDefault(c => c.IdCliente == clienteId);
 
-        if (carrinho == null)
+            if (carrinho == null)
             return View(new List<CarrinhoItem>());
 
-        ViewBag.Frete = carrinho.ValorFrete;
-        ViewBag.TipoFrete = carrinho.TipoFrete;
 
         return View(carrinho.Itens);
     }
@@ -136,12 +134,20 @@ public IActionResult Adicionar(int produtoId, int quantidade)
     // =========================
     // CALCULAR FRETE
     // =========================
-    public async Task<IActionResult> CalcularFreteMelhorEnvio(string cepDestino, int produtoId)
+    public async Task<IActionResult> CalcularFreteMelhorEnvio(string cepDestino)
     {
-        var produto = _context.Produto.FirstOrDefault(p => p.IdProduto == produtoId);
+        var clienteId = HttpContext.Session.GetInt32("UsuarioId");
 
-        if (produto == null)
-            return Json(new { erro = "Produto não encontrado" });
+        if (clienteId == null)
+            return Unauthorized();
+
+        var carrinho = _context.Carrinho
+            .Include(c => c.Itens)
+                .ThenInclude(i => i.Produto)
+            .FirstOrDefault(c => c.IdCliente == clienteId);
+
+        if (carrinho == null || !carrinho.Itens.Any())
+            return Json(new { erro = "Carrinho vazio" });
 
         var client = new HttpClient();
 
@@ -150,23 +156,23 @@ public IActionResult Adicionar(int produtoId, int quantidade)
 
         client.DefaultRequestHeaders.Add("Accept", "application/json");
 
+        // 🔥 MONTA LISTA DE PRODUTOS
+        var produtos = carrinho.Itens.Select(item => new
+        {
+            id = item.Produto.IdProduto.ToString(),
+            width = item.Produto.Largura ?? 15,
+            height = item.Produto.Altura ?? 10,
+            length = item.Produto.Comprimento ?? 20,
+            weight = item.Produto.Peso ?? 1,
+            insurance_value = item.Produto.PrecoVenda ?? 0,
+            quantity = item.Quantidade
+        }).ToArray();
+
         var body = new
         {
             from = new { postal_code = "15400065" },
             to = new { postal_code = cepDestino },
-            products = new[]
-            {
-                new
-                {
-                    id = produto.IdProduto.ToString(),
-                    width = produto.Largura ?? 15,
-                    height = produto.Altura ?? 10,
-                    length = produto.Comprimento ?? 20,
-                    weight = produto.Peso ?? 1,
-                    insurance_value = produto.PrecoVenda ?? 0,
-                    quantity = 1
-                }
-            }
+            products = produtos
         };
 
         var json = JsonSerializer.Serialize(body);
@@ -177,6 +183,9 @@ public IActionResult Adicionar(int produtoId, int quantidade)
         );
 
         var result = await response.Content.ReadAsStringAsync();
+
+        ViewBag.Frete = carrinho.ValorFrete;
+        ViewBag.TipoFrete = carrinho.TipoFrete;
 
         return Content(result, "application/json");
     }

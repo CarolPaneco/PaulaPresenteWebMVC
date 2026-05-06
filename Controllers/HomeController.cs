@@ -10,7 +10,6 @@ namespace PaulaPresentesWebMVC.Controllers
     {
         private readonly AppDbContext _context;
 
-        // INJETANDO O BANCO
         public HomeController(AppDbContext context)
         {
             _context = context;
