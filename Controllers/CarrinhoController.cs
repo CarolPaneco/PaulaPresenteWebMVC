@@ -183,9 +183,16 @@ public IActionResult Adicionar(int produtoId, int quantidade)
         );
 
         var result = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(result);
+        var options = JsonSerializer.Deserialize<List<FreteResponse>>(result);
+        var sedex = options
+                .Where(x => x.name != null &&
+                            x.name.ToUpper().Contains("SEDEX"))
+                .ToList();
 
         ViewBag.Frete = carrinho.ValorFrete;
         ViewBag.TipoFrete = carrinho.TipoFrete;
+        ViewBag.PrazoEntrega = carrinho.PrazoFrete;
 
         return Content(result, "application/json");
     }

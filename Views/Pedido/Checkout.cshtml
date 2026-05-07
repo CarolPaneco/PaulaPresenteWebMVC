@@ -5,88 +5,158 @@
     decimal subtotal = ViewBag.Subtotal ?? 0;
     decimal frete = ViewBag.Frete ?? 0;
     decimal total = ViewBag.Total ?? 0;
-    string tipoFrete = ViewBag.TipoFrete ?? "Não informado";
+    string tipoFrete = ViewBag.TipoFrete ?? "";
+    int prazoEntrega = ViewBag.PrazoEntrega ?? 0;
 }
 
-<main class="max-w-[1440px] mx-auto ">
+<main class="max-w-[1440px] mx-auto">
 
-    <!-- TÍTULO -->
-    <h1 class="text-3xl text-primary mb-10">Finalizar Compra</h1>
+    <h1 class="text-3xl text-primary mb-10">
+        Finalizar Compra
+    </h1>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
 
         <!-- ESQUERDA -->
         <div class="lg:col-span-7 space-y-10">
 
-            <!-- ENVIO -->
+            <!-- TIPO ENTREGA -->
             <section class="bg-white p-6 shadow rounded">
-                <h2 class="text-lg text-primary mb-4">Informações de Envio</h2>
+
+                <h2 class="text-lg text-primary mb-4">
+                    Como deseja receber o produto?
+                </h2>
+
+                <!-- RETIRADA -->
+                <label
+                    class="flex items-start gap-4 border border-neutral-200 p-4 rounded cursor-pointer hover:border-primary transition mb-3">
+
+                    <input type="radio" name="tipoEntrega" value="retirada" class="mt-1 accent-red-900"
+                        onchange="selecionarRetirada()" @(tipoFrete == "Retirada" ? "checked" : "") />
+
+                    <span class="text-xl">📍</span>
+
+                    <div>
+                        <p class="font-medium text-red-900">
+                            Retirada grátis
+                        </p>
+
+                        <p class="text-sm text-neutral-500">
+                            Disponível em loja - Olímpia SP
+                        </p>
+                    </div>
+
+                </label>
+
+                <!-- ENTREGA -->
+                <label
+                    class="flex items-start gap-4 border border-neutral-200 p-4 rounded cursor-pointer hover:border-primary transition">
+
+                    <input type="radio" name="tipoEntrega" value="entrega" class="mt-1 accent-red-900"
+                        onchange="toggleEntrega()" @(tipoFrete != "Retirada" && frete > 0 ? "checked" : "") />
+
+                    <span class="text-xl">🚚</span>
+
+                    <div>
+                        <p class="font-medium text-red-900">
+                            Entrega via SEDEX
+                        </p>
+
+                        <p class="text-sm text-neutral-500">
+                            Calcula automaticamente prazo e valor
+                        </p>
+                    </div>
+
+                </label>
+
+            </section>
+
+            <!-- ENDEREÇO -->
+            <section id="sectionEntrega"
+                class="bg-white p-6 shadow rounded transition-all duration-300 @(tipoFrete != "Retirada" && frete > 0 ? "" : "hidden")">
+
+                <h2 class="text-lg text-primary mb-4">
+                    Informações de Envio
+                </h2>
 
                 <form id="formPedido" method="post" action="/Pedido/Finalizar">
 
-                    <input name="Rua" class="w-full border p-2 mb-3" placeholder="Rua" />
+                    <!-- CEP -->
+                    <input id="cepEndereco" name="CEP" class="w-full border p-2 mb-3" placeholder="Digite seu CEP"
+                        onblur="buscarEndereco()" />
 
-                    <input name="Numero" class="w-full border p-2 mb-3" placeholder="Número" />
+                    <!-- RUA -->
+                    <input id="ruaEndereco" name="Rua" class="w-full border p-2 mb-3 bg-gray-100" placeholder="Rua"
+                        readonly />
 
-                    <input name="Bairro" class="w-full border p-2 mb-3" placeholder="Bairro" />
+                    <!-- BAIRRO -->
+                    <input id="bairroEndereco" name="Bairro" class="w-full border p-2 mb-3 bg-gray-100"
+                        placeholder="Bairro" readonly />
 
-                    <input name="Cidade" class="w-full border p-2 mb-3" placeholder="Cidade" />
+                    <!-- CIDADE -->
+                    <input id="cidadeEndereco" name="Cidade" class="w-full border p-2 mb-3 bg-gray-100"
+                        placeholder="Cidade" readonly />
 
-                    <input name="Estado" class="w-full border p-2 mb-3" placeholder="Estado" />
+                    <!-- ESTADO -->
+                    <input id="estadoEndereco" name="Estado" class="w-full border p-2 mb-3 bg-gray-100"
+                        placeholder="Estado" readonly />
 
-                    <input name="CEP" class="w-full border p-2 mb-3" placeholder="CEP" />
+                    <!-- NÚMERO -->
+                    <input id="numeroEndereco" name="Numero" class="w-full border p-2 mb-3" placeholder="Número" />
 
                 </form>
-            </section>
 
-            <!-- FRETE -->
-            <!-- RETIRADA -->
-            <label
-                class="flex items-start gap-4 border border-neutral-200 p-4 rounded cursor-pointer hover:border-primary transition">
+                <!-- RESULTADO FRETE -->
+            <div id="resultadoFrete" class="mt-4 text-sm text-neutral-600">
 
-                <input type="radio" name="frete" value="0|0|Retirada na loja" class="mt-1 accent-red-900"
-                    onchange="salvarFrete(this)" />
+                @if (tipoFrete != "Retirada" && frete > 0)
+                {
+                    <div class="border border-neutral-300 rounded p-4 mt-3">
 
-                <span class="text-xl">📍</span>
+                        <div class="flex items-center justify-between gap-4">
 
-                <div>
-                    <p class="font-medium text-red-900">Retirada grátis</p>
-                    <p class="text-sm text-neutral-500">Disponível em loja - Olímpia SP</p>
-                </div>
+                            <div class="flex items-center gap-3">
 
-            </label>
+                                <span class="text-2xl">🚚</span>
 
-            <!-- CALCULAR FRETE -->
-            <div class="mt-6">
+                                <div>
 
-                <div class="flex items-center gap-2 mb-2">
-                    <span class="text-xl">🚚</span>
-                    <p class="font-medium text-red-900">Calcular frete</p>
-                </div>
+                                    <p class="font-semibold text-red-900">
+                                        @tipoFrete
+                                    </p>
 
-                <div class="flex gap-2">
-                    <input type="text" id="cep"
-                        class="flex-1 border border-neutral-300 px-3 py-2 text-sm rounded focus:outline-none focus:border-primary"
-                        placeholder="Digite seu CEP" />
+                                    <p class="text-sm text-neutral-500">
+                                        Entrega em @prazoEntrega dias
+                                    </p>
 
-                    <button onclick="calcularFrete()"
-                        class="bg-primary text-white px-4 text-sm rounded hover:bg-secondary transition">
-                        OK
-                    </button>
-                </div>
+                                    <p class="font-bold mt-1">
+                                        R$ @frete.ToString("F2")
+                                    </p>
 
-                <!-- RESULTADO -->
-                <div id="resultadoFrete" class="mt-4 text-sm text-neutral-600"></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                }
 
             </div>
 
-            <!-- PAGAMENTO (VISUAL) -->
+            </section>
+
+            <!-- PAGAMENTO -->
             <section class="bg-white p-6 shadow rounded">
-                <h2 class="text-lg text-primary mb-4">Pagamento</h2>
+
+                <h2 class="text-lg text-primary mb-4">
+                    Pagamento
+                </h2>
 
                 <p class="text-sm text-neutral-500">
-                    (Integração com pagamento será adicionada depois)
+                    Integração de pagamento será adicionada depois.
                 </p>
+
             </section>
 
         </div>
@@ -96,7 +166,9 @@
 
             <div class="bg-white p-6 shadow rounded sticky top-32">
 
-                <h2 class="text-lg text-primary mb-6">Resumo do Pedido</h2>
+                <h2 class="text-lg text-primary mb-6">
+                    Resumo do Pedido
+                </h2>
 
                 <!-- ITENS -->
                 <div class="space-y-4 max-h-[300px] overflow-y-auto">
@@ -112,13 +184,16 @@
 
                                 <img class="w-16 h-20 object-cover"
                                     src="@(item.Produto?.Imagens != null && item.Produto.Imagens.Any()
-                                                                                                                                                                                                                                                                                                                                    ? "/images/produtos/" + item.Produto.Imagens.First().CaminhoImagem
-                                                                                                                                                                                                                                                                                                                                    : "/images/produto.jpg")" />
+                                                                                                                                                                                    ? "/images/produtos/" + item.Produto.Imagens.First().CaminhoImagem
+                                                                                                                                                                                    : "/images/produto.jpg")" />
 
                                 <div class="flex flex-col justify-between">
 
                                     <div>
-                                        <p class="text-sm">@item.Produto?.Nome</p>
+                                        <p class="text-sm">
+                                            @item.Produto?.Nome
+                                        </p>
+
                                         <p class="text-xs text-neutral-400">
                                             Qtd: @item.Quantidade
                                         </p>
@@ -135,98 +210,6 @@
                     }
 
                 </div>
-                <script>
-                    function calcularFrete() {
-
-                        const cep = document.getElementById("cep").value.replace(/\D/g, '');
-                        const resultado = document.getElementById("resultadoFrete");
-
-                        if (cep.length !== 8) {
-                            resultado.innerHTML = "Digite um CEP válido";
-                            return;
-                        }
-
-                        resultado.innerHTML = "Calculando...";
-
-                        fetch(`/Carrinho/CalcularFreteMelhorEnvio?cepDestino=${cep}`)
-                            .then(async res => {
-
-                                if (!res.ok) {
-                                    const erro = await res.text();
-                                    throw new Error(erro);
-                                }
-
-                                return res.json();
-                            })
-                            .then(data => {
-
-                                console.log("RESPOSTA:", data);
-
-                                if (!Array.isArray(data)) {
-                                    console.log("Erro vindo da API:", data);
-                                    resultado.innerHTML = "Erro ao calcular frete";
-                                    return;
-                                }
-
-                                let html = "";
-
-                                data.forEach(opcao => {
-
-                                    if (!opcao.price) return;
-
-                                    html += `
-        <label style="display:block; border:1px solid #ddd; padding:10px; margin-top:5px; cursor:pointer;">
-            
-            <input type="radio" name="frete" 
-                value="${opcao.price}|${opcao.delivery_time}|${opcao.name}" />
-
-            <strong>${opcao.name}</strong><br>
-            R$ ${opcao.price} - ${opcao.delivery_time} dias
-        </label>
-                `;
-                                });
-                                html += `
-                <button type="button" onclick="salvarFrete(this)" 
-                    class="btn btn-dark w-100 mt-2"
-                    onchange="salvarFrete(this)">
-                    Selecionar Frete
-                </button>
-            `;
-
-                                resultado.innerHTML = html || "Nenhum frete disponível";
-                            })
-                            .catch(err => {
-                                console.log("ERRO COMPLETO:", err);
-                                resultado.innerHTML = "Erro ao calcular frete";
-                            });
-                    }
-
-                    function salvarFrete() {
-
-                        const selecionado = document.querySelector('input[name="frete"]:checked');
-
-                        if (!selecionado) {
-                            alert("Selecione um frete");
-                            return;
-                        }
-
-                        const [valor, prazo, tipo] = selecionado.value.split("|");
-
-                        fetch('/Carrinho/SalvarFrete', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({
-                                valor: parseFloat(valor),
-                                prazo: parseInt(prazo),
-                                tipo: tipo
-                            })
-                        })
-                            .then(() => {
-                                alert("Frete salvo no carrinho!");
-                                location.reload();
-                            });
-                    }
-                </script>
 
                 <!-- VALORES -->
                 <div class="mt-6 border-t pt-4 space-y-2">
@@ -237,45 +220,52 @@
                     </div>
 
                     <div class="flex justify-between">
+
                         <span>Frete</span>
 
                         <span id="valorFrete">
-                            @if (frete > 0)
+
+                            @if (tipoFrete == "Retirada")
                             {
-                                @:R$ @frete.ToString("F2")
+                                <span class="text-green-600 font-medium">
+                                    Retirada grátis
+                                </span>
+                            }
+                            else if (frete > 0)
+                            {
+                                <span>
+                                    R$ @frete.ToString("F2")
+                                </span>
+                                total = subtotal + frete;
                             }
                             else
                             {
-                                @:Grátis
+                                <span class="text-neutral-400">
+                                    Não calculado
+                                </span>
                             }
+
                         </span>
+
                     </div>
 
-                    <div class="mt-4">
-                        <input type="text" id="cupom" placeholder="Digite seu cupom"
-                            class="border px-3 py-2 w-full mb-2" />
+                    <div class="flex justify-between text-lg font-bold mt-4 border-t pt-3">
 
-                        <button type="button" onclick="aplicarCupom()"
-                            class="w-full bg-primary text-white py-2 mt-1 hover:opacity-90">
-                            Aplicar Cupom
-                        </button>
+                        <span>Total</span>
 
-                        <p id="msgCupom" class="text-sm mt-2"></p>
+                        <span id="valorTotal" class="text-primary">
+                            R$ @total.ToString("F2")
+                        </span>
+
                     </div>
-
-                    <span id="totalPedido">
-
-                        <div class="flex justify-between text-lg font-bold mt-4 border-t pt-3">
-                            <span>Total</span>
-                            <span class="text-primary">R$ @total.ToString("F2")</span>
-                        </div>
-                    </span>
 
                 </div>
 
                 <!-- BOTÃO -->
                 <button type="submit" form="formPedido" class="w-full bg-primary text-white py-4 mt-6 hover:opacity-90">
+
                     FINALIZAR PEDIDO
+
                 </button>
 
             </div>
@@ -287,44 +277,230 @@
 </main>
 
 <script>
-    function aplicarCupom() {
-        console.log("CLICOU NO BOTÃO");
 
-        const codigo = document.getElementById("cupom").value;
-        const totalTexto = document.getElementById("totalPedido").innerText;
+    function selecionarRetirada() {
+
+        toggleEntrega();
 
 
-        let total = parseFloat(totalTexto.replace("R$", "").replace(",", "."));
+        fetch('/Carrinho/SalvarFrete', {
 
-        fetch('/Pedido/AplicarCupom', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
             body: JSON.stringify({
-                codigo: codigo,
-                total: total
+
+                valor: 0,
+                prazo: 0,
+                tipo: "Retirada"
+
             })
+
         })
-            .then(async res => {
-    const texto = await res.text();
-    console.log("RESPOSTA BRUTA:", texto);
-    return JSON.parse(texto);
-})
+            .then(() => {
+
+                location.reload();
+
+            });
+    }
+
+    function toggleEntrega() {
+
+        const tipo =
+            document.querySelector('input[name="tipoEntrega"]:checked').value;
+
+        const sectionEntrega =
+            document.getElementById("sectionEntrega");
+
+        if (tipo === "entrega") {
+
+            sectionEntrega.classList.remove("hidden");
+
+        } if (tipo === "retirada") {
+
+            sectionEntrega.classList.add("hidden");
+
+        }
+
+
+    }
+
+    function buscarEndereco() {
+
+        const cepInput =
+            document.getElementById("cepEndereco");
+
+        let cep =
+            cepInput.value.replace(/\D/g, '');
+
+        if (cep.length !== 8) {
+
+            alert("CEP inválido");
+            return;
+        }
+
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+
+            .then(response => response.json())
+
             .then(data => {
 
-                const msg = document.getElementById("msgCupom");
+                if (data.erro) {
 
-                if (!data.sucesso) {
-                    msg.innerText = data.mensagem;
-                    msg.style.color = "red";
+                    alert("CEP não encontrado");
                     return;
                 }
 
-                msg.innerText = "Cupom aplicado!";
-                msg.style.color = "green";
+                document.getElementById("ruaEndereco").value =
+                    data.logradouro;
+
+                document.getElementById("bairroEndereco").value =
+                    data.bairro;
+
+                document.getElementById("cidadeEndereco").value =
+                    data.localidade;
+
+                document.getElementById("estadoEndereco").value =
+                    data.uf;
+
+                document.getElementById("numeroEndereco").focus();
+
+                calcularFrete();
+            })
+
+            .catch(error => {
+
+                console.log(error);
+
+                alert("Erro ao buscar CEP");
+            });
 
 
-                document.getElementById("totalPedido").innerText =
-                    "R$ " + data.totalFinal.toFixed(2);
+    }
+
+    function calcularFrete() {
+
+        const cep =
+            document.getElementById("cepEndereco")
+                .value.replace(/\D/g, '');
+
+        const resultado =
+            document.getElementById("resultadoFrete");
+
+        resultado.innerHTML = "Calculando frete...";
+
+        fetch(`/Carrinho/CalcularFreteMelhorEnvio?cepDestino=${cep}`)
+
+            .then(async res => {
+
+                if (!res.ok) {
+
+                    const erro = await res.text();
+
+                    throw new Error(erro);
+                }
+
+                return res.json();
+            })
+
+            .then(data => {
+
+                const sedex = data.find(opcao =>
+                    opcao.name &&
+                    opcao.name.toUpperCase().includes("SEDEX")
+                );
+
+                if (!sedex) {
+
+                    resultado.innerHTML =
+                        "SEDEX indisponível para este CEP";
+
+                    return;
+                }
+                resultado.innerHTML = `
+                <div class="border border-neutral-300 rounded p-4 mt-3">
+
+                    <div class="flex items-center justify-between gap-4">
+
+                        <div class="flex items-center gap-3">
+
+                            <span class="text-2xl">🚚</span>
+
+                            <div>
+
+                                <p class="font-semibold text-red-900">
+                                    ${sedex.name}
+                                </p>
+
+                                <p class="text-sm text-neutral-500">
+                                    Entrega em ${sedex.delivery_time} dias
+                                </p>
+
+                                <p class="font-bold mt-1">
+                                    R$ ${sedex.price}
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            `;
+
+
+                salvarFreteAutomatico(
+                    sedex.price,
+                    sedex.delivery_time,
+                    sedex.name
+                );
+
+                document.getElementById("valorFrete").innerHTML =
+                    `R$ ${parseFloat(sedex.price).toFixed(2)}`;
+
+                atualizarPagina();
+
+
+            })
+
+            .catch(err => {
+
+                console.log("ERRO:", err);
+
+                resultado.innerHTML =
+                    "Erro ao calcular frete";
             });
     }
+
+
+    function salvarFreteAutomatico(valor, prazo, tipo) {
+
+        fetch('/Carrinho/SalvarFrete', {
+
+            method: 'POST',
+
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+
+                valor: parseFloat(valor),
+                prazo: parseInt(prazo),
+                tipo: tipo
+            })
+        });
+    }
+
+    function atualizarPagina() {
+
+        location.reload();
+
+    }
+
 </script>
