@@ -31,8 +31,12 @@
                 <label
                     class="flex items-start gap-4 border border-neutral-200 p-4 rounded cursor-pointer hover:border-primary transition mb-3">
 
-                    <input type="radio" name="tipoEntrega" value="retirada" class="mt-1 accent-red-900"
-                        onchange="selecionarRetirada()" @(tipoFrete == "Retirada" ? "checked" : "") />
+                    <input type="radio"
+       name="tipoEntrega"
+       value="retirada"
+       class="mt-1 accent-red-900"
+       onchange="selecionarRetirada()"
+       @(string.IsNullOrEmpty(tipoFrete) || tipoFrete == "Retirada" ? "checked" : "") />
 
                     <span class="text-xl">📍</span>
 
@@ -102,7 +106,7 @@
                         placeholder="Estado" readonly />
 
                     <!-- NÚMERO -->
-                    <input id="numeroEndereco" name="Numero" class="w-full border p-2 mb-3" placeholder="Número"  required />
+                    <input id="numeroEndereco" name="Numero" class="w-full border p-2 mb-3" placeholder="Número" />
 
                 </form>
 
@@ -503,19 +507,32 @@
 
     }
 
-    document.getElementById("formPedido").addEventListener("submit", function (e) {
+    document.addEventListener("DOMContentLoaded", function () {
 
-        const tipoFrete = "@ViewBag.TipoFrete";
-        const numero = document.getElementById("numeroEndereco").value.trim();
+        const numeroInput = document.getElementById("numeroEndereco");
 
-        if (tipoFrete !== "Retirada" && numero === "") {
+        function atualizarObrigatoriedade() {
 
-            e.preventDefault();
+            const entregaSelecionada =
+                document.querySelector('input[name="tipoEntrega"][value="entrega"]').checked;
 
-            alert("Por favor, preencha o número do endereço.");
-
-            document.getElementById("numeroEndereco").focus();
+            if (entregaSelecionada) {
+                numeroInput.setAttribute("required", "required");
+            }
+            else {
+                numeroInput.removeAttribute("required");
+            }
         }
+
+        // roda ao carregar página
+        atualizarObrigatoriedade();
+
+        // roda ao trocar opção
+        document.querySelectorAll('input[name="tipoEntrega"]')
+            .forEach(radio => {
+                radio.addEventListener("change", atualizarObrigatoriedade);
+            });
+
     });
 
 </script>
