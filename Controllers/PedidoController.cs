@@ -40,6 +40,7 @@ namespace PaulaPresentesWebMVC.Controllers
             ViewBag.Frete = frete;
             ViewBag.Total = subtotal + frete;
             ViewBag.TipoFrete = carrinho.TipoFrete;
+            ViewBag.PrazoFrete = carrinho.PrazoFrete ?? 0;
 
             return View();
         }

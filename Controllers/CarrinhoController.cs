@@ -190,10 +190,6 @@ public IActionResult Adicionar(int produtoId, int quantidade)
                             x.name.ToUpper().Contains("SEDEX"))
                 .ToList();
 
-        ViewBag.Frete = carrinho.ValorFrete;
-        ViewBag.TipoFrete = carrinho.TipoFrete;
-        ViewBag.PrazoEntrega = carrinho.PrazoFrete;
-
         return Content(result, "application/json");
     }
 

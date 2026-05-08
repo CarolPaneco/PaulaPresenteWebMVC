@@ -6,7 +6,7 @@
     decimal frete = ViewBag.Frete ?? 0;
     decimal total = ViewBag.Total ?? 0;
     string tipoFrete = ViewBag.TipoFrete ?? "";
-    int prazoEntrega = ViewBag.PrazoEntrega ?? 0;
+    int prazoFrete = ViewBag.PrazoFrete ?? 0;
 }
 
 <main class="max-w-[1440px] mx-auto">
@@ -102,7 +102,7 @@
                         placeholder="Estado" readonly />
 
                     <!-- NÚMERO -->
-                    <input id="numeroEndereco" name="Numero" class="w-full border p-2 mb-3" placeholder="Número" />
+                    <input id="numeroEndereco" name="Numero" class="w-full border p-2 mb-3" placeholder="Número"  required />
 
                 </form>
 
@@ -126,7 +126,7 @@
                                     </p>
 
                                     <p class="text-sm text-neutral-500">
-                                        Entrega em @prazoEntrega dias
+                                        Entrega em até @ViewBag.PrazoFrete dias úteis
                                     </p>
 
                                     <p class="font-bold mt-1">
@@ -383,6 +383,7 @@
 
     function calcularFrete() {
 
+
         const cep =
             document.getElementById("cepEndereco")
                 .value.replace(/\D/g, '');
@@ -453,7 +454,6 @@
                 </div>
             `;
 
-
                 salvarFreteAutomatico(
                     sedex.price,
                     sedex.delivery_time,
@@ -502,5 +502,20 @@
         location.reload();
 
     }
+
+    document.getElementById("formPedido").addEventListener("submit", function (e) {
+
+        const tipoFrete = "@ViewBag.TipoFrete";
+        const numero = document.getElementById("numeroEndereco").value.trim();
+
+        if (tipoFrete !== "Retirada" && numero === "") {
+
+            e.preventDefault();
+
+            alert("Por favor, preencha o número do endereço.");
+
+            document.getElementById("numeroEndereco").focus();
+        }
+    });
 
 </script>

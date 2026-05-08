@@ -11,7 +11,6 @@ namespace PaulaPresentesWebMVC.Data
         public DbSet<Carrinho> Carrinho { get; set; }
         public DbSet<CarrinhoItem> CarrinhoItem { get; set; }
         public DbSet<Pedido> Pedido { get; set; }
-
         public DbSet<Cupom> Cupom { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

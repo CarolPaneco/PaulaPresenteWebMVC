@@ -21,8 +21,6 @@ namespace PaulaPresentesWebMVC.Models
         [Column("tipo_frete")]
         public string? TipoFrete { get; set; }
 
-        [Column("prazo_entrega")]
-        public string? PrazoEntrega { get; set; }
 
         [Column("codigo_cupom")]
         public string? CodigoCupom { get; set; }
