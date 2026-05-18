@@ -42,6 +42,15 @@ namespace PaulaPresentesWebMVC.Models
         [Column("comprimento")]
         public decimal? Comprimento { get; set; }
 
+        [Column("quantidade_estoque")]
+        public int? QuantidadeEstoque { get; set; }
+
+        [Column("quantidade_vendida")]
+        public int? QuantidadeVendida { get; set; }
+
+        [Column("data_compra")]
+        public DateTime? DataCompra { get; set; }
+
         public Estoque Estoque { get; set; }
 
         public List<ProdutoImagem>? Imagens { get; set; }

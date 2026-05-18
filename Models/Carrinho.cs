@@ -12,21 +12,8 @@ namespace PaulaPresentesWebMVC.Models
         [Column("id_cliente")]
         public int IdCliente { get; set; }
 
-        [Column("valor_frete")]
-        public decimal? ValorFrete { get; set; }
-
-        [Column("prazo_frete")]
-        public int? PrazoFrete { get; set; }
-
-        [Column("tipo_frete")]
-        public string? TipoFrete { get; set; }
-
-
-        [Column("codigo_cupom")]
-        public string? CodigoCupom { get; set; }
-
-        [Column("desconto")]
-        public decimal? Desconto { get; set; }
+        [Column("data_criacao")]
+        public DateTime? DataCriacao { get; set; }
 
         public List<CarrinhoItem>? Itens { get; set; }
     }

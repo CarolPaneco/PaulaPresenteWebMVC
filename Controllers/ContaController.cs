@@ -24,6 +24,15 @@ namespace PaulaPresentesWebMVC.Controllers
         [HttpPost]
         public IActionResult Login(string email, string senha)
         {
+
+            if (email == "admin@paula.com" && senha == "admin2306")
+            {
+                // Pode salvar sessão
+                HttpContext.Session.SetString("Admin", "true");
+
+                return RedirectToAction("Index", "Admin");
+            }
+
             var cliente = _context.Cliente
                 .FirstOrDefault(c => c.Email == email && c.Senha == senha);
 
@@ -69,7 +78,6 @@ namespace PaulaPresentesWebMVC.Controllers
             return View("Auth"); // 🔥 IMPORTANTE
         }
 
-        // 👤 PERFIL
         public IActionResult Perfil()
         {
             var nome = HttpContext.Session.GetString("UsuarioNome");

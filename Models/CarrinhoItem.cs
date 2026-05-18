@@ -18,6 +18,12 @@ namespace PaulaPresentesWebMVC.Models
         [Column("quantidade")]
         public int Quantidade { get; set; }
 
+        [Column("preco_unitario")]
+        public decimal PrecoUnitario { get; set; }
+
+        [Column("subtotal_item")]
+        public decimal SubtotalItem { get; set; }
+
         [ForeignKey("IdCarrinho")]
         public Carrinho? Carrinho { get; set; }
 
