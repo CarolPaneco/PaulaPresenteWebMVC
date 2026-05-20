@@ -1,0 +1,409 @@
+﻿@model List<PaulaPresentesWebMVC.Models.Produto>
+
+<div class="relative w-full h-[870px] overflow-hidden">
+    <div id="carousel" class="flex h-full transition-transform duration-700 ease-in-out">
+
+        <!-- SLIDE 1 -->
+        <div class="min-w-full relative flex items-center justify-center bg-neutral-900">
+            <div class="absolute inset-0 bg-black/30 z-10"></div>
+
+            <img class="absolute inset-0 w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuATNkxlY7ZWB6S_VAVq_nEzv6ux7YGFz1-PAzHeKfA8Z_JXZc-C34uNJGNnd9ZQ0GquZwOdQ5JEPHukDJOVpIIwII4RO-m8uhAcFDh4BX6W5LVA82t3GP088q5Ivw8_abQmYyE03kZouDYKIgz5eU3rfnvA9VHeeZvzI2KSHgrnS9gV0NjpBDTupIy5lC42QKh-thb0BlpbjMBOinJS6p5cKOhL7EePcZYMUKkzFntnWrS5XO3tqQu1qootzKzotq00r5UcuTrTS30" />
+
+            <div class="relative z-20 text-center text-white px-4">
+                <span class="uppercase tracking-[0.3em] mb-4 block">Coleção Exclusiva</span>
+                <h1 class="text-5xl md:text-7xl mb-8">A Arte de Presentear</h1>
+            </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="min-w-full relative flex items-center justify-center bg-neutral-900">
+            <div class="absolute inset-0 bg-black/30 z-10"></div>
+
+            <img class="absolute inset-0 w-full h-full object-cover"
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" />
+
+            <div class="relative z-20 text-center text-white px-4">
+                <span class="uppercase tracking-[0.3em] mb-4 block">Elegância</span>
+                <h1 class="text-5xl md:text-7xl mb-8">Estilo Atemporal</h1>
+            </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="min-w-full relative flex items-center justify-center bg-neutral-900">
+            <div class="absolute inset-0 bg-black/30 z-10"></div>
+
+            <img class="absolute inset-0 w-full h-full object-cover"
+                src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd53" />
+
+            <div class="relative z-20 text-center text-white px-4">
+                <span class="uppercase tracking-[0.3em] mb-4 block">Luxo</span>
+                <h1 class="text-5xl md:text-7xl mb-8">Detalhes que encantam</h1>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BOTÕES -->
+    <button onclick="prevSlide()" class="absolute left-6 top-1/2 -translate-y-1/2 text-white text-3xl z-40">
+        ❮
+    </button>
+
+    <button onclick="nextSlide()" class="absolute right-6 top-1/2 -translate-y-1/2 text-white text-3xl z-40">
+        ❯
+    </button>
+
+    <!-- INDICADORES -->
+    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex gap-4">
+        <div class="dot w-12 h-[2px] bg-white"></div>
+        <div class="dot w-12 h-[2px] bg-white/30"></div>
+        <div class="dot w-12 h-[2px] bg-white/30"></div>
+    </div>
+
+</div>
+
+<script>
+    let index = 0;
+    const carousel = document.getElementById("carousel");
+    const total = carousel.children.length;
+    const dots = document.querySelectorAll(".dot");
+
+    function updateCarousel() {
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+
+        dots.forEach((dot, i) => {
+            dot.classList.remove("bg-white");
+            dot.classList.add("bg-white/30");
+
+            if (i === index) {
+                dot.classList.remove("bg-white/30");
+                dot.classList.add("bg-white");
+            }
+        });
+    }
+
+    function nextSlide() {
+        index = (index + 1) % total;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        index = (index - 1 + total) % total;
+        updateCarousel();
+    }
+
+    // AUTO PLAY
+    setInterval(nextSlide, 5000);
+</script>
+
+<main class="w-full px-16 mt-stack-lg mb-stack-lg flex gap-gutter">
+
+
+    <!-- SIDEBAR -->
+    <aside class="w-64 flex-shrink-0 sticky top-32 h-fit hidden lg:block">
+
+        <div class="mb-10">
+            <h3 class="font-headline-md text-headline-md mb-6 text-red-900">Categorias</h3>
+
+            <ul class="space-y-4">
+
+                <!-- TODOS -->
+                <li>
+                    <a href="/" class="flex items-center gap-3 group">
+
+                        <div
+                            class="w-4 h-4 border flex items-center justify-center
+                            @(ViewBag.CategoriaSelecionada == null ? "bg-primary border-primary" : "border-neutral-300")">
+
+                            @if (ViewBag.CategoriaSelecionada == null)
+                            {
+                                <span class="text-white text-xs">✓</span>
+                            }
+                        </div>
+
+                        <span
+                            class="font-label-caps text-label-caps
+                            @(ViewBag.CategoriaSelecionada == null ? "text-primary" : "text-neutral-600 group-hover:text-primary")">
+                            Todos
+                        </span>
+                    </a>
+                </li>
+
+                <!-- BOLSAS -->
+                <li>
+                    <a href="/Home?categoria=Bolsa" class="flex items-center gap-3 group">
+
+                        <div
+                            class="w-4 h-4 border flex items-center justify-center
+                            @(ViewBag.CategoriaSelecionada == "Bolsa" ? "bg-primary border-primary" : "border-neutral-300")">
+
+                            @if (ViewBag.CategoriaSelecionada == "Bolsa")
+                            {
+                                <span class="text-white text-xs">✓</span>
+                            }
+                        </div>
+
+                        <span
+                            class="font-label-caps text-label-caps
+                            @(ViewBag.CategoriaSelecionada == "Bolsa" ? "text-primary" : "text-neutral-600 group-hover:text-primary")">
+                            Bolsas
+                        </span>
+                    </a>
+                </li>
+
+                <!-- OCULOS -->
+                <li>
+                    <a href="/Home?categoria=Óculos" class="flex items-center gap-3 group">
+
+                        <div
+                            class="w-4 h-4 border flex items-center justify-center
+                            @(ViewBag.CategoriaSelecionada == "Óculos" ? "bg-primary border-primary" : "border-neutral-300")">
+
+                            @if (ViewBag.CategoriaSelecionada == "Óculos")
+                            {
+                                <span class="text-white text-xs">✓</span>
+                            }
+                        </div>
+
+                        <span
+                            class="font-label-caps text-label-caps
+                            @(ViewBag.CategoriaSelecionada == "Óculos" ? "text-primary" : "text-neutral-600 group-hover:text-primary")">
+                            Óculos
+                        </span>
+                    </a>
+                </li>
+
+                <!-- MALAS -->
+                <li>
+                    <a href="/Home?categoria=Mala" class="flex items-center gap-3 group">
+
+                        <div
+                            class="w-4 h-4 border flex items-center justify-center
+                            @(ViewBag.CategoriaSelecionada == "Mala" ? "bg-primary border-primary" : "border-neutral-300")">
+
+                            @if (ViewBag.CategoriaSelecionada == "Mala")
+                            {
+                                <span class="text-white text-xs">✓</span>
+                            }
+                        </div>
+
+                        <span
+                            class="font-label-caps text-label-caps
+                            @(ViewBag.CategoriaSelecionada == "Mala" ? "text-primary" : "text-neutral-600 group-hover:text-primary")">
+                            Malas
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Home?categoria=Mochila" class="flex items-center gap-3 group">
+
+                        <div
+                            class="w-4 h-4 border flex items-center justify-center
+                            @(ViewBag.CategoriaSelecionada == "Mochila" ? "bg-primary border-primary" : "border-neutral-300")">
+
+                            @if (ViewBag.CategoriaSelecionada == "Mochila")
+                            {
+                                <span class="text-white text-xs">✓</span>
+                            }
+                        </div>
+
+                        <span
+                            class="font-label-caps text-label-caps
+                            @(ViewBag.CategoriaSelecionada == "Mochila" ? "text-primary" : "text-neutral-600 group-hover:text-primary")">
+                            Mochila
+                        </span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+    </aside>
+
+
+    <!-- PRODUTOS -->
+    <section class="flex-1">
+
+        <div class="flex justify-between items-end mb-12">
+            <h2 class="font-display-lg text-display-lg text-red-900">Novidades</h2>
+        </div>
+
+        <!-- GRID -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-gutter gap-y-12">
+
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                var item = Model[i];
+
+                <div class="produto group relative flex flex-col @(i >= 8 ? "hidden" : "")">
+
+                    <a href="/Produto/Detalhes/@item.IdProduto">
+
+                        <div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-4 relative">
+
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="@(item.Imagens != null && item.Imagens.Any()
+                                ? "/img/produtos/" + item.Imagens.First().CaminhoImagem
+                                : "/images/produto.jpg")" />
+
+                    </div>
+
+                    <div class="flex flex-col gap-1">
+
+                        <span class="font-label-caps text-[10px] text-neutral-400 uppercase tracking-widest">
+                            @item.Categoria
+                        </span>
+
+                        <h3 class="font-headline-md text-body-lg text-red-900">
+                            @(string.IsNullOrEmpty(item.Nome) ? "Produto" : item.Nome)
+                        </h3>
+
+                        <p class="font-body-md text-on-surface font-medium">
+                            @(item.PrecoVenda != null ? $"R$ {item.PrecoVenda}" : "Preço indisponível")
+                        </p>
+
+                    </div>
+
+                </a>
+
+            </div>
+                        }
+        </div>
+
+    </section>
+</main>
+
+<div class="mt-stack-lg flex flex-col items-center gap-6">
+
+    <p class="font-label-caps text-[10px] text-neutral-400">
+        EXIBINDO <span id="contador">8</span> DE @Model.Count PRODUTOS
+    </p>
+
+    <div class="w-full max-w-xs h-[1px] bg-neutral-200">
+        <div id="barra" class="h-full bg-primary" style="width:16%"></div>
+    </div>
+
+    <button id="btnToggle"
+        class="px-16 py-4 border border-primary text-primary font-label-caps tracking-widest hover:bg-primary hover:text-white transition-all duration-500">
+        VER MAIS
+    </button>
+
+</div>
+<script>
+    let visiveis = 8;
+    const incremento = 8;
+
+    const produtos = document.querySelectorAll(".produto");
+    const total = produtos.length;
+
+    const botao = document.getElementById("btnToggle");
+    const contador = document.getElementById("contador");
+    const barra = document.getElementById("barra");
+
+    botao.addEventListener("click", () => {
+
+        if (visiveis < total) {
+            // MOSTRAR MAIS
+            visiveis += incremento;
+
+            produtos.forEach((p, i) => {
+                if (i < visiveis) p.classList.remove("hidden");
+            });
+
+            if (visiveis >= total) {
+                botao.textContent = "VER MENOS";
+                visiveis = total;
+            }
+
+        } else {
+            // VOLTAR PARA 8
+            visiveis = 8;
+
+            produtos.forEach((p, i) => {
+                if (i >= visiveis) p.classList.add("hidden");
+            });
+
+            botao.textContent = "VER MAIS";
+        }
+
+        // Atualiza contador
+        contador.textContent = visiveis;
+
+        // Atualiza barra
+        let porcentagem = (visiveis / total) * 100;
+        barra.style.width = porcentagem + "%";
+    });
+
+    let quantidadeVisivel = 8;
+
+    const produtos =
+        document.querySelectorAll(".produto");
+
+    const botao =
+        document.getElementById("btnToggle");
+
+    const contador =
+        document.getElementById("contador");
+
+    const barra =
+        document.getElementById("barra");
+
+    botao.addEventListener("click", () => {
+
+        quantidadeVisivel += 8;
+
+        produtos.forEach((produto, index) => {
+
+            if (index < quantidadeVisivel) {
+                produto.classList.remove("hidden");
+            }
+
+        });
+
+        // contador
+        let exibidos =
+            Math.min(quantidadeVisivel, produtos.length);
+
+        contador.innerText = exibidos;
+
+        // barra progresso
+        let porcentagem =
+            (exibidos / produtos.length) * 100;
+
+        barra.style.width = porcentagem + "%";
+
+        // esconder botão quando acabar
+        if (quantidadeVisivel >= produtos.length) {
+
+            botao.style.display = "none";
+
+        }
+
+    });
+</script>
+</section>
+<!-- Editorial Section -->
+<section class="w-full py-stack-lg bg-surface-container-low border-y border-neutral-100">
+    <div class="max-w-[1440px] mx-auto px-16 grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+        <div class="relative aspect-square">
+            <img class="w-full h-full object-cover"
+                data-alt="A sophisticated lifestyle editorial shot featuring a woman in a tailored camel coat walking through a modern marble hall, carrying a burgundy Paula Presentes leather tote. The lighting is soft and ethereal, capturing a moment of quiet confidence and luxury. The color palette is composed of warm neutrals and rich reds, creating a cohesive brand story of high-end, functional fashion and timeless elegance."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb4fXApEvNUA_Iw9IyIGf4YiIUzYNzfCH6-lkSLOHC_VTtWkLOtwX_4vuDKEzljG48yd2ZJ4sz_YCKdmfR5BjiWUhRH2NVJrPwC8nG_-fZE0tPjgxuPxtLHwPPgyU2QAUarTt1z0dMFhQDmcDwasJdiE4TG_h80FFWG41Lxv2xv_fMRMHClwH9lBCPvF3QBg2Dt8nV9__YnGEZXlL9VsniFwJ_1Vfq0HwjWydH4SA8TFeDLcg0LscIesNRwwS0g16sxqcNvr9TQxs" />
+        </div>
+        <div class="pl-0 md:pl-16 flex flex-col items-start text-left">
+            <span class="font-label-caps text-label-caps text-primary tracking-[0.4em] mb-6 block">MANIFESTO</span>
+            <h2 class="font-display-lg text-display-lg text-red-900 mb-8 max-w-md">Feito para os que valorizam o
+                detalhe.</h2>
+            <p class="font-body-lg text-neutral-600 mb-10 max-w-lg leading-relaxed">
+                A Paula Presentes nasceu do desejo de curar o extraordinário. Cada peça em nossa coleção é selecionada
+                por sua qualidade impecável e design atemporal, transformando cada presente em uma memória eterna.
+            </p>
+            <a class="font-label-caps text-label-caps text-red-900 border-b-2 border-primary pb-1 hover:text-secondary hover:border-secondary transition-all"
+                asp-controller="Home" asp-action="Sobre">
+                CONHEÇA NOSSA HISTÓRIA</a>
+        </div>
+    </div>
+</section>
+
+</main>

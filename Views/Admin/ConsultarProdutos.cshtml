@@ -1,0 +1,104 @@
+@model List<PaulaPresentesWebMVC.Models.Produto>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <title>Consultar Produtos</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-[#f9f9f9] p-10">
+
+    <div class="max-w-7xl mx-auto">
+
+        <div class="mb-10">
+
+            <h1 class="text-5xl font-bold text-[#570013]">
+                Produtos
+            </h1>
+
+            <p class="text-gray-500 mt-3 text-lg">
+                Todos os produtos cadastrados
+            </p>
+
+        </div>
+
+        <form method="get" class="mb-10">
+
+            <input type="text"
+                   name="pesquisa"
+                   placeholder="Pesquisar por código, nome, categoria ou cor"
+                   class="w-full bg-white border border-gray-300 rounded-2xl p-5 shadow-sm" />
+
+        </form>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            @foreach (var item in Model)
+            {
+                <div class="bg-white rounded-3xl shadow-xl p-6">
+
+                    <img src="@(item.Imagens != null && item.Imagens.Any()
+                    ? "/img/produtos/" + item.Imagens.First().CaminhoImagem
+                    : "/images/produto.jpg")"
+                    class="w-full h-72 object-cover rounded-2xl mb-6" />
+
+                    <h2 class="text-2xl font-bold">
+                        @item.Nome
+                    </h2>
+
+                    <p class="text-gray-500">
+                        @item.Marca
+                    </p>
+
+                    <div class="mt-4 space-y-2">
+
+                        <p>
+                            Categoria: @item.Categoria
+                        </p>
+
+                        <p>
+                            Cor: @item.Cor
+                        </p>
+
+                        <p>
+                            Código: @item.CodigoBarra
+                        </p>
+
+                    </div>
+
+                    <div class="mt-6 flex justify-between items-center">
+
+                        <p class="text-2xl font-bold text-[#570013]">
+                            R$ @item.PrecoVenda
+                        </p>
+
+                        <span class="bg-[#570013] text-white px-4 py-2 rounded-xl">
+
+                            Estoque: @item.QuantidadeEstoque
+
+                        </span>
+
+                    </div>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

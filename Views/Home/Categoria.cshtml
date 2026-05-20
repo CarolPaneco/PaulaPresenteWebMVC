@@ -1,0 +1,167 @@
+@model List<PaulaPresentesWebMVC.Models.Produto>
+
+@{
+    Layout = null;
+
+    string categoria = ViewBag.Categoria ?? "Categoria";
+}
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap"
+          rel="stylesheet" />
+
+    <style>
+        body {
+            background: #f9f9f9;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .titulo {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+
+</head>
+
+<body class="bg-[#f9f9f9] text-neutral-900">
+
+
+    <!-- HERO -->
+    <section class="relative h-[500px] overflow-hidden">
+
+        <img class="absolute inset-0 w-full h-full object-cover"
+             src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=2070&auto=format&fit=crop" />
+
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <div class="relative z-20 h-full flex flex-col justify-center items-center text-center text-white px-6">
+
+            <span class="uppercase tracking-[0.4em] text-sm mb-6">
+                Coleção Exclusiva
+            </span>
+
+            <h1 class="titulo text-5xl md:text-7xl">
+                @categoria
+            </h1>
+
+            <p class="mt-6 max-w-2xl text-lg text-white/90">
+                Explore nossa seleção premium de @categoria.ToLower().
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- BOTÃO VOLTAR -->
+    <div class="max-w-[1440px] mx-auto px-16 pt-10">
+
+        <button onclick="history.back()"
+            class="flex items-center gap-3 text-neutral-500 hover:text-primary transition-all duration-300 group">
+
+            <span
+                class="material-symbols-outlined text-3xl transition-transform duration-300 group-hover:-translate-x-1">
+                <-
+            </span>
+
+            <span class="font-['Inter'] uppercase tracking-[0.25em] text-xs">
+                Voltar
+            </span>
+
+        </button>
+
+    </div>
+
+    <!-- CONTEÚDO -->
+    <main class="max-w-[1440px] mx-auto px-8 md:px-16 py-20">
+
+        <!-- TOPO -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16">
+
+            <div>
+
+                <span class="uppercase tracking-[0.3em] text-xs text-neutral-400">
+                    Categoria
+                </span>
+
+                <h2 class="titulo text-5xl text-red-900 mt-3">
+                    @categoria
+                </h2>
+
+            </div>
+
+            <div class="text-neutral-500 uppercase tracking-[0.2em] text-xs">
+
+                @Model.Count produto(s)
+
+            </div>
+
+        </div>
+
+        <!-- GRID -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-8 gap-y-16">
+
+            @foreach (var item in Model)
+            {
+                <div class="produto group relative flex flex-col">
+
+                    <a href="/Produto/Detalhes/@item.IdProduto">
+
+                        <!-- IMAGEM -->
+                        <div class="aspect-[3/4] overflow-hidden bg-neutral-100 mb-5 relative rounded-sm">
+
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                 src="@(item.Imagens != null && item.Imagens.Any()
+                                    ? "/img/produtos/" + item.Imagens.First().CaminhoImagem
+                                    : "/images/produto.jpg")" />
+
+                        </div>
+
+                        <!-- INFO -->
+                        <div class="flex flex-col gap-2">
+
+                            <span class="uppercase tracking-[0.25em] text-[10px] text-neutral-400">
+
+                                @item.Categoria
+
+                            </span>
+
+                            <h3 class="titulo text-2xl text-red-900 leading-snug">
+
+                                @item.Nome
+
+                            </h3>
+
+                            <p class="text-neutral-700 font-medium text-lg">
+
+                                @(item.PrecoVenda != null
+                                    ? $"R$ {item.PrecoVenda}"
+                                    : "Preço indisponível")
+
+                            </p>
+
+                        </div>
+
+                    </a>
+
+                </div>
+            }
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

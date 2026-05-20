@@ -1,0 +1,68 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<main class="min-h-screen flex items-center justify-center bg-surface px-6">
+
+    <div class="w-full max-w-md">
+
+        <!-- Logo -->
+        <div class="text-center mb-10">
+            <h1 class="font-['Noto_Serif'] text-3xl text-primary">
+                Paula Presentes
+            </h1>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-white p-8 shadow-sm border border-neutral-200">
+
+            <h2 class="font-headline-lg text-primary mb-2">
+                Bem-vinda de volta
+            </h2>
+
+            <p class="text-sm text-neutral-500 mb-8">
+                Acesse sua conta
+            </p>
+
+            <form method="post" class="space-y-6">
+
+                <!-- EMAIL -->
+                <div>
+                    <label class="text-xs uppercase text-neutral-500">E-mail</label>
+                    <input name="email" type="email" required
+                           class="w-full border-b border-neutral-300 focus:border-primary focus:ring-0 py-3 bg-transparent" />
+                </div>
+
+                <!-- SENHA -->
+                <div>
+                    <label class="text-xs uppercase text-neutral-500">Senha</label>
+                    <input name="senha" type="password" required
+                           class="w-full border-b border-neutral-300 focus:border-primary focus:ring-0 py-3 bg-transparent" />
+                </div>
+
+                <!-- ERRO -->
+                @if (ViewBag.Erro != null)
+                {
+                    <div class="text-red-500 text-sm text-center">
+                        @ViewBag.Erro
+                    </div>
+                }
+
+                <!-- BOTÃO -->
+                <button class="w-full bg-primary text-white py-4 uppercase text-xs tracking-widest hover:bg-red-900 transition">
+                    Entrar
+                </button>
+
+                <!-- LINK -->
+                <p class="text-center text-sm text-neutral-500">
+                    Não tem conta?
+                    <a href="/Conta/Cadastro" class="text-primary hover:underline">
+                        Cadastre-se
+                    </a>
+                </p>
+
+            </form>
+        </div>
+    </div>
+
+</main>

@@ -1,0 +1,94 @@
+@model List<PaulaPresentesWebMVC.Models.Produto>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <title>Consultar Estoque</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-[#f9f9f9] p-10">
+
+    <div class="max-w-7xl mx-auto">
+
+        <div class="mb-10">
+
+            <h1 class="text-5xl font-bold text-[#570013]">
+                Consultar Estoque
+            </h1>
+
+            <p class="text-gray-500 mt-3 text-lg">
+                Produtos disponíveis no estoque
+            </p>
+
+        </div>
+
+        <form method="get" class="mb-10">
+
+            <input type="text"
+                   name="pesquisa"
+                   placeholder="Pesquisar por código, nome, categoria ou cor"
+                   class="w-full bg-white border border-gray-300 rounded-2xl p-5 shadow-sm" />
+
+        </form>
+
+        <div class="bg-white rounded-3xl shadow overflow-hidden">
+
+            <table class="w-full">
+
+                <thead class="bg-[#570013] text-white">
+
+                    <tr>
+
+                        <th class="p-6 text-left">Produto</th>
+                        <th class="p-6 text-left">Categoria</th>
+                        <th class="p-6 text-left">Cor</th>
+                        <th class="p-6 text-left">Estoque</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr class="border-b hover:bg-gray-50">
+
+                            <td class="p-6">@item.Nome</td>
+
+                            <td class="p-6">@item.Categoria</td>
+
+                            <td class="p-6">@item.Cor</td>
+
+                            <td class="p-6 font-bold">
+
+                                @item.QuantidadeEstoque
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

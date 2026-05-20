@@ -1,0 +1,73 @@
+@model PaulaPresentesWebMVC.Models.Cliente
+
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<main class="min-h-screen flex items-center justify-center bg-surface px-6">
+
+    <div class="w-full max-w-md">
+
+        <!-- Logo -->
+        <div class="text-center mb-10">
+            <h1 class="font-['Noto_Serif'] text-3xl text-primary">
+                Paula Presentes
+            </h1>
+        </div>
+
+        <div class="bg-white p-8 shadow-sm border border-neutral-200">
+
+            <h2 class="font-headline-lg text-primary mb-6">
+                Criar Conta
+            </h2>
+
+            <form method="post" class="space-y-5">
+
+                <input asp-for="Nome" placeholder="Nome"
+                       class="w-full border-b border-neutral-300 py-3 focus:border-primary focus:ring-0" />
+
+                <input asp-for="Email" type="email" placeholder="E-mail"
+                       class="w-full border-b border-neutral-300 py-3 focus:border-primary focus:ring-0" />
+
+                <input asp-for="Senha" type="password" placeholder="Senha"
+                       class="w-full border-b border-neutral-300 py-3 focus:border-primary focus:ring-0" />
+
+                <input asp-for="Telefone" placeholder="Telefone"
+                       class="w-full border-b border-neutral-300 py-3 focus:border-primary focus:ring-0" />
+
+                <input asp-for="DataNascimento" type="date"
+                       class="w-full border-b border-neutral-300 py-3 focus:border-primary focus:ring-0" />
+
+                <!-- SUCESSO -->
+                @if (ViewBag.Sucesso != null)
+                {
+                    <div class="text-green-600 text-sm text-center">
+                        @ViewBag.Sucesso
+                    </div>
+                }
+
+                <!-- ERRO -->
+                @if (ViewBag.Erro != null)
+                {
+                    <div class="text-red-500 text-sm text-center">
+                        @ViewBag.Erro
+                    </div>
+                }
+
+                <button class="w-full bg-primary text-white py-4 uppercase text-xs tracking-widest hover:bg-red-900 transition">
+                    Cadastrar
+                </button>
+
+                <p class="text-center text-sm text-neutral-500">
+                    Já tem conta?
+                    <a href="/Conta/Login" class="text-primary hover:underline">
+                        Entrar
+                    </a>
+                </p>
+
+            </form>
+
+        </div>
+    </div>
+
+</main>

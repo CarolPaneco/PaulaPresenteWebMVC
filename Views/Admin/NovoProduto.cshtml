@@ -1,0 +1,454 @@
+@model PaulaPresentesWebMVC.Models.Produto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <title>Novo Produto</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+</head>
+
+<body class="bg-[#f9f9f9] min-h-screen font-[Inter]">
+
+    <div class="max-w-5xl mx-auto py-16 px-8">
+
+        <div class="bg-white rounded-[32px] shadow-xl p-12">
+
+            <div class="mb-12">
+
+                <h1 class="text-5xl font-bold text-[#570013] font-[Noto_Serif]">
+                    Novo Produto
+                </h1>
+
+                <p class="text-gray-500 mt-3 text-lg">
+                    Cadastre um novo produto no sistema
+                </p>
+
+            </div>
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="bg-red-100 border border-red-400 text-red-700 px-6 py-4 rounded-2xl mb-6">
+
+                    @foreach (var erro in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <p>@erro.ErrorMessage</p>
+                    }
+
+                </div>
+            }
+
+            <form method="post"
+                  enctype="multipart/form-data"
+                  asp-action="NovoProduto"
+                  asp-controller="Admin">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <!-- NOME -->
+                    <div>
+
+                        <label class="font-semibold">
+                            Nome
+                        </label>
+
+                        <input asp-for="Nome"
+                               required
+                               class="w-full border border-gray-300 rounded-2xl p-4 mt-3" />
+
+                    </div>
+
+                    <!-- MARCA -->
+                    <div>
+
+                        <label class="font-semibold">
+                            Marca
+                        </label>
+
+                        <input asp-for="Marca"
+                               required
+                               class="w-full border border-gray-300 rounded-2xl p-4 mt-3" />
+
+                    </div>
+
+                    <!-- CATEGORIA -->
+                    <div>
+
+                        <label class="font-semibold">
+                            Categoria
+                        </label>
+
+                        <select asp-for="Categoria"
+                                required
+                                class="w-full border border-gray-300 rounded-2xl p-4 mt-3 bg-white">
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="Bolsa">Bolsa</option>
+                            <option value="Mochila">Mochila</option>
+                            <option value="Carteira">Carteira</option>
+                            <option value="Necessaire">Necessaire</option>
+                            <option value="Mala">Mala</option>
+                            <option value="Óculos">Óculos</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- COR -->
+                    <div>
+
+                        <label class="font-semibold">
+                            Cor
+                        </label>
+
+                        <select asp-for="Cor"
+                                required
+                                class="w-full border border-gray-300 rounded-2xl p-4 mt-3 bg-white">
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="Preto">Preto</option>
+                            <option value="Branco">Branco</option>
+                            <option value="Marrom">Marrom</option>
+                            <option value="Bege">Bege</option>
+                            <option value="Caramelo">Caramelo</option>
+                            <option value="Off White">Off White</option>
+                            <option value="Rosa">Rosa</option>
+                            <option value="Azul">Azul</option>
+                            <option value="Vermelho">Vermelho</option>
+                            <option value="Verde">Verde</option>
+                            <option value="Cinza">Cinza</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- CODIGO -->
+                    <div>
+
+                        <label class="font-semibold">
+                            Código de Barras
+                        </label>
+
+                        <input asp-for="CodigoBarra"
+                               required
+                               class="w-full border border-gray-300 rounded-2xl p-4 mt-3" />
+
+                    </div>
+
+                    <!-- PREÇO VENDA -->
+                    <div>
+
+                        <label class="font-semibold">
+                            Preço Venda
+                        </label>
+
+                        <input asp-for="PrecoVenda"
+                               type="number"
+                               step="0.01"
+                               min="0"
+                               required
+                               class="w-full border border-gray-300 rounded-2xl p-4 mt-3" />
+
+                    </div>
+
+                    <!-- PREÇO CUSTO -->
+                    <div>
+
+                        <label class="font-semibold">
+                            Preço Custo
+                        </label>
+
+                        <input asp-for="PrecoCusto"
+                               type="number"
+                               step="0.01"
+                               min="0"
+                               required
+                               class="w-full border border-gray-300 rounded-2xl p-4 mt-3" />
+
+                    </div>
+
+                    <!-- ESTOQUE -->
+                    <div>
+
+                        <label class="font-semibold">
+                            Quantidade Estoque
+                        </label>
+
+                        <input asp-for="QuantidadeEstoque"
+                               type="number"
+                               min="0"
+                               required
+                               class="w-full border border-gray-300 rounded-2xl p-4 mt-3" />
+
+                    </div>
+
+                    <!-- PESO -->
+                    <div>
+
+                        <label class="font-semibold">
+                            Peso (kg)
+                        </label>
+
+                        <input asp-for="Peso"
+                               type="number"
+                               step="0.001"
+                               class="w-full border border-gray-300 rounded-2xl p-4 mt-3" />
+
+                    </div>
+
+                    <!-- ALTURA -->
+                    <div>
+
+                        <label class="font-semibold">
+                            Altura (cm)
+                        </label>
+
+                        <input asp-for="Altura"
+                               type="number"
+                               step="0.01"
+                               class="w-full border border-gray-300 rounded-2xl p-4 mt-3" />
+
+                    </div>
+
+                    <!-- LARGURA -->
+                    <div>
+
+                        <label class="font-semibold">
+                            Largura (cm)
+                        </label>
+
+                        <input asp-for="Largura"
+                               type="number"
+                               step="0.01"
+                               class="w-full border border-gray-300 rounded-2xl p-4 mt-3" />
+
+                    </div>
+
+                    <!-- COMPRIMENTO -->
+                    <div>
+
+                        <label class="font-semibold">
+                            Comprimento (cm)
+                        </label>
+
+                        <input asp-for="Comprimento"
+                               type="number"
+                               step="0.01"
+                               class="w-full border border-gray-300 rounded-2xl p-4 mt-3" />
+
+                    </div>
+
+                    <!-- DESCRIÇÃO -->
+                    <div class="md:col-span-2">
+
+                        <label class="font-semibold">
+                            Descrição
+                        </label>
+
+                        <textarea asp-for="Descricao"
+                                  rows="5"
+                                  class="w-full border border-gray-300 rounded-2xl p-4 mt-3"></textarea>
+
+                    </div>
+
+                    <!-- IMAGENS -->
+                    <div class="md:col-span-2">
+
+                        <div class="flex justify-between items-center">
+
+                            <label class="font-semibold text-xl">
+                                Imagens do Produto
+                            </label>
+
+                            <span id="contadorImagens"
+                                  class="text-sm text-gray-500">
+
+                                0 / 5 imagens
+
+                            </span>
+
+                        </div>
+
+                        <div class="mt-4 border-2 border-dashed border-gray-300 rounded-3xl p-10 bg-gray-50">
+
+                            <input type="file"
+                                   id="inputImagens"
+                                   name="imagens"
+                                   multiple
+                                   accept="image/*"
+                                   class="hidden" />
+
+                            <button type="button"
+                                    onclick="document.getElementById('inputImagens').click()"
+                                    class="bg-[#570013] text-white px-6 py-4 rounded-2xl font-bold hover:opacity-90 transition">
+
+                                Adicionar Imagens
+
+                            </button>
+
+                            <p class="text-gray-500 mt-4">
+
+                                PNG, JPG ou WEBP — máximo 5 imagens
+
+                            </p>
+
+                        </div>
+
+                        <!-- PREVIEW -->
+                        <div id="previewImagens"
+                             class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-8">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button type="submit"
+                        class="w-full bg-[#570013] text-white py-5 rounded-2xl mt-12 text-xl font-bold hover:opacity-90 transition">
+
+                    Salvar Produto
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        // =========================
+        // INPUTS
+        // =========================
+
+        const inputImagens =
+            document.getElementById("inputImagens");
+
+        const preview =
+            document.getElementById("previewImagens");
+
+        const contador =
+            document.getElementById("contadorImagens");
+
+        // =========================
+        // ARRAY DE IMAGENS
+        // =========================
+
+        let arquivos = [];
+
+        // =========================
+        // ADICIONAR IMAGENS
+        // =========================
+
+        inputImagens.addEventListener("change", function (e) {
+
+            const novosArquivos =
+                Array.from(e.target.files);
+
+            for (let arquivo of novosArquivos) {
+
+                // LIMITE 5
+                if (arquivos.length >= 5) {
+
+                    alert("Máximo de 5 imagens");
+
+                    break;
+                }
+
+                arquivos.push(arquivo);
+            }
+
+            atualizarPreview();
+        });
+
+        // =========================
+        // ATUALIZA PREVIEW
+        // =========================
+
+        function atualizarPreview() {
+
+            preview.innerHTML = "";
+
+            contador.innerText =
+                `${arquivos.length} / 5 imagens`;
+
+            const dataTransfer =
+                new DataTransfer();
+
+            arquivos.forEach((arquivo, index) => {
+
+                dataTransfer.items.add(arquivo);
+
+                const reader =
+                    new FileReader();
+
+                reader.onload = function (e) {
+
+                    const div =
+                        document.createElement("div");
+
+                    div.className =
+                        "relative rounded-3xl overflow-hidden shadow-lg bg-white border";
+
+                    div.innerHTML = `
+                        
+                        <img src="${e.target.result}"
+                             class="w-full h-40 object-cover">
+
+                        <button type="button"
+                                onclick="removerImagem(${index})"
+                                class="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white w-8 h-8 rounded-full font-bold transition">
+
+                            ×
+
+                        </button>
+                    `;
+
+                    preview.appendChild(div);
+                };
+
+                reader.readAsDataURL(arquivo);
+            });
+
+            inputImagens.files =
+                dataTransfer.files;
+        }
+
+        // =========================
+        // REMOVER IMAGEM
+        // =========================
+
+        function removerImagem(index) {
+
+            arquivos.splice(index, 1);
+
+            atualizarPreview();
+        }
+
+    </script>
+
+</body>
+
+</html>
