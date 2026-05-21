@@ -1,0 +1,161 @@
+@model List<Cliente>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="light" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {}
+            }
+        }
+    </script>
+</head>
+
+<body class="min-h-screen bg-[#f9f9f9] text-[#1b1b1b] font-[Inter]">
+
+<!-- HEADER -->
+<header class="h-20 bg-white border-b flex items-center justify-between px-10 sticky top-0 z-50">
+    <h1 class="text-2xl font-bold text-[#570013]">Clientes</h1>
+
+    <div class="flex gap-4 items-center">
+
+        <!-- SEARCH -->
+        <input id="searchInput"
+               onkeyup="filtrarClientes()"
+               placeholder="Buscar cliente..."
+               class="border rounded-xl px-4 py-2 w-72 focus:outline-none" />
+
+        <!-- BUTTON -->
+        <button onclick="abrirModal()"
+                class="bg-[#570013] text-white px-5 py-2 rounded-xl font-semibold hover:opacity-90">
+            + Novo Cliente
+        </button>
+    </div>
+</header>
+
+<main class="p-10 max-w-[1400px] mx-auto">
+
+    <!-- ALERTA ANIVERSARIANTES -->
+    <div class="mb-6 p-4 rounded-xl bg-yellow-100 border border-yellow-300">
+        🎉 Aniversariantes de hoje:
+
+        @if (ViewBag.Aniversariantes != null && ((List<Cliente>)ViewBag.Aniversariantes).Any())
+        {
+            foreach (var c in (List<Cliente>)ViewBag.Aniversariantes)
+            {
+                <span class="font-bold">@c.Nome</span><br />
+            }
+        }
+        else
+        {
+            <span class="text-gray-600">Nenhum aniversariante hoje 🎂</span>
+        }
+    </div>
+
+    <!-- LISTA CLIENTES -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        @foreach (var c in Model)
+        {
+            <div class="cliente-card bg-white p-6 rounded-2xl shadow hover:shadow-lg transition"
+                 data-nome="@c.Nome"
+                 data-telefone="@c.Telefone"
+                 data-nascimento="@c.DataNascimento?.ToString("dd/MM/yyyy")">
+
+                <h2 class="text-xl font-bold text-[#570013]">@c.Nome</h2>
+
+                <p class="text-sm text-gray-600 mt-2">
+                    📞 @c.Telefone
+                </p>
+
+                <p class="text-sm text-gray-500 mt-1">
+                    🎂 @(c.DataNascimento?.ToString("dd/MM/yyyy"))
+                </p>
+
+            </div>
+        }
+
+    </div>
+</main>
+
+<!-- MODAL -->
+<div id="modalCliente"
+     class="hidden fixed inset-0 bg-black/50 flex items-center justify-center">
+
+    <div class="bg-white p-8 rounded-2xl w-[500px]">
+
+        <h2 class="text-xl font-bold mb-4">Novo Cliente</h2>
+
+        <form method="post" asp-action="Clientes" asp-controller="Admin" class="space-y-4">
+
+            <input name="Nome" placeholder="Nome" class="w-full border p-3 rounded-xl" />
+
+            <input name="Telefone" placeholder="Telefone" class="w-full border p-3 rounded-xl" />
+
+            <input type="date" name="DataNascimento" class="w-full border p-3 rounded-xl" />
+
+            <div class="flex justify-end gap-3 pt-4">
+
+                <button type="button"
+                        onclick="fecharModal()"
+                        class="px-4 py-2 bg-gray-300 rounded-xl">
+                    Cancelar
+                </button>
+
+                <button class="px-5 py-2 bg-[#570013] text-white rounded-xl">
+                    Salvar
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<!-- JS -->
+<script>
+
+function abrirModal() {
+    document.getElementById("modalCliente").classList.remove("hidden");
+}
+
+function fecharModal() {
+    document.getElementById("modalCliente").classList.add("hidden");
+}
+
+// FILTRO DE CLIENTES
+function filtrarClientes() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let cards = document.querySelectorAll(".cliente-card");
+
+    cards.forEach(card => {
+        let nome = card.dataset.nome.toLowerCase();
+        let tel = card.dataset.telefone.toLowerCase();
+        let nasc = card.dataset.nascimento.toLowerCase();
+
+        if (nome.includes(input) || tel.includes(input) || nasc.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+</script>
+
+</body>
+</html>

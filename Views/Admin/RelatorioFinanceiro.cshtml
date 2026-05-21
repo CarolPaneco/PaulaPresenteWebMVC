@@ -1,0 +1,377 @@
+@{
+    Layout = null;
+
+    var gastosCategoria = ViewBag.GastosCategoria;
+
+    var produtosMaisVendidos = ViewBag.ProdutosMaisVendidos;
+
+    var estoqueBaixo = ViewBag.EstoqueBaixo;
+}
+
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Relatório Financeiro</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        rel="stylesheet" />
+
+</head>
+
+<body class="bg-[#f9f9f9] min-h-screen font-[Inter]">
+
+    <!-- HEADER -->
+    <header class="h-20 bg-white border-b flex items-center justify-between px-16">
+
+        <div class="flex items-center gap-4">
+
+            <h1 class="text-3xl font-bold text-[#570013]">
+                Paula Presentes
+            </h1>
+
+            <span class="bg-gray-100 px-4 py-1 rounded-full text-sm uppercase tracking-widest">
+
+                Painel Financeiro
+
+            </span>
+
+        </div>
+
+        <a href="/Admin"
+           class="text-[#570013] font-bold">
+
+            Voltar
+
+        </a>
+
+    </header>
+
+    <main class="max-w-[1700px] mx-auto px-16 py-14">
+
+        <!-- TOPO -->
+        <div class="flex justify-between items-center mb-12">
+
+            <div>
+
+                <h1 class="text-5xl font-bold text-[#1b1b1b] font-serif">
+
+                    Relatório Financeiro
+
+                </h1>
+
+                <p class="text-gray-500 mt-4 text-lg">
+
+                    Dashboard completo da empresa
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- FILTRO -->
+        <form method="get"
+              class="bg-white rounded-3xl shadow-xl p-8 mb-12">
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <div>
+
+                    <label class="font-bold">
+                        Data Inicial
+                    </label>
+
+                    <input type="date"
+                           name="dataInicial"
+                           value="@ViewBag.DataInicial"
+                           class="w-full border rounded-2xl p-4 mt-3" />
+
+                </div>
+
+                <div>
+
+                    <label class="font-bold">
+                        Data Final
+                    </label>
+
+                    <input type="date"
+                           name="dataFinal"
+                           value="@ViewBag.DataFinal"
+                           class="w-full border rounded-2xl p-4 mt-3" />
+
+                </div>
+
+                <div class="flex items-end">
+
+                    <button
+                        class="w-full bg-[#570013] text-white rounded-2xl p-4 font-bold text-lg">
+
+                        Filtrar Relatório
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+        <!-- CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+
+            <!-- FATURAMENTO -->
+            <div class="bg-[#570013] text-white rounded-3xl p-8 shadow-xl">
+
+                <p class="opacity-80 text-lg">
+                    Faturamento
+                </p>
+
+                <h2 class="text-5xl font-bold mt-4">
+
+                    R$ @(((decimal)(ViewBag.Faturamento ?? 0)).ToString("N2"))
+
+                </h2>
+
+            </div>
+
+            <!-- LUCRO -->
+            <div class="bg-white rounded-3xl p-8 shadow-xl">
+
+                <p class="text-gray-500 text-lg">
+                    Lucro
+                </p>
+
+                <h2 class="text-5xl font-bold text-green-600 mt-3">
+
+                    R$ @(((decimal)(ViewBag.Lucro ?? 0)).ToString("N2"))
+
+                </h2>
+
+            </div>
+
+            <!-- GASTOS -->
+            <div class="bg-white rounded-3xl p-8 shadow-xl">
+
+                <p class="text-gray-500 text-lg">
+                    Gastos
+                </p>
+
+                <h2 class="text-5xl font-bold text-red-600 mt-4">
+
+                    R$ @(((decimal)(ViewBag.Saidas ?? 0)).ToString("N2"))
+
+                </h2>
+
+            </div>
+
+            <!-- TICKET MÉDIO -->
+            <div class="bg-white rounded-3xl p-8 shadow-xl">
+
+                <p class="text-gray-500 text-lg">
+                    Ticket Médio
+                </p>
+
+                <h2 class="text-5xl font-bold mt-4">
+
+                    R$ @(((decimal)(ViewBag.TicketMedio ?? 0)).ToString("N2"))
+                    
+
+                </h2>
+
+            </div>
+
+        </div>
+
+        <!-- SEMANA -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+
+            <div class="bg-white rounded-3xl p-8 shadow-xl">
+
+                <h2 class="text-2xl font-bold mb-4">
+                    Venda Semanal
+                </h2>
+
+                <p class="text-4xl font-bold text-[#570013]">
+
+                    R$ @(((decimal)(ViewBag.VendasSemana ?? 0)).ToString("N2"))
+
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 shadow-xl">
+
+                <h2 class="text-2xl font-bold mb-4">
+                    Gastos Semanais
+                </h2>
+
+                <p class="text-4xl font-bold text-red-600">
+
+                    R$ @(((decimal)(ViewBag.GatosSemana ?? 0)).ToString("N2"))
+
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 shadow-xl">
+
+                <h2 class="text-2xl font-bold mb-4">
+                    Lucro Semanal
+                </h2>
+
+                <p class="text-4xl font-bold text-green-600">
+
+                    R$ @(((decimal)(ViewBag.LucroSemana ?? 0)).ToString("N2"))
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- GASTOS POR CATEGORIA -->
+        <div class="bg-white rounded-3xl shadow-xl p-10 mb-12">
+
+            <h2 class="text-3xl font-bold mb-8">
+
+                Gastos por Categoria
+
+            </h2>
+
+            <div class="space-y-5">
+
+                @foreach (var item in gastosCategoria)
+                {
+                    <div class="flex justify-between items-center border-b pb-4">
+
+                        <span class="text-xl">
+
+                            @item.Categoria
+
+                        </span>
+
+                        <span class="text-2xl font-bold text-red-600">
+
+                            R$ @(((decimal)(item.Valor ?? 0)).ToString("N2"))
+
+                        </span>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+        <!-- GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+            <!-- MAIS VENDIDOS -->
+            <div class="bg-white rounded-3xl shadow-xl p-10">
+
+                <h2 class="text-3xl font-bold mb-8">
+
+                    Produtos Mais Vendidos
+
+                </h2>
+
+                <div class="space-y-5">
+
+                    @foreach (var produto in produtosMaisVendidos)
+                    {
+                        <div class="flex justify-between items-center border-b pb-4">
+
+                            <div>
+
+                                <h3 class="text-xl font-bold">
+
+                                    @produto.Nome
+
+                                </h3>
+
+                                <p class="text-gray-500">
+
+                                    @produto.Categoria
+
+                                </p>
+
+                            </div>
+
+                            <span class="bg-[#570013] text-white px-5 py-3 rounded-2xl font-bold">
+
+                                @produto.QuantidadeVendida vendas
+
+                            </span>
+
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+
+            <!-- ESTOQUE BAIXO -->
+            <div class="bg-white rounded-3xl shadow-xl p-10">
+
+                <h2 class="text-3xl font-bold mb-8 text-red-600">
+
+                    Estoque Baixo
+
+                </h2>
+
+                <div class="space-y-5">
+
+                    @foreach (var produto in estoqueBaixo)
+                    {
+                        <div class="flex justify-between items-center border-b pb-4">
+
+                            <div>
+
+                                <h3 class="text-xl font-bold">
+
+                                    @produto.Nome
+
+                                </h3>
+
+                                <p class="text-gray-500">
+
+                                    Código: @produto.CodigoBarra
+
+                                </p>
+
+                            </div>
+
+                            <span class="bg-red-100 text-red-700 px-5 py-3 rounded-2xl font-bold">
+
+                                @produto.QuantidadeEstoque em estoque
+
+                            </span>
+
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

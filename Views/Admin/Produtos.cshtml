@@ -1,0 +1,207 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Produtos</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap"
+          rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#e8e8e8",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "surface-container": "#eeeeee",
+                        "outline": "#8c7071",
+                        "outline-variant": "#e0bfbf",
+                        "on-surface": "#1b1b1b",
+                        "on-surface-variant": "#584141",
+                        "surface": "#f9f9f9",
+                        "primary": "#570013",
+                        "secondary": "#735c00"
+                    },
+
+                    fontFamily: {
+                        body: ["Inter"],
+                        headline: ["Noto Serif"]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+
+        body {
+            background: #f9f9f9;
+            color: #1b1b1b;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .card-shadow {
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.03);
+            transition: 0.3s;
+        }
+
+        .card-shadow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 300,
+                'GRAD' 0,
+                'opsz' 24;
+        }
+
+    </style>
+
+</head>
+
+<body class="min-h-screen bg-surface font-body">
+
+    <!-- HEADER -->
+    <header class="h-20 bg-surface-container-lowest border-b border-surface-container flex items-center justify-between px-16 sticky top-0 z-40">
+
+        <div class="flex items-center gap-4">
+
+            <span class="text-3xl font-headline text-primary">
+                Paula Presentes
+            </span>
+
+            <span class="text-xs uppercase tracking-widest bg-surface-container px-4 py-2 rounded-full text-outline font-semibold">
+                Painel Admin
+            </span>
+
+        </div>
+
+        <a href="/Admin"
+           class="flex items-center gap-2 text-outline hover:text-primary transition">
+
+            <span class="material-symbols-outlined">
+                arrow_back
+            </span>
+
+            <span class="uppercase tracking-widest text-xs font-semibold">
+                Voltar
+            </span>
+
+        </a>
+
+    </header>
+
+    <main class="max-w-[1440px] mx-auto px-16 py-16">
+
+        <!-- TOPO -->
+        <section class="flex justify-between items-end mb-12">
+
+            <div>
+
+                <h1 class="text-5xl font-headline font-bold text-on-surface">
+                    Produtos
+                </h1>
+
+                <p class="text-on-surface-variant mt-3 text-lg">
+                    Controle de estoque e gerenciamento de produtos
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- NOVO PRODUTO -->
+            <a href="/Admin/NovoProduto"
+               class="bg-primary text-white rounded-3xl p-10 min-h-[280px] flex flex-col justify-between hover:scale-105 transition-all duration-300 shadow-xl">
+
+                <div>
+
+                    <span class="material-symbols-outlined text-7xl mb-6">
+                        add_box
+                    </span>
+
+                    <h2 class="text-3xl font-bold mb-4">
+                        Novo Produto
+                    </h2>
+
+                    <p class="text-lg opacity-90 leading-relaxed">
+                        Registre novos produtos, valores, estoque e informações completas.
+                    </p>
+
+                </div>
+
+            </a>
+
+            <!-- ESTOQUE -->
+            <a href="/Admin/ConsultarEstoque"
+               class="bg-surface-container-lowest rounded-3xl p-10 min-h-[280px] flex flex-col justify-between card-shadow border border-outline-variant">
+
+                <div>
+
+                    <span class="material-symbols-outlined text-7xl mb-6 text-primary">
+                        inventory_2
+                    </span>
+
+                    <h2 class="text-3xl font-bold mb-4 text-on-surface">
+                        Consultar Estoque
+                    </h2>
+
+                    <p class="text-lg text-on-surface-variant leading-relaxed">
+                        Consulte quantidade disponível e acompanhe produtos com estoque baixo.
+                    </p>
+
+                </div>
+
+            </a>
+
+            <!-- CONSULTAR PRODUTOS -->
+            <a href="/Admin/ConsultarProdutos"
+               class="bg-surface-container-lowest rounded-3xl p-10 min-h-[280px] flex flex-col justify-between card-shadow border border-outline-variant">
+
+                <div>
+
+                    <span class="material-symbols-outlined text-7xl mb-6 text-primary">
+                        package_2
+                    </span>
+
+                    <h2 class="text-3xl font-bold mb-4 text-on-surface">
+                        Consultar Produtos
+                    </h2>
+
+                    <p class="text-lg text-on-surface-variant leading-relaxed">
+                        Visualize todos os produtos cadastrados com imagens e detalhes.
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

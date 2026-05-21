@@ -1,0 +1,538 @@
+@model PaulaPresentesWebMVC.Models.Pedido
+
+@{
+    var itens = ViewBag.Itens as List<PaulaPresentesWebMVC.Models.CarrinhoItem>;
+    decimal subtotal = ViewBag.Subtotal ?? 0;
+    decimal frete = ViewBag.Frete ?? 0;
+    decimal total = ViewBag.Total ?? 0;
+    string tipoFrete = ViewBag.TipoFrete ?? "";
+    int prazoFrete = ViewBag.PrazoFrete ?? 0;
+}
+
+<main class="max-w-[1440px] mx-auto">
+
+    <h1 class="text-3xl text-primary mb-10">
+        Finalizar Compra
+    </h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+        <!-- ESQUERDA -->
+        <div class="lg:col-span-7 space-y-10">
+
+            <!-- TIPO ENTREGA -->
+            <section class="bg-white p-6 shadow rounded">
+
+                <h2 class="text-lg text-primary mb-4">
+                    Como deseja receber o produto?
+                </h2>
+
+                <!-- RETIRADA -->
+                <label
+                    class="flex items-start gap-4 border border-neutral-200 p-4 rounded cursor-pointer hover:border-primary transition mb-3">
+
+                    <input type="radio"
+       name="tipoEntrega"
+       value="retirada"
+       class="mt-1 accent-red-900"
+       onchange="selecionarRetirada()"
+       @(string.IsNullOrEmpty(tipoFrete) || tipoFrete == "Retirada" ? "checked" : "") />
+
+                    <span class="text-xl">📍</span>
+
+                    <div>
+                        <p class="font-medium text-red-900">
+                            Retirada grátis
+                        </p>
+
+                        <p class="text-sm text-neutral-500">
+                            Disponível em loja - Olímpia SP
+                        </p>
+                    </div>
+
+                </label>
+
+                <!-- ENTREGA -->
+                <label
+                    class="flex items-start gap-4 border border-neutral-200 p-4 rounded cursor-pointer hover:border-primary transition">
+
+                    <input type="radio" name="tipoEntrega" value="entrega" class="mt-1 accent-red-900"
+                        onchange="toggleEntrega()" @(tipoFrete != "Retirada" && frete > 0 ? "checked" : "") />
+
+                    <span class="text-xl">🚚</span>
+
+                    <div>
+                        <p class="font-medium text-red-900">
+                            Entrega via SEDEX
+                        </p>
+
+                        <p class="text-sm text-neutral-500">
+                            Calcula automaticamente prazo e valor
+                        </p>
+                    </div>
+
+                </label>
+
+            </section>
+
+            <!-- ENDEREÇO -->
+            <section id="sectionEntrega"
+                class="bg-white p-6 shadow rounded transition-all duration-300 @(tipoFrete != "Retirada" && frete > 0 ? "" : "hidden")">
+
+                <h2 class="text-lg text-primary mb-4">
+                    Informações de Envio
+                </h2>
+
+                <form id="formPedido" method="post" action="/Pedido/Finalizar">
+
+                    <!-- CEP -->
+                    <input id="cepEndereco" name="CEP" class="w-full border p-2 mb-3" placeholder="Digite seu CEP"
+                        onblur="buscarEndereco()" />
+
+                    <!-- RUA -->
+                    <input id="ruaEndereco" name="Rua" class="w-full border p-2 mb-3 bg-gray-100" placeholder="Rua"
+                        readonly />
+
+                    <!-- BAIRRO -->
+                    <input id="bairroEndereco" name="Bairro" class="w-full border p-2 mb-3 bg-gray-100"
+                        placeholder="Bairro" readonly />
+
+                    <!-- CIDADE -->
+                    <input id="cidadeEndereco" name="Cidade" class="w-full border p-2 mb-3 bg-gray-100"
+                        placeholder="Cidade" readonly />
+
+                    <!-- ESTADO -->
+                    <input id="estadoEndereco" name="Estado" class="w-full border p-2 mb-3 bg-gray-100"
+                        placeholder="Estado" readonly />
+
+                    <!-- NÚMERO -->
+                    <input id="numeroEndereco" name="Numero" class="w-full border p-2 mb-3" placeholder="Número" />
+
+                </form>
+
+                <!-- RESULTADO FRETE -->
+            <div id="resultadoFrete" class="mt-4 text-sm text-neutral-600">
+
+                @if (tipoFrete != "Retirada" && frete > 0)
+                {
+                    <div class="border border-neutral-300 rounded p-4 mt-3">
+
+                        <div class="flex items-center justify-between gap-4">
+
+                            <div class="flex items-center gap-3">
+
+                                <span class="text-2xl">🚚</span>
+
+                                <div>
+
+                                    <p class="font-semibold text-red-900">
+                                        @tipoFrete
+                                    </p>
+
+                                    <p class="text-sm text-neutral-500">
+                                        Entrega em até @ViewBag.PrazoFrete dias úteis
+                                    </p>
+
+                                    <p class="font-bold mt-1">
+                                        R$ @frete.ToString("F2")
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+
+            </section>
+
+            <!-- PAGAMENTO -->
+            <section class="bg-white p-6 shadow rounded">
+
+                <h2 class="text-lg text-primary mb-4">
+                    Pagamento
+                </h2>
+
+                <p class="text-sm text-neutral-500">
+                    Integração de pagamento será adicionada depois.
+                </p>
+
+            </section>
+
+        </div>
+
+        <!-- DIREITA -->
+        <div class="lg:col-span-5">
+
+            <div class="bg-white p-6 shadow rounded sticky top-32">
+
+                <h2 class="text-lg text-primary mb-6">
+                    Resumo do Pedido
+                </h2>
+
+                <!-- ITENS -->
+                <div class="space-y-4 max-h-[300px] overflow-y-auto">
+
+                    @if (itens != null)
+                    {
+                        foreach (var item in itens)
+                        {
+                            var preco = item.Produto?.PrecoVenda ?? 0;
+                            var totalItem = preco * item.Quantidade;
+
+                            <div class="flex gap-4">
+
+                                <img class="w-full h-full object-cover"
+                                src="@(item.Produto?.Imagens != null && item.Produto.Imagens.Any()
+                                    ? "/img/produtos/" + item.Produto.Imagens.First().CaminhoImagem
+                                    : "/images/produto.jpg")" />
+
+                                <div class="flex flex-col justify-between">
+
+                                    <div>
+                                        <p class="text-sm">
+                                            @item.Produto?.Nome
+                                        </p>
+
+                                        <p class="text-xs text-neutral-400">
+                                            Qtd: @item.Quantidade
+                                        </p>
+                                    </div>
+
+                                    <span class="font-semibold">
+                                        R$ @totalItem.ToString("F2")
+                                    </span>
+
+                                </div>
+
+                            </div>
+                        }
+                    }
+
+                </div>
+
+                <!-- VALORES -->
+                <div class="mt-6 border-t pt-4 space-y-2">
+
+                    <div class="flex justify-between">
+                        <span>Subtotal</span>
+                        <span>R$ @subtotal.ToString("F2")</span>
+                    </div>
+
+                    <div class="flex justify-between">
+
+                        <span>Frete</span>
+
+                        <span id="valorFrete">
+
+                            @if (tipoFrete == "Retirada")
+                            {
+                                <span class="text-green-600 font-medium">
+                                    Retirada grátis
+                                </span>
+                            }
+                            else if (frete > 0)
+                            {
+                                <span>
+                                    R$ @frete.ToString("F2")
+                                </span>
+                                total = subtotal + frete;
+                            }
+                            else
+                            {
+                                <span class="text-neutral-400">
+                                    Não calculado
+                                </span>
+                            }
+
+                        </span>
+
+                    </div>
+
+                    <div class="flex justify-between text-lg font-bold mt-4 border-t pt-3">
+
+                        <span>Total</span>
+
+                        <span id="valorTotal" class="text-primary">
+                            R$ @total.ToString("F2")
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- BOTÃO -->
+                <button type="submit" form="formPedido" class="w-full bg-primary text-white py-4 mt-6 hover:opacity-90">
+
+                    FINALIZAR PEDIDO
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script>
+
+    function selecionarRetirada() {
+
+        toggleEntrega();
+
+
+        fetch('/Carrinho/SalvarFrete', {
+
+            method: 'POST',
+
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+
+                valor: 0,
+                prazo: 0,
+                tipo: "Retirada"
+
+            })
+
+        })
+            .then(() => {
+
+                location.reload();
+
+            });
+    }
+
+    function toggleEntrega() {
+
+        const tipo =
+            document.querySelector('input[name="tipoEntrega"]:checked').value;
+
+        const sectionEntrega =
+            document.getElementById("sectionEntrega");
+
+        if (tipo === "entrega") {
+
+            sectionEntrega.classList.remove("hidden");
+
+        } if (tipo === "retirada") {
+
+            sectionEntrega.classList.add("hidden");
+
+        }
+
+
+    }
+
+    function buscarEndereco() {
+
+        const cepInput =
+            document.getElementById("cepEndereco");
+
+        let cep =
+            cepInput.value.replace(/\D/g, '');
+
+        if (cep.length !== 8) {
+
+            alert("CEP inválido");
+            return;
+        }
+
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                if (data.erro) {
+
+                    alert("CEP não encontrado");
+                    return;
+                }
+
+                document.getElementById("ruaEndereco").value =
+                    data.logradouro;
+
+                document.getElementById("bairroEndereco").value =
+                    data.bairro;
+
+                document.getElementById("cidadeEndereco").value =
+                    data.localidade;
+
+                document.getElementById("estadoEndereco").value =
+                    data.uf;
+
+                document.getElementById("numeroEndereco").focus();
+
+                calcularFrete();
+            })
+
+            .catch(error => {
+
+                console.log(error);
+
+                alert("Erro ao buscar CEP");
+            });
+
+
+    }
+
+    function calcularFrete() {
+
+
+        const cep =
+            document.getElementById("cepEndereco")
+                .value.replace(/\D/g, '');
+
+        const resultado =
+            document.getElementById("resultadoFrete");
+
+        resultado.innerHTML = "Calculando frete...";
+
+        fetch(`/Carrinho/CalcularFreteMelhorEnvio?cepDestino=${cep}`)
+
+            .then(async res => {
+
+                if (!res.ok) {
+
+                    const erro = await res.text();
+
+                    throw new Error(erro);
+                }
+
+                return res.json();
+            })
+
+            .then(data => {
+
+                const sedex = data.find(opcao =>
+                    opcao.name &&
+                    opcao.name.toUpperCase().includes("SEDEX")
+                );
+
+                if (!sedex) {
+
+                    resultado.innerHTML =
+                        "SEDEX indisponível para este CEP";
+
+                    return;
+                }
+                resultado.innerHTML = `
+                <div class="border border-neutral-300 rounded p-4 mt-3">
+
+                    <div class="flex items-center justify-between gap-4">
+
+                        <div class="flex items-center gap-3">
+
+                            <span class="text-2xl">🚚</span>
+
+                            <div>
+
+                                <p class="font-semibold text-red-900">
+                                    ${sedex.name}
+                                </p>
+
+                                <p class="text-sm text-neutral-500">
+                                    Entrega em ${sedex.delivery_time} dias
+                                </p>
+
+                                <p class="font-bold mt-1">
+                                    R$ ${sedex.price}
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            `;
+
+                salvarFreteAutomatico(
+                    sedex.price,
+                    sedex.delivery_time,
+                    sedex.name
+                );
+
+                document.getElementById("valorFrete").innerHTML =
+                    `R$ ${parseFloat(sedex.price).toFixed(2)}`;
+
+                atualizarPagina();
+
+
+            })
+
+            .catch(err => {
+
+                console.log("ERRO:", err);
+
+                resultado.innerHTML =
+                    "Erro ao calcular frete";
+            });
+    }
+
+
+    function salvarFreteAutomatico(valor, prazo, tipo) {
+
+        fetch('/Carrinho/SalvarFrete', {
+
+            method: 'POST',
+
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+
+                valor: parseFloat(valor),
+                prazo: parseInt(prazo),
+                tipo: tipo
+            })
+        });
+    }
+
+    function atualizarPagina() {
+
+        location.reload();
+
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const numeroInput = document.getElementById("numeroEndereco");
+
+        function atualizarObrigatoriedade() {
+
+            const entregaSelecionada =
+                document.querySelector('input[name="tipoEntrega"][value="entrega"]').checked;
+
+            if (entregaSelecionada) {
+                numeroInput.setAttribute("required", "required");
+            }
+            else {
+                numeroInput.removeAttribute("required");
+            }
+        }
+
+        // roda ao carregar página
+        atualizarObrigatoriedade();
+
+        // roda ao trocar opção
+        document.querySelectorAll('input[name="tipoEntrega"]')
+            .forEach(radio => {
+                radio.addEventListener("change", atualizarObrigatoriedade);
+            });
+
+    });
+
+</script>

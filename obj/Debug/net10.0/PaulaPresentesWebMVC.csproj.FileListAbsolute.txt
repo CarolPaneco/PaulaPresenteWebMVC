@@ -1,0 +1,825 @@
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\appsettings.json
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\PaulaPresentesWebMVC.staticwebassets.runtime.json
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\PaulaPresentesWebMVC.staticwebassets.endpoints.json
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\PaulaPresentesWebMVC.exe
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\PaulaPresentesWebMVC.deps.json
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\PaulaPresentesWebMVC.runtimeconfig.json
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\PaulaPresentesWebMVC.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\PaulaPresentesWebMVC.pdb
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Azure.Core.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Azure.Identity.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Humanizer.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.Data.SqlClient.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.Identity.Client.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Microsoft.SqlServer.Server.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\Mono.TextTemplating.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\System.ClientModel.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\System.CodeDom.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\System.Composition.AttributedModel.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\System.Composition.Convention.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\System.Composition.Hosting.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\System.Composition.Runtime.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\System.Composition.TypedParts.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\System.Memory.Data.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\PaulaPresentesWebMVC.csproj.AssemblyReference.cache
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\PaulaPresentesWebMVC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\PaulaPresentesWebMVC.AssemblyInfoInputs.cache
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\PaulaPresentesWebMVC.AssemblyInfo.cs
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\PaulaPresentesWebMVC.csproj.CoreCompileInputs.cache
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\PaulaPresentesWebMVC.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\PaulaPresentesWebMVC.RazorAssemblyInfo.cache
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\PaulaPresentesWebMVC.RazorAssemblyInfo.cs
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\PaulaPresentesWebMVC.sourcelink.json
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\scopedcss\bundle\PaulaPresentesWebMVC.styles.css
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\scopedcss\projectbundle\PaulaPresentesWebMVC.bundle.scp.css
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\0zcjtvkwu8-{0}-lugek5hnai-lugek5hnai.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\efwlmymsvi-{0}-61n19gt1b8-61n19gt1b8.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\zm5aamninf-{0}-fr7q2aak1r-fr7q2aak1r.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\bycplhyjzo-{0}-bqjiyaj88i-bqjiyaj88i.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\4t65aebpgt-{0}-c2jlpeoesf-c2jlpeoesf.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\cwiiwplenn-{0}-erw9l3u2r3-erw9l3u2r3.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\8l1q98tk8v-{0}-aexeepp0ev-aexeepp0ev.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\nl9xqxzwy8-{0}-d7shbmvgxk-d7shbmvgxk.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\ynfoud4f0n-{0}-ausgxo2sd3-ausgxo2sd3.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\qk6zvstqpj-{0}-k8d9w2qqmf-k8d9w2qqmf.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\g3x4kr496r-{0}-cosvhxvwiu-cosvhxvwiu.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\b8eoxj0q72-{0}-ub07r2b239-ub07r2b239.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\vm7o05kkwb-{0}-fvhpjtyr6v-fvhpjtyr6v.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\ze1x2pu203-{0}-b7pk76d08c-b7pk76d08c.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\cbasmcob9h-{0}-fsbi9cje9m-fsbi9cje9m.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\w6le7v7dg0-{0}-rzd6atqjts-rzd6atqjts.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\buozjhulqk-{0}-ee0r1s7dh0-ee0r1s7dh0.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\sq7dzyu0wz-{0}-dxx9fxp4il-dxx9fxp4il.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\6o66oz7z2z-{0}-jd9uben2k1-jd9uben2k1.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\sfwwccsen0-{0}-khv3u5hwcm-khv3u5hwcm.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\e627kri61o-{0}-r4e9w2rdcm-r4e9w2rdcm.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\6hm1gkdavz-{0}-lcd1t2u6c8-lcd1t2u6c8.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\gcsa4ngg2h-{0}-c2oey78nd0-c2oey78nd0.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\oumd81v0rz-{0}-tdbxkamptv-tdbxkamptv.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\zzxpqi7yng-{0}-j5mq2jizvt-j5mq2jizvt.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\noy5za9972-{0}-06098lyss8-06098lyss8.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\lxfzbxrcgp-{0}-nvvlpmu67g-nvvlpmu67g.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\9op5glwf10-{0}-s35ty4nyc5-s35ty4nyc5.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\weobpc2u64-{0}-pj5nd1wqec-pj5nd1wqec.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\63v82iy1c5-{0}-46ein0sx1k-46ein0sx1k.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\wpi9zllkmq-{0}-v0zj4ognzu-v0zj4ognzu.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\0hn7sxeie4-{0}-37tfw0ft22-37tfw0ft22.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\xqv6oa9z8p-{0}-hrwsygsryq-hrwsygsryq.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\0cyzomqs03-{0}-pk9g2wxc8p-pk9g2wxc8p.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\mh8ndt6x3r-{0}-ft3s53vfgj-ft3s53vfgj.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\w7hg2pex8r-{0}-6cfz1n2cew-6cfz1n2cew.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\wqpfzxh321-{0}-6pdc2jztkx-6pdc2jztkx.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\6lka546hxu-{0}-493y06b0oq-493y06b0oq.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\x9axi5pm6r-{0}-iovd86k7lj-iovd86k7lj.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\bm7b5morwm-{0}-vr1egmr9el-vr1egmr9el.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\94dga8y5po-{0}-kbrnm935zg-kbrnm935zg.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\avgm05pjw1-{0}-jj8uyg4cgr-jj8uyg4cgr.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\6b9n7j5no2-{0}-y7v9cxd14o-y7v9cxd14o.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\hdh753lc0m-{0}-notf2xhcfb-notf2xhcfb.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\v10qne7lqu-{0}-h1s4sie4z3-h1s4sie4z3.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\w2keqycg97-{0}-63fj8s7r0e-63fj8s7r0e.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\5r4is54klh-{0}-0j3bgjxly4-0j3bgjxly4.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\h0sfmp7y7m-{0}-47otxtyo56-47otxtyo56.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\kdnfnnw5uk-{0}-4v8eqarkd7-4v8eqarkd7.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\nutjpt4c5m-{0}-l3n5xuwxn8-l3n5xuwxn8.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\pqqo076ts0-{0}-ilo7uva0vt-ilo7uva0vt.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\fsf6icwetv-{0}-qlccset4i1-qlccset4i1.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\uktt5sfvyc-{0}-lzl9nlhx6b-lzl9nlhx6b.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\ejf8ynm6c5-{0}-ag7o75518u-ag7o75518u.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\4swjhu8xk3-{0}-xzw0cte36n-xzw0cte36n.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\lmmmuspcni-{0}-0i3buxo5is-0i3buxo5is.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\sl75prtp5s-{0}-o1o13a6vjx-o1o13a6vjx.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\1c3y2ua999-{0}-ttgo8qnofa-ttgo8qnofa.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\6o1rxke1ie-{0}-2z0ns9nrw6-2z0ns9nrw6.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\sazbve8ogq-{0}-muycvpuwrr-muycvpuwrr.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\srkyblh8y7-{0}-87fc7y1x7t-87fc7y1x7t.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\5143cnqh22-{0}-jfsiqqwiad-jfsiqqwiad.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\s2xoeui9g1-{0}-gsecuiuidh-gsecuiuidh.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\compressed\cqshf6g7pq-{0}-gsecuiuidh-gsecuiuidh.gz
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\PaulaPre.ECD3043C.Up2Date
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\PaulaPresentesWebMVC.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\refint\PaulaPresentesWebMVC.dll
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\PaulaPresentesWebMVC.pdb
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\PaulaPresentesWebMVC.genruntimeconfig.cache
+C:\Users\Caroline\Desktop\refatoracao\refatoracao\obj\Debug\net10.0\ref\PaulaPresentesWebMVC.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.csproj.AssemblyReference.cache
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.AssemblyInfoInputs.cache
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.AssemblyInfo.cs
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.csproj.CoreCompileInputs.cache
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.RazorAssemblyInfo.cache
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.RazorAssemblyInfo.cs
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\refint\PaulaPresentesWebMVC.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.pdb
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\appsettings.json
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\PaulaPresentesWebMVC.staticwebassets.runtime.json
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\PaulaPresentesWebMVC.staticwebassets.endpoints.json
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\PaulaPresentesWebMVC.exe
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\PaulaPresentesWebMVC.deps.json
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\PaulaPresentesWebMVC.runtimeconfig.json
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\PaulaPresentesWebMVC.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\PaulaPresentesWebMVC.pdb
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Azure.Core.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Azure.Identity.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Humanizer.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.Data.SqlClient.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.Identity.Client.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.SqlServer.Server.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Mono.TextTemplating.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.ClientModel.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.CodeDom.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.Composition.AttributedModel.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.Composition.Convention.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.Composition.Hosting.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.Composition.Runtime.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.Composition.TypedParts.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.Memory.Data.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\scopedcss\bundle\PaulaPresentesWebMVC.styles.css
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\scopedcss\projectbundle\PaulaPresentesWebMVC.bundle.scp.css
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\0zcjtvkwu8-{0}-lugek5hnai-lugek5hnai.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\efwlmymsvi-{0}-61n19gt1b8-61n19gt1b8.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\zm5aamninf-{0}-fr7q2aak1r-fr7q2aak1r.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\bycplhyjzo-{0}-bqjiyaj88i-bqjiyaj88i.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\4t65aebpgt-{0}-c2jlpeoesf-c2jlpeoesf.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\cwiiwplenn-{0}-erw9l3u2r3-erw9l3u2r3.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\8l1q98tk8v-{0}-aexeepp0ev-aexeepp0ev.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\nl9xqxzwy8-{0}-d7shbmvgxk-d7shbmvgxk.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\ynfoud4f0n-{0}-ausgxo2sd3-ausgxo2sd3.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\qk6zvstqpj-{0}-k8d9w2qqmf-k8d9w2qqmf.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\g3x4kr496r-{0}-cosvhxvwiu-cosvhxvwiu.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\b8eoxj0q72-{0}-ub07r2b239-ub07r2b239.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\vm7o05kkwb-{0}-fvhpjtyr6v-fvhpjtyr6v.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\ze1x2pu203-{0}-b7pk76d08c-b7pk76d08c.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\cbasmcob9h-{0}-fsbi9cje9m-fsbi9cje9m.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\w6le7v7dg0-{0}-rzd6atqjts-rzd6atqjts.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\buozjhulqk-{0}-ee0r1s7dh0-ee0r1s7dh0.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\sq7dzyu0wz-{0}-dxx9fxp4il-dxx9fxp4il.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\6o66oz7z2z-{0}-jd9uben2k1-jd9uben2k1.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\sfwwccsen0-{0}-khv3u5hwcm-khv3u5hwcm.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\e627kri61o-{0}-r4e9w2rdcm-r4e9w2rdcm.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\6hm1gkdavz-{0}-lcd1t2u6c8-lcd1t2u6c8.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\gcsa4ngg2h-{0}-c2oey78nd0-c2oey78nd0.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\oumd81v0rz-{0}-tdbxkamptv-tdbxkamptv.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\zzxpqi7yng-{0}-j5mq2jizvt-j5mq2jizvt.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\noy5za9972-{0}-06098lyss8-06098lyss8.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\lxfzbxrcgp-{0}-nvvlpmu67g-nvvlpmu67g.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\9op5glwf10-{0}-s35ty4nyc5-s35ty4nyc5.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\weobpc2u64-{0}-pj5nd1wqec-pj5nd1wqec.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\63v82iy1c5-{0}-46ein0sx1k-46ein0sx1k.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\wpi9zllkmq-{0}-v0zj4ognzu-v0zj4ognzu.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\0hn7sxeie4-{0}-37tfw0ft22-37tfw0ft22.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\xqv6oa9z8p-{0}-hrwsygsryq-hrwsygsryq.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\0cyzomqs03-{0}-pk9g2wxc8p-pk9g2wxc8p.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\mh8ndt6x3r-{0}-ft3s53vfgj-ft3s53vfgj.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\w7hg2pex8r-{0}-6cfz1n2cew-6cfz1n2cew.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\wqpfzxh321-{0}-6pdc2jztkx-6pdc2jztkx.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\6lka546hxu-{0}-493y06b0oq-493y06b0oq.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\x9axi5pm6r-{0}-iovd86k7lj-iovd86k7lj.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\bm7b5morwm-{0}-vr1egmr9el-vr1egmr9el.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\94dga8y5po-{0}-kbrnm935zg-kbrnm935zg.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\avgm05pjw1-{0}-jj8uyg4cgr-jj8uyg4cgr.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\6b9n7j5no2-{0}-y7v9cxd14o-y7v9cxd14o.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\hdh753lc0m-{0}-notf2xhcfb-notf2xhcfb.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\v10qne7lqu-{0}-h1s4sie4z3-h1s4sie4z3.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\w2keqycg97-{0}-63fj8s7r0e-63fj8s7r0e.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\5r4is54klh-{0}-0j3bgjxly4-0j3bgjxly4.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\h0sfmp7y7m-{0}-47otxtyo56-47otxtyo56.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\kdnfnnw5uk-{0}-4v8eqarkd7-4v8eqarkd7.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\nutjpt4c5m-{0}-l3n5xuwxn8-l3n5xuwxn8.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\pqqo076ts0-{0}-ilo7uva0vt-ilo7uva0vt.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\fsf6icwetv-{0}-qlccset4i1-qlccset4i1.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\uktt5sfvyc-{0}-lzl9nlhx6b-lzl9nlhx6b.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\ejf8ynm6c5-{0}-ag7o75518u-ag7o75518u.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\4swjhu8xk3-{0}-xzw0cte36n-xzw0cte36n.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\lmmmuspcni-{0}-0i3buxo5is-0i3buxo5is.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\sl75prtp5s-{0}-o1o13a6vjx-o1o13a6vjx.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\1c3y2ua999-{0}-ttgo8qnofa-ttgo8qnofa.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\6o1rxke1ie-{0}-2z0ns9nrw6-2z0ns9nrw6.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\sazbve8ogq-{0}-muycvpuwrr-muycvpuwrr.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\srkyblh8y7-{0}-87fc7y1x7t-87fc7y1x7t.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\5143cnqh22-{0}-jfsiqqwiad-jfsiqqwiad.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\s2xoeui9g1-{0}-gsecuiuidh-gsecuiuidh.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\cqshf6g7pq-{0}-gsecuiuidh-gsecuiuidh.gz
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPre.ECD3043C.Up2Date
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.genruntimeconfig.cache
+C:\Users\Caroline\Downloads\PaulaPresenteWebMVC-master (3)\PaulaPresenteWebMVC-master (2)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\ref\PaulaPresentesWebMVC.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\appsettings.json
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\PaulaPresentesWebMVC.staticwebassets.runtime.json
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\PaulaPresentesWebMVC.staticwebassets.endpoints.json
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\PaulaPresentesWebMVC.exe
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\PaulaPresentesWebMVC.deps.json
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\PaulaPresentesWebMVC.runtimeconfig.json
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\PaulaPresentesWebMVC.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\PaulaPresentesWebMVC.pdb
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Azure.Core.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Azure.Identity.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Humanizer.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.Data.SqlClient.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.Identity.Client.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Microsoft.SqlServer.Server.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\Mono.TextTemplating.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.ClientModel.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.CodeDom.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.Composition.AttributedModel.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.Composition.Convention.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.Composition.Hosting.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.Composition.Runtime.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.Composition.TypedParts.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.Configuration.ConfigurationManager.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.Memory.Data.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.csproj.AssemblyReference.cache
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.AssemblyInfoInputs.cache
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.AssemblyInfo.cs
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.csproj.CoreCompileInputs.cache
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.RazorAssemblyInfo.cache
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.RazorAssemblyInfo.cs
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\scopedcss\bundle\PaulaPresentesWebMVC.styles.css
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\scopedcss\projectbundle\PaulaPresentesWebMVC.bundle.scp.css
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\0zcjtvkwu8-{0}-lugek5hnai-lugek5hnai.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\efwlmymsvi-{0}-61n19gt1b8-61n19gt1b8.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\zm5aamninf-{0}-fr7q2aak1r-fr7q2aak1r.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\bycplhyjzo-{0}-bqjiyaj88i-bqjiyaj88i.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\4t65aebpgt-{0}-c2jlpeoesf-c2jlpeoesf.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\cwiiwplenn-{0}-erw9l3u2r3-erw9l3u2r3.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\8l1q98tk8v-{0}-aexeepp0ev-aexeepp0ev.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\nl9xqxzwy8-{0}-d7shbmvgxk-d7shbmvgxk.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\ynfoud4f0n-{0}-ausgxo2sd3-ausgxo2sd3.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\qk6zvstqpj-{0}-k8d9w2qqmf-k8d9w2qqmf.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\g3x4kr496r-{0}-cosvhxvwiu-cosvhxvwiu.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\b8eoxj0q72-{0}-ub07r2b239-ub07r2b239.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\vm7o05kkwb-{0}-fvhpjtyr6v-fvhpjtyr6v.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\ze1x2pu203-{0}-b7pk76d08c-b7pk76d08c.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\cbasmcob9h-{0}-fsbi9cje9m-fsbi9cje9m.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\w6le7v7dg0-{0}-rzd6atqjts-rzd6atqjts.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\buozjhulqk-{0}-ee0r1s7dh0-ee0r1s7dh0.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\sq7dzyu0wz-{0}-dxx9fxp4il-dxx9fxp4il.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\6o66oz7z2z-{0}-jd9uben2k1-jd9uben2k1.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\sfwwccsen0-{0}-khv3u5hwcm-khv3u5hwcm.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\e627kri61o-{0}-r4e9w2rdcm-r4e9w2rdcm.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\6hm1gkdavz-{0}-lcd1t2u6c8-lcd1t2u6c8.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\gcsa4ngg2h-{0}-c2oey78nd0-c2oey78nd0.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\oumd81v0rz-{0}-tdbxkamptv-tdbxkamptv.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\zzxpqi7yng-{0}-j5mq2jizvt-j5mq2jizvt.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\noy5za9972-{0}-06098lyss8-06098lyss8.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\lxfzbxrcgp-{0}-nvvlpmu67g-nvvlpmu67g.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\9op5glwf10-{0}-s35ty4nyc5-s35ty4nyc5.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\weobpc2u64-{0}-pj5nd1wqec-pj5nd1wqec.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\63v82iy1c5-{0}-46ein0sx1k-46ein0sx1k.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\wpi9zllkmq-{0}-v0zj4ognzu-v0zj4ognzu.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\0hn7sxeie4-{0}-37tfw0ft22-37tfw0ft22.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\xqv6oa9z8p-{0}-hrwsygsryq-hrwsygsryq.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\0cyzomqs03-{0}-pk9g2wxc8p-pk9g2wxc8p.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\mh8ndt6x3r-{0}-ft3s53vfgj-ft3s53vfgj.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\w7hg2pex8r-{0}-6cfz1n2cew-6cfz1n2cew.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\wqpfzxh321-{0}-6pdc2jztkx-6pdc2jztkx.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\6lka546hxu-{0}-493y06b0oq-493y06b0oq.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\x9axi5pm6r-{0}-iovd86k7lj-iovd86k7lj.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\bm7b5morwm-{0}-vr1egmr9el-vr1egmr9el.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\94dga8y5po-{0}-kbrnm935zg-kbrnm935zg.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\avgm05pjw1-{0}-jj8uyg4cgr-jj8uyg4cgr.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\6b9n7j5no2-{0}-y7v9cxd14o-y7v9cxd14o.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\hdh753lc0m-{0}-notf2xhcfb-notf2xhcfb.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\v10qne7lqu-{0}-h1s4sie4z3-h1s4sie4z3.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\w2keqycg97-{0}-63fj8s7r0e-63fj8s7r0e.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\5r4is54klh-{0}-0j3bgjxly4-0j3bgjxly4.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\h0sfmp7y7m-{0}-47otxtyo56-47otxtyo56.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\kdnfnnw5uk-{0}-4v8eqarkd7-4v8eqarkd7.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\nutjpt4c5m-{0}-l3n5xuwxn8-l3n5xuwxn8.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\pqqo076ts0-{0}-ilo7uva0vt-ilo7uva0vt.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\fsf6icwetv-{0}-qlccset4i1-qlccset4i1.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\uktt5sfvyc-{0}-lzl9nlhx6b-lzl9nlhx6b.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\ejf8ynm6c5-{0}-ag7o75518u-ag7o75518u.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\4swjhu8xk3-{0}-xzw0cte36n-xzw0cte36n.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\lmmmuspcni-{0}-0i3buxo5is-0i3buxo5is.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\sl75prtp5s-{0}-o1o13a6vjx-o1o13a6vjx.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\1c3y2ua999-{0}-ttgo8qnofa-ttgo8qnofa.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\6o1rxke1ie-{0}-2z0ns9nrw6-2z0ns9nrw6.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\sazbve8ogq-{0}-muycvpuwrr-muycvpuwrr.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\srkyblh8y7-{0}-87fc7y1x7t-87fc7y1x7t.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\5143cnqh22-{0}-jfsiqqwiad-jfsiqqwiad.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\s2xoeui9g1-{0}-gsecuiuidh-gsecuiuidh.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\compressed\cqshf6g7pq-{0}-gsecuiuidh-gsecuiuidh.gz
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPre.ECD3043C.Up2Date
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\refint\PaulaPresentesWebMVC.dll
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.pdb
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\PaulaPresentesWebMVC.genruntimeconfig.cache
+C:\Users\alunofatec\Downloads\PaulaPresenteWebMVC-master (4)\PaulaPresenteWebMVC-master\obj\Debug\net10.0\ref\PaulaPresentesWebMVC.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\appsettings.json
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\PaulaPresentesWebMVC.staticwebassets.runtime.json
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\PaulaPresentesWebMVC.staticwebassets.endpoints.json
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\PaulaPresentesWebMVC.exe
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\PaulaPresentesWebMVC.deps.json
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\PaulaPresentesWebMVC.runtimeconfig.json
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\PaulaPresentesWebMVC.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\PaulaPresentesWebMVC.pdb
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Azure.Core.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Azure.Identity.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Humanizer.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.Data.SqlClient.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.Identity.Client.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Microsoft.SqlServer.Server.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\Mono.TextTemplating.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\System.ClientModel.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\System.CodeDom.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\System.Composition.AttributedModel.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\System.Composition.Convention.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\System.Composition.Hosting.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\System.Composition.Runtime.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\System.Composition.TypedParts.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\System.Memory.Data.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\PaulaPresentesWebMVC.csproj.AssemblyReference.cache
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\PaulaPresentesWebMVC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\PaulaPresentesWebMVC.AssemblyInfoInputs.cache
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\PaulaPresentesWebMVC.AssemblyInfo.cs
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\PaulaPresentesWebMVC.csproj.CoreCompileInputs.cache
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\PaulaPresentesWebMVC.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\PaulaPresentesWebMVC.RazorAssemblyInfo.cache
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\PaulaPresentesWebMVC.RazorAssemblyInfo.cs
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\scopedcss\bundle\PaulaPresentesWebMVC.styles.css
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\scopedcss\projectbundle\PaulaPresentesWebMVC.bundle.scp.css
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\0zcjtvkwu8-{0}-lugek5hnai-lugek5hnai.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\efwlmymsvi-{0}-61n19gt1b8-61n19gt1b8.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\zm5aamninf-{0}-fr7q2aak1r-fr7q2aak1r.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\bycplhyjzo-{0}-bqjiyaj88i-bqjiyaj88i.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\4t65aebpgt-{0}-c2jlpeoesf-c2jlpeoesf.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\cwiiwplenn-{0}-erw9l3u2r3-erw9l3u2r3.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\8l1q98tk8v-{0}-aexeepp0ev-aexeepp0ev.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\nl9xqxzwy8-{0}-d7shbmvgxk-d7shbmvgxk.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\ynfoud4f0n-{0}-ausgxo2sd3-ausgxo2sd3.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\qk6zvstqpj-{0}-k8d9w2qqmf-k8d9w2qqmf.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\g3x4kr496r-{0}-cosvhxvwiu-cosvhxvwiu.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\b8eoxj0q72-{0}-ub07r2b239-ub07r2b239.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\vm7o05kkwb-{0}-fvhpjtyr6v-fvhpjtyr6v.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\ze1x2pu203-{0}-b7pk76d08c-b7pk76d08c.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\cbasmcob9h-{0}-fsbi9cje9m-fsbi9cje9m.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\w6le7v7dg0-{0}-rzd6atqjts-rzd6atqjts.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\buozjhulqk-{0}-ee0r1s7dh0-ee0r1s7dh0.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\sq7dzyu0wz-{0}-dxx9fxp4il-dxx9fxp4il.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\6o66oz7z2z-{0}-jd9uben2k1-jd9uben2k1.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\sfwwccsen0-{0}-khv3u5hwcm-khv3u5hwcm.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\e627kri61o-{0}-r4e9w2rdcm-r4e9w2rdcm.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\6hm1gkdavz-{0}-lcd1t2u6c8-lcd1t2u6c8.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\gcsa4ngg2h-{0}-c2oey78nd0-c2oey78nd0.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\oumd81v0rz-{0}-tdbxkamptv-tdbxkamptv.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\zzxpqi7yng-{0}-j5mq2jizvt-j5mq2jizvt.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\noy5za9972-{0}-06098lyss8-06098lyss8.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\lxfzbxrcgp-{0}-nvvlpmu67g-nvvlpmu67g.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\9op5glwf10-{0}-s35ty4nyc5-s35ty4nyc5.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\weobpc2u64-{0}-pj5nd1wqec-pj5nd1wqec.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\63v82iy1c5-{0}-46ein0sx1k-46ein0sx1k.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\wpi9zllkmq-{0}-v0zj4ognzu-v0zj4ognzu.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\0hn7sxeie4-{0}-37tfw0ft22-37tfw0ft22.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\xqv6oa9z8p-{0}-hrwsygsryq-hrwsygsryq.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\0cyzomqs03-{0}-pk9g2wxc8p-pk9g2wxc8p.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\mh8ndt6x3r-{0}-ft3s53vfgj-ft3s53vfgj.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\w7hg2pex8r-{0}-6cfz1n2cew-6cfz1n2cew.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\wqpfzxh321-{0}-6pdc2jztkx-6pdc2jztkx.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\6lka546hxu-{0}-493y06b0oq-493y06b0oq.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\x9axi5pm6r-{0}-iovd86k7lj-iovd86k7lj.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\bm7b5morwm-{0}-vr1egmr9el-vr1egmr9el.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\94dga8y5po-{0}-kbrnm935zg-kbrnm935zg.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\avgm05pjw1-{0}-jj8uyg4cgr-jj8uyg4cgr.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\6b9n7j5no2-{0}-y7v9cxd14o-y7v9cxd14o.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\hdh753lc0m-{0}-notf2xhcfb-notf2xhcfb.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\v10qne7lqu-{0}-h1s4sie4z3-h1s4sie4z3.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\w2keqycg97-{0}-63fj8s7r0e-63fj8s7r0e.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\5r4is54klh-{0}-0j3bgjxly4-0j3bgjxly4.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\h0sfmp7y7m-{0}-47otxtyo56-47otxtyo56.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\kdnfnnw5uk-{0}-4v8eqarkd7-4v8eqarkd7.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\nutjpt4c5m-{0}-l3n5xuwxn8-l3n5xuwxn8.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\pqqo076ts0-{0}-ilo7uva0vt-ilo7uva0vt.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\fsf6icwetv-{0}-qlccset4i1-qlccset4i1.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\uktt5sfvyc-{0}-lzl9nlhx6b-lzl9nlhx6b.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\ejf8ynm6c5-{0}-ag7o75518u-ag7o75518u.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\4swjhu8xk3-{0}-xzw0cte36n-xzw0cte36n.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\lmmmuspcni-{0}-0i3buxo5is-0i3buxo5is.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\sl75prtp5s-{0}-o1o13a6vjx-o1o13a6vjx.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\1c3y2ua999-{0}-ttgo8qnofa-ttgo8qnofa.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\6o1rxke1ie-{0}-2z0ns9nrw6-2z0ns9nrw6.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\sazbve8ogq-{0}-muycvpuwrr-muycvpuwrr.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\srkyblh8y7-{0}-87fc7y1x7t-87fc7y1x7t.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\5143cnqh22-{0}-jfsiqqwiad-jfsiqqwiad.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\s2xoeui9g1-{0}-gsecuiuidh-gsecuiuidh.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\compressed\cqshf6g7pq-{0}-gsecuiuidh-gsecuiuidh.gz
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\PaulaPre.ECD3043C.Up2Date
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\PaulaPresentesWebMVC.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\refint\PaulaPresentesWebMVC.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\PaulaPresentesWebMVC.pdb
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\PaulaPresentesWebMVC.genruntimeconfig.cache
+C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net10.0\ref\PaulaPresentesWebMVC.dll

@@ -1,0 +1,497 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Registrar Venda</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap"
+          rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          rel="stylesheet" />
+
+    <script>
+
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+
+                    colors: {
+
+                        "surface-container-high": "#e8e8e8",
+                        "primary-container": "#800020",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#8c7071",
+                        "secondary-container": "#fed65b",
+                        "surface-bright": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "outline-variant": "#e0bfbf",
+                        "surface-container-low": "#f3f3f3",
+                        "on-surface": "#1b1b1b",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container": "#eeeeee",
+                        "on-surface-variant": "#584141",
+                        "background": "#f9f9f9",
+                        "primary": "#570013",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "success": "#166534"
+                    },
+
+                    fontFamily: {
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Noto Serif"],
+                        "headline-md": ["Noto Serif"]
+                    }
+                }
+            }
+        }
+
+    </script>
+
+    <style>
+
+        body {
+            background-color: #f9f9f9;
+            color: #1b1b1b;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .admin-card-shadow {
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .admin-card-shadow:hover {
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 300,
+                'GRAD' 0,
+                'opsz' 24;
+        }
+
+    </style>
+
+</head>
+
+<body class="min-h-screen font-body-md bg-surface">
+
+    <!-- HEADER -->
+    <header class="h-20 bg-surface-container-lowest border-b border-surface-container flex items-center justify-between px-16 sticky top-0 z-40">
+
+        <div class="flex items-center gap-4">
+
+            <span class="font-headline-md text-primary text-2xl tracking-tight">
+                Paula Presentes
+            </span>
+
+            <span class="text-outline text-xs uppercase tracking-widest bg-surface-container px-3 py-1 rounded-full">
+                Painel Admin
+            </span>
+
+        </div>
+
+        <a href="/Admin"
+           class="flex items-center gap-2 text-outline hover:text-primary transition-colors duration-300">
+
+            <span class="material-symbols-outlined text-xl">
+                arrow_back
+            </span>
+
+            <span class="uppercase text-xs tracking-widest">
+                Voltar
+            </span>
+
+        </a>
+
+    </header>
+
+    <main class="max-w-[1600px] mx-auto px-16 py-16">
+
+        <!-- TOPO -->
+        <section class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
+
+            <div>
+
+                <h1 class="font-headline-lg text-5xl text-on-surface">
+                    Registrar Venda
+                </h1>
+
+                <p class="text-on-surface-variant mt-3 text-lg">
+                    Sistema inteligente de vendas da loja
+                </p>
+
+            </div>
+
+            <div class="text-right">
+
+                <p class="text-xs uppercase tracking-widest text-outline">
+                    Data de hoje
+                </p>
+
+                <p class="text-2xl text-primary font-semibold"
+                   id="current-date">
+                </p>
+
+            </div>
+
+        </section>
+
+        <form method="post"
+              action="/Admin/FinalizarVenda">
+
+            <!-- ADICIONAR PRODUTO -->
+            <div class="bg-surface-container-lowest rounded-3xl p-8 admin-card-shadow mb-10 border border-outline-variant">
+
+                <div class="flex items-center gap-4">
+
+                    <div class="flex-1 relative">
+
+                        <span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-outline">
+                            barcode
+                        </span>
+
+                        <input type="text"
+                               id="codigoBarras"
+                               placeholder="Digite o código de barras do produto"
+                               class="w-full rounded-2xl border border-outline-variant bg-surface p-5 pl-14 text-lg focus:outline-none focus:border-primary" />
+
+                    </div>
+
+                    <button type="button"
+                            onclick="buscarProduto()"
+                            class="bg-primary text-white px-10 py-5 rounded-2xl text-lg font-semibold hover:opacity-90 transition-all">
+
+                        Adicionar Produto
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- PRODUTOS -->
+            <div id="listaProdutos"
+                 class="space-y-6 mb-10">
+
+            </div>
+
+            <!-- RESUMO -->
+            <div class="bg-surface-container-lowest rounded-3xl p-10 admin-card-shadow border border-outline-variant">
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                    <!-- DESCONTO -->
+                    <div>
+
+                        <label class="font-semibold text-lg">
+                            Desconto
+                        </label>
+
+                        <input type="number"
+                               step="0.01"
+                               value="0"
+                               name="desconto"
+                               id="desconto"
+                               oninput="calcularTotal()"
+                               class="w-full rounded-2xl border border-outline-variant bg-surface p-5 mt-3 text-lg focus:outline-none focus:border-primary" />
+
+                    </div>
+
+                    <!-- PAGAMENTO -->
+                    <div>
+
+                        <label class="font-semibold text-lg">
+                            Forma de Pagamento
+                        </label>
+
+                        <select name="formaPagamento"
+                                class="w-full rounded-2xl border border-outline-variant bg-surface p-5 mt-3 text-lg focus:outline-none focus:border-primary">
+
+                            <option>Pix</option>
+                            <option>Dinheiro</option>
+                            <option>Cartão Débito</option>
+                            <option>Cartão Crédito</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- VENDEDOR -->
+                    <div>
+
+                        <label class="font-semibold text-lg">
+                            Vendedor
+                        </label>
+
+                        <select name="vendedor"
+                                required
+                                class="w-full rounded-2xl border border-outline-variant bg-surface p-5 mt-3 text-lg focus:outline-none focus:border-primary">
+
+                            <option value="">
+                                Selecione o vendedor
+                            </option>
+
+                            <option value="Paula">
+                                Paula
+                            </option>
+
+                            <option value="Sueli">
+                                Sueli
+                            </option>
+
+                            <option value="Sueila">
+                                Sueila
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <!-- TOTAL -->
+                <div class="mt-12 border-t border-outline-variant pt-10">
+
+                    <div class="flex items-center justify-between">
+
+                        <div>
+
+                            <p class="text-outline uppercase tracking-widest text-sm mb-2">
+                                Valor Total
+                            </p>
+
+                            <h2 class="text-5xl font-bold text-primary"
+                                id="totalTexto">
+
+                                R$ 0,00
+
+                            </h2>
+
+                        </div>
+
+                        <button type="submit"
+                                class="bg-green-700 hover:bg-green-800 text-white px-12 py-6 rounded-3xl text-2xl font-bold transition-all duration-300 flex items-center gap-3">
+
+                            <span class="material-symbols-outlined text-3xl">
+                                check_circle
+                            </span>
+
+                            Finalizar Venda
+
+                        </button>
+
+                    </div>
+
+                    <input type="hidden"
+                           id="subtotal"
+                           name="subtotal" />
+
+                    <input type="hidden"
+                           id="total"
+                           name="total" />
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </main>
+
+    <script>
+
+        const dateOptions = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        };
+
+        document.getElementById('current-date')
+            .innerText =
+            new Date().toLocaleDateString('pt-BR', dateOptions);
+
+        let subtotal = 0;
+
+        async function buscarProduto() {
+
+            const codigo =
+                document.getElementById("codigoBarras").value;
+
+            if (!codigo) {
+
+                alert("Digite um código de barras.");
+
+                return;
+            }
+
+            const response =
+                await fetch(`/Admin/BuscarProduto?codigoBarra=${codigo}`);
+
+            const produto =
+                await response.json();
+
+            if (!produto.sucesso) {
+
+                alert(produto.mensagem);
+
+                return;
+            }
+
+            adicionarProdutoTela(produto);
+
+            document.getElementById("codigoBarras").value = "";
+
+        }
+
+        function adicionarProdutoTela(produto) {
+
+            console.log(produto);
+
+            subtotal += produto.preco;
+
+            calcularTotal();
+
+            const html = `
+
+            <div class="bg-surface-container-lowest rounded-3xl p-6 border border-outline-variant admin-card-shadow">
+
+                <div class="flex flex-col lg:flex-row gap-8 items-center">
+
+                    <img src="${produto.imagem}"
+                         class="w-36 h-36 object-cover rounded-3xl border border-outline-variant">
+
+                    <div class="flex-1">
+
+                        <h2 class="text-3xl font-bold text-on-surface mb-2">
+                            ${produto.nome}
+                        </h2>
+
+                        <p class="text-on-surface-variant text-lg">
+                            ${produto.marca} • ${produto.cor}
+                        </p>
+
+                        <div class="mt-4 flex gap-4 flex-wrap">
+
+                            <span class="bg-surface-container px-4 py-2 rounded-xl text-sm">
+                                Estoque: ${produto.estoque}
+                            </span>
+
+                            <span class="bg-surface-container px-4 py-2 rounded-xl text-sm font-semibold text-primary">
+                                R$ ${produto.preco}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="w-full lg:w-52">
+
+                        <label class="font-semibold text-lg">
+                            Quantidade
+                        </label>
+
+                        <input type="number"
+                            value="1"
+                            min="1"
+                            max="${produto.estoque}"
+                            name="quantidade"
+                            data-preco="${produto.preco}"
+                            class="quantidade-input w-full rounded-2xl border border-outline-variant bg-surface p-4 mt-3 text-lg"
+                            oninput="calcularTotal()">
+
+                    </div>
+
+                    <input type="hidden"
+                           name="idProduto"
+                           value="${produto.idProduto}">
+
+                    <button type="button"
+                            onclick="removerProduto(this, ${produto.preco})"
+                            class="bg-red-600 hover:bg-red-700 text-white px-6 py-4 rounded-2xl text-lg font-semibold transition-all">
+
+                        Remover
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            `;
+
+            // PRIMEIRO adiciona na tela
+            document.getElementById("listaProdutos")
+                .insertAdjacentHTML("beforeend", html);
+
+            // DEPOIS recalcula
+            calcularTotal();
+        }
+
+        function removerProduto(botao, preco) {
+
+            subtotal -= preco;
+
+            calcularTotal();
+
+            botao.closest(".admin-card-shadow").remove();
+
+        }
+
+        function calcularTotal() {
+
+            let subtotalCalculado = 0;
+
+            // pega todos os inputs de quantidade
+            const inputs = document.querySelectorAll(".quantidade-input");
+
+            inputs.forEach(input => {
+
+                const quantidade = parseInt(input.value) || 0;
+                const preco = parseFloat(input.dataset.preco);
+
+                subtotalCalculado += quantidade * preco;
+            });
+
+            subtotal = subtotalCalculado;
+
+            const desconto =
+                parseFloat(document.getElementById("desconto").value) || 0;
+
+            const total = subtotal - desconto;
+
+            document.getElementById("totalTexto")
+                .innerText =
+                total.toLocaleString('pt-BR',
+                    {
+                        style: 'currency',
+                        currency: 'BRL'
+                    });
+
+            document.getElementById("subtotal").value = subtotal;
+
+            document.getElementById("total").value = total;
+        }
+
+    </script>
+
+</body>
+
+</html>
