@@ -16,7 +16,7 @@ namespace PaulaPresentesWebMVC.Models
         public Cliente? Cliente { get; set; }
 
         [Column("data_criacao")]
-        public DateTime? DataCriacaoCarrinho { get; set; } = DateTime.Now;
+        public DateTime? DataCriacaoCarrinho { get; set; } = DateTime.UtcNow;
 
         public List<CarrinhoItem>? Itens { get; set; }
     }

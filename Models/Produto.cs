@@ -52,7 +52,7 @@ namespace PaulaPresentesWebMVC.Models
         public string? CodigoBarra { get; set; }
 
         [Column("data_compra")]
-        public DateTime? DataCompra { get; set; }
+        public DateTime? DataCompra { get; set; } = DateTime.UtcNow;
 
         public List<ProdutoImagem>? Imagens { get; set; }
     }

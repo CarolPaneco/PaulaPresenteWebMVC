@@ -108,7 +108,7 @@ namespace PaulaPresentesWebMVC.Controllers
 
             var venda = new Venda
             {
-                DataVenda = DateTime.Now,
+                DataVenda = DateTime.UtcNow,
                 Subtotal = subtotalConvertido,
                 Desconto = descontoConvertido,
                 Total = totalConvertido,
@@ -150,7 +150,7 @@ namespace PaulaPresentesWebMVC.Controllers
                 Descricao = $"Venda #{venda.IdVenda} - {vendedor} - {formaPagamento}",
 
                 Valor = totalConvertido,
-                DataMovimentacao = DateTime.Now,
+                DataMovimentacao = DateTime.UtcNow,
             };
 
             _context.MovimentacaoCaixa.Add(entradaCaixa);
@@ -324,7 +324,7 @@ namespace PaulaPresentesWebMVC.Controllers
 
             // DATA
 
-            produto.DataCompra = DateTime.Now;
+            produto.DataCompra = DateTime.UtcNow;
 
             produto.QuantidadeVendida = 0;
 
@@ -430,7 +430,7 @@ namespace PaulaPresentesWebMVC.Controllers
         public IActionResult NovaEntrada(MovimentacaoCaixa movimentacao)
         {
             movimentacao.Tipo = "ENTRADA";
-            movimentacao.DataMovimentacao = DateTime.Now;
+            movimentacao.DataMovimentacao = DateTime.UtcNow;
 
             _context.MovimentacaoCaixa.Add(movimentacao);
 
@@ -443,7 +443,7 @@ namespace PaulaPresentesWebMVC.Controllers
         public IActionResult NovaSaida(MovimentacaoCaixa movimentacao)
         {
             movimentacao.Tipo = "SAIDA";
-            movimentacao.DataMovimentacao = DateTime.Now;
+            movimentacao.DataMovimentacao = DateTime.UtcNow;
 
             // 🔒 proteção contra NULL (evita crash futuro)
             movimentacao.Categoria ??= "Outros";
@@ -460,9 +460,9 @@ namespace PaulaPresentesWebMVC.Controllers
         public IActionResult RelatorioFinanceiro(DateTime? dataInicial, DateTime? dataFinal)
         {
             // PERÍODO PADRÃO = MÊS ATUAL
-            DateTime inicio = dataInicial ?? new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            DateTime inicio = dataInicial ?? new DateTime(DateTime.UtcNow.Year, DateTime.UtcNow.Month, 1);
 
-            DateTime fim = dataFinal ?? DateTime.Now;
+            DateTime fim = dataFinal ?? DateTime.UtcNow;
 
             // =========================
             // VENDAS
@@ -524,7 +524,7 @@ namespace PaulaPresentesWebMVC.Controllers
             // VENDAS DA SEMANA
             // =========================
 
-            DateTime inicioSemana = DateTime.Now.AddDays(-7);
+            DateTime inicioSemana = DateTime.UtcNow.AddDays(-7);
 
             decimal vendasSemana = _context.Venda
                 .Where(v => v.DataVenda >= inicioSemana)
@@ -611,20 +611,20 @@ namespace PaulaPresentesWebMVC.Controllers
             {
                 if (periodo == "mes")
                 {
-                    dataInicial = DateTime.Now.AddMonths(-1);
+                    dataInicial = DateTime.UtcNow.AddMonths(-1);
                 }
 
                 if (periodo == "semestre")
                 {
-                    dataInicial = DateTime.Now.AddMonths(-6);
+                    dataInicial = DateTime.UtcNow.AddMonths(-6);
                 }
 
                 if (periodo == "ano")
                 {
-                    dataInicial = DateTime.Now.AddYears(-1);
+                    dataInicial = DateTime.UtcNow.AddYears(-1);
                 }
 
-                dataFinal = DateTime.Now;
+                dataFinal = DateTime.UtcNow;
             }
 
             // =========================
@@ -694,7 +694,7 @@ namespace PaulaPresentesWebMVC.Controllers
                 Categoria = "Viagem",
                 Descricao = $"Viagem #{viagem.IdViagem}",
                 Valor = viagem.CustoTotal,
-                DataMovimentacao = DateTime.Now,
+                DataMovimentacao = DateTime.UtcNow,
             };
 
             _context.MovimentacaoCaixa.Add(saidaCaixa);

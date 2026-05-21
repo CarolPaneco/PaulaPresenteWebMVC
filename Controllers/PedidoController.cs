@@ -91,7 +91,7 @@ namespace PaulaPresentesWebMVC.Controllers
                 ValorFrete = frete,
                 Total = total,
                 TipoFrete = pedidoExistente?.TipoFrete,
-                DataPedido = DateTime.Now
+                DataPedido = DateTime.UtcNow
             };
 
             _context.Pedido.Add(novoPedido);
@@ -155,7 +155,7 @@ namespace PaulaPresentesWebMVC.Controllers
                 Frete = frete,
                 Total = total,
                 TipoFrete = carrinho.TipoFrete,
-                DataPedido = DateTime.Now
+                DataPedido = DateTime.UtcNow
             };
 
             _context.Pedido.Add(pedido);
@@ -201,7 +201,7 @@ namespace PaulaPresentesWebMVC.Controllers
                 if (!cupom.Ativo)
                     return Json(new { sucesso = false, mensagem = "Cupom inativo" });
 
-                if (cupom.DataValidade.HasValue && cupom.DataValidade < DateTime.Now)
+                if (cupom.DataValidade.HasValue && cupom.DataValidade < DateTime.UtcNow)
                     return Json(new { sucesso = false, mensagem = "Cupom expirado" });
 
                 if (data.Total < cupom.ValorMinimo)

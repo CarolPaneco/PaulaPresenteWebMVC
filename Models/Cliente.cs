@@ -50,7 +50,7 @@ namespace PaulaPresentesWebMVC.Models
         public string? Senha { get; set; }
 
         [Column("data_cadastro")]
-        public DateTime? DataCadastroCliente { get; set; }
+        public DateTime? DataCadastroCliente { get; set; } = DateTime.UtcNow;
 
         [Column("ativo")]
         public bool? Ativo { get; set; }
