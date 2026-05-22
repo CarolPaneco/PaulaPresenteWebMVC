@@ -21,31 +21,43 @@
           rel="stylesheet" />
 
     <script>
+
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
+
                     colors: {
+
                         "surface-container-high": "#e8e8e8",
+                        "primary-container": "#800020",
                         "surface-container-lowest": "#ffffff",
-                        "surface-container-low": "#f3f3f3",
-                        "surface-container": "#eeeeee",
                         "outline": "#8c7071",
-                        "outline-variant": "#e0bfbf",
-                        "on-surface": "#1b1b1b",
-                        "on-surface-variant": "#584141",
+                        "secondary-container": "#fed65b",
+                        "surface-bright": "#f9f9f9",
                         "surface": "#f9f9f9",
+                        "outline-variant": "#e0bfbf",
+                        "surface-container-low": "#f3f3f3",
+                        "on-surface": "#1b1b1b",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container": "#eeeeee",
+                        "on-surface-variant": "#584141",
+                        "background": "#f9f9f9",
                         "primary": "#570013",
-                        "secondary": "#735c00"
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "success": "#166534"
                     },
 
                     fontFamily: {
-                        body: ["Inter"],
-                        headline: ["Noto Serif"]
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Noto Serif"],
+                        "headline-md": ["Noto Serif"]
                     }
                 }
             }
         }
+
     </script>
 
     <style>
@@ -85,24 +97,24 @@
 
         <div class="flex items-center gap-4">
 
-            <span class="text-3xl font-headline text-primary">
+            <span class="font-headline-md text-primary text-2xl tracking-tight">
                 Paula Presentes
             </span>
 
-            <span class="text-xs uppercase tracking-widest bg-surface-container px-4 py-2 rounded-full text-outline font-semibold">
+            <span class="text-outline text-xs uppercase tracking-widest bg-surface-container px-3 py-1 rounded-full">
                 Painel Admin
             </span>
 
         </div>
 
         <a href="/Admin"
-           class="flex items-center gap-2 text-outline hover:text-primary transition">
+           class="flex items-center gap-2 text-outline hover:text-primary transition-colors duration-300">
 
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined text-xl">
                 arrow_back
             </span>
 
-            <span class="uppercase tracking-widest text-xs font-semibold">
+            <span class="uppercase text-xs tracking-widest">
                 Voltar
             </span>
 

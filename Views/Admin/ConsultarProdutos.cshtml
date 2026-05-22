@@ -4,6 +4,13 @@
     Layout = null;
 }
 
+@if (TempData["Erro"] != null)
+{
+    <div class="bg-red-100 text-red-700 p-3 rounded-xl mb-4">
+        @TempData["Erro"]
+    </div>
+}
+
 <!DOCTYPE html>
 
 <html lang="pt-br">
@@ -14,21 +21,98 @@
 
     <title>Consultar Produtos</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <script>
+
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+
+                    colors: {
+
+                        "surface-container-high": "#e8e8e8",
+                        "primary-container": "#800020",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#8c7071",
+                        "secondary-container": "#fed65b",
+                        "surface-bright": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "outline-variant": "#e0bfbf",
+                        "surface-container-low": "#f3f3f3",
+                        "on-surface": "#1b1b1b",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container": "#eeeeee",
+                        "on-surface-variant": "#584141",
+                        "background": "#f9f9f9",
+                        "primary": "#570013",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "success": "#166534"
+                    },
+
+                    fontFamily: {
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Noto Serif"],
+                        "headline-md": ["Noto Serif"]
+                    }
+                }
+            }
+        }
+
+    </script>
 
 </head>
 
-<body class="bg-[#f9f9f9] p-10">
+<body class="min-h-screen font-body-md bg-surface">
+
+    <header
+        class="h-20 bg-surface-container-lowest border-b border-surface-container flex items-center justify-between px-16 sticky top-0 z-40">
+
+        <div class="flex items-center gap-4">
+
+            <span class="font-headline-md text-primary text-2xl tracking-tight">
+                Paula Presentes
+            </span>
+
+            <span class="text-outline text-xs uppercase tracking-widest bg-surface-container px-3 py-1 rounded-full">
+                Painel Admin
+            </span>
+
+        </div>
+
+        <a href="/Admin/Produtos"
+            class="flex items-center gap-2 text-outline hover:text-primary transition-colors duration-300">
+
+            <span class="material-symbols-outlined text-xl">
+                arrow_back
+            </span>
+
+            <span class="uppercase text-xs tracking-widest">
+                Voltar
+            </span>
+
+        </a>
+
+    </header>
 
     <div class="max-w-7xl mx-auto">
 
         <div class="mb-10">
 
-            <h1 class="text-5xl font-bold text-[#570013]">
+            <h1 class="text-5xl font-bold mt-5 text-[#570013]">
                 Produtos
             </h1>
 
-            <p class="text-gray-500 mt-3 text-lg">
+            <p class="text-gray-500 mt-4 text-lg">
                 Todos os produtos cadastrados
             </p>
 
@@ -36,10 +120,8 @@
 
         <form method="get" class="mb-10">
 
-            <input type="text"
-                   name="pesquisa"
-                   placeholder="Pesquisar por código, nome, categoria ou cor"
-                   class="w-full bg-white border border-gray-300 rounded-2xl p-5 shadow-sm" />
+            <input type="text" name="pesquisa" placeholder="Pesquisar por código, nome, categoria ou cor"
+                class="w-full bg-white border border-gray-300 rounded-2xl p-5 shadow-sm" />
 
         </form>
 
@@ -47,12 +129,12 @@
 
             @foreach (var item in Model)
             {
-                <div class="bg-white rounded-3xl shadow-xl p-6">
+                <div class="bg-white rounded-3xl shadow-xl p-6 flex flex-col">
 
                     <img src="@(item.Imagens != null && item.Imagens.Any()
-                    ? "/img/produtos/" + item.Imagens.First().CaminhoImagem
-                    : "/images/produto.jpg")"
-                    class="w-full h-72 object-cover rounded-2xl mb-6" />
+                                                                                                                                                 ? "/img/produtos/" + item.Imagens.First().CaminhoImagem
+                                                                                                                                                 : "/images/produto.jpg")"
+                        class="w-full h-72 object-cover rounded-2xl mb-6" />
 
                     <h2 class="text-2xl font-bold">
                         @item.Nome
@@ -92,8 +174,127 @@
 
                     </div>
 
+                    <div class="mt-6 flex gap-2">
+
+                        <button onclick="abrirEditar(
+                                        '@item.IdProduto',
+                                        '@item.Nome',
+                                        '@item.PrecoVenda',
+                                        '@item.PrecoCusto',
+                                        '@item.QuantidadeEstoque'
+                                    )" class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:opacity-90">
+                            Editar
+                        </button>
+
+                        <button type="button" onclick="abrirExcluir('@item.IdProduto')"
+                            class="bg-red-600 text-white px-4 py-2 rounded-xl hover:opacity-90">
+                            Excluir
+                        </button>
+
+                    </div>
+
                 </div>
             }
+
+        </div>
+
+    </div>
+
+    <div id="modalEditar" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+
+        <div class="bg-white p-8 rounded-2xl w-[500px]">
+
+            <h2 class="text-2xl font-bold mb-6">Editar Produto</h2>
+
+            <form method="post" action="/Admin/Editar" class="space-y-4">
+
+                <input type="hidden" id="editId" name="IdProduto" />
+
+                <!-- NOME -->
+                <div>
+                    <label class="text-sm font-semibold text-gray-600">Nome</label>
+                    <input id="editNome" name="Nome"
+                        class="w-full border p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#570013]" />
+                </div>
+
+                <!-- PREÇO VENDA -->
+                <div>
+                    <label class="text-sm font-semibold text-gray-600">Preço de Venda</label>
+                    <input id="editPrecoVenda" name="PrecoVenda"
+                        class="w-full border p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#570013]" />
+                </div>
+
+                <!-- PREÇO CUSTO -->
+                <div>
+                    <label class="text-sm font-semibold text-gray-600">Preço de Custo</label>
+                    <input id="editPrecoCusto" name="PrecoCusto"
+                        class="w-full border p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#570013]" />
+                </div>
+
+                <!-- ESTOQUE -->
+                <div>
+                    <label class="text-sm font-semibold text-gray-600">Estoque</label>
+                    <input id="editEstoque" name="QuantidadeEstoque"
+                        class="w-full border p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#570013]" />
+                </div>
+
+                <!-- SENHA ADMIN -->
+                <div>
+                    <label class="text-sm font-semibold text-gray-600">Senha de Administrador</label>
+                    <input type="password" name="SenhaAdmin" placeholder="Digite a senha para confirmar"
+                        class="w-full border p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500" />
+                </div>
+
+                <div class="flex justify-between mt-5">
+
+                    <button type="button" onclick="fecharModal()" class="px-4 py-2 bg-gray-400 text-white rounded-xl">
+                        Cancelar
+                    </button>
+
+                    <button class="px-4 py-2 bg-green-600 text-white rounded-xl">
+                        Salvar
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div id="modalExcluir" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+
+        <div class="bg-white p-8 rounded-2xl w-[400px]">
+
+            <h2 class="text-2xl font-bold mb-6 text-red-600">
+                Confirmar Exclusão
+            </h2>
+
+            <form method="post" action="/Admin/Excluir" class="space-y-4">
+
+                <input type="hidden" id="deleteId" name="id" />
+
+                <label class="text-sm font-semibold text-gray-600">
+                    Senha de Administrador
+                </label>
+
+                <input type="password" name="SenhaAdmin" placeholder="Digite a senha"
+                    class="w-full border p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500" />
+
+                <div class="flex justify-between mt-5">
+
+                    <button type="button" onclick="fecharExcluir()" class="px-4 py-2 bg-gray-400 text-white rounded-xl">
+                        Cancelar
+                    </button>
+
+                    <button class="px-4 py-2 bg-red-600 text-white rounded-xl">
+                        Excluir
+                    </button>
+
+                </div>
+
+            </form>
 
         </div>
 
@@ -102,3 +303,33 @@
 </body>
 
 </html>
+
+<script>
+    function abrirEditar(id, nome, precoVenda, precoCusto, estoque) {
+
+        document.getElementById("editId").value = id;
+        document.getElementById("editNome").value = nome;
+        document.getElementById("editPrecoVenda").value = precoVenda;
+        document.getElementById("editPrecoCusto").value = precoCusto;
+        document.getElementById("editEstoque").value = estoque;
+
+        document.getElementById("modalEditar").classList.remove("hidden");
+    }
+
+    function fecharModal() {
+        document.getElementById("modalEditar").classList.add("hidden");
+    }
+
+
+
+    function abrirExcluir(id) {
+        document.getElementById("deleteId").value = id;
+        document.getElementById("modalExcluir").classList.remove("hidden");
+    }
+
+    function fecharExcluir() {
+        document.getElementById("modalExcluir").classList.add("hidden");
+    }
+
+
+</script>

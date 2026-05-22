@@ -22,31 +22,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap"
           rel="stylesheet" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet" />
 
-    <script>
+
+        <script>
+
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
+
                     colors: {
-                        primary: "#570013",
-                        surface: "#f9f9f9",
-                        card: "#ffffff",
-                        outline: "#e5e5e5",
-                        muted: "#6b7280",
-                        success: "#15803d",
-                        danger: "#b91c1c"
+
+                        "surface-container-high": "#e8e8e8",
+                        "primary-container": "#800020",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#8c7071",
+                        "secondary-container": "#fed65b",
+                        "surface-bright": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "outline-variant": "#e0bfbf",
+                        "surface-container-low": "#f3f3f3",
+                        "on-surface": "#1b1b1b",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container": "#eeeeee",
+                        "on-surface-variant": "#584141",
+                        "background": "#f9f9f9",
+                        "primary": "#570013",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "success": "#166534"
                     },
 
                     fontFamily: {
-                        body: ["Inter"],
-                        title: ["Noto Serif"]
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Noto Serif"],
+                        "headline-md": ["Noto Serif"]
                     }
                 }
             }
         }
+
     </script>
 
     <style>
@@ -81,27 +98,31 @@
 
 <body class="min-h-screen bg-surface font-body">
 
-    <!-- HEADER -->
-    <header class="h-20 bg-white border-b border-outline px-16 flex items-center justify-between sticky top-0 z-50">
+    <header
+        class="h-20 bg-surface-container-lowest border-b border-surface-container flex items-center justify-between px-16 sticky top-0 z-40">
 
         <div class="flex items-center gap-4">
 
-            <h1 class="text-2xl font-bold text-primary">
+            <span class="font-headline-md text-primary text-2xl tracking-tight">
                 Paula Presentes
-            </h1>
+            </span>
 
-            <span class="bg-gray-100 px-4 py-1 rounded-full text-xs uppercase tracking-widest text-gray-500">
-
+            <span class="text-outline text-xs uppercase tracking-widest bg-surface-container px-3 py-1 rounded-full">
                 Painel Admin
-
             </span>
 
         </div>
 
         <a href="/Admin"
-           class="bg-primary text-white px-6 py-3 rounded-2xl font-semibold hover:opacity-90 transition">
+            class="flex items-center gap-2 text-outline hover:text-primary transition-colors duration-300">
 
-            Voltar
+            <span class="material-symbols-outlined text-xl">
+                arrow_back
+            </span>
+
+            <span class="uppercase text-xs tracking-widest">
+                Voltar
+            </span>
 
         </a>
 

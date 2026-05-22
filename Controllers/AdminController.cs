@@ -200,6 +200,49 @@ namespace PaulaPresentesWebMVC.Controllers
             return View(produtos.ToList());
         }
 
+        [HttpPost]
+        public IActionResult Editar(Produto produto, string SenhaAdmin)
+        {
+            if (SenhaAdmin != "ritinha")
+            {
+                TempData["Erro"] = "Senha de administrador incorreta!";
+                return RedirectToAction("ConsultarProdutos");
+            }
+
+            var p = _context.Produto.FirstOrDefault(x => x.IdProduto == produto.IdProduto);
+
+            if (p == null)
+                return NotFound();
+
+            p.Nome = produto.Nome;
+            p.PrecoVenda = produto.PrecoVenda;
+            p.PrecoCusto = produto.PrecoCusto;
+            p.QuantidadeEstoque = produto.QuantidadeEstoque;
+
+            _context.SaveChanges();
+
+            return RedirectToAction("ConsultarProdutos");
+        }
+
+        public IActionResult Excluir(int id, string SenhaAdmin)
+        {
+            if (SenhaAdmin != "ritinha")
+            {
+                TempData["Erro"] = "Senha de administrador incorreta!";
+                return RedirectToAction("ConsultarProdutos");
+            }
+
+            var produto = _context.Produto.FirstOrDefault(x => x.IdProduto == id);
+
+            if (produto != null)
+            {
+                _context.Produto.Remove(produto);
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("ConsultarProdutos");
+        }
+
         // =========================
         // CONSULTAR ESTOQUE
         // =========================
@@ -709,12 +752,12 @@ namespace PaulaPresentesWebMVC.Controllers
             return RedirectToAction("Viagem");
         }
 
-
+        [HttpGet]
         public IActionResult Clientes()
         {
             var clientes = _context.Cliente.ToList();
 
-            var hoje = DateTime.Today;
+            var hoje = DateTime.UtcNow;
 
             ViewBag.Aniversariantes = clientes
                 .Where(c =>
@@ -730,6 +773,14 @@ namespace PaulaPresentesWebMVC.Controllers
         [HttpPost]
         public IActionResult Clientes(Cliente cliente)
         {
+            if (cliente.DataNascimento.HasValue)
+            {
+                cliente.DataNascimento = DateTime.SpecifyKind(
+                    cliente.DataNascimento.Value,
+                    DateTimeKind.Utc
+                );
+            }
+
             _context.Cliente.Add(cliente);
             _context.SaveChanges();
 

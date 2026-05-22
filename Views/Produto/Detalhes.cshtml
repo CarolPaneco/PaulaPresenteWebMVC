@@ -163,7 +163,7 @@
                 </div>
 
                 <!-- COMPRAR AGORA -->
-                <button type="button"
+                <button  onclick="enviarWhatsApp()" type="button"
                     class="w-full border border-black py-4 font-label-caps text-sm tracking-widest hover:bg-black hover:text-white transition uppercase">
                     Comprar agora
                 </button>
@@ -287,29 +287,30 @@
             aviso.innerText = "";
         }
     }
-</script>
 
-<script>
-    function salvarFreteDireto(radio) {
+    
+    function enviarWhatsApp() {
 
-        const [valor, prazo, tipo] = radio.value.split("|");
+        let telefone = "5517991672947";
 
-        fetch('/Carrinho/SalvarFrete', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                valor: parseFloat(valor),
-                prazo: parseInt(prazo),
-                tipo: tipo
-            })
-        })
-            .then(() => {
-                console.log("Frete salvo:", tipo);
-            })
-            .catch(() => {
-                console.log("Erro ao salvar frete");
-            });
+        let quantidade = parseInt(document.getElementById("quantidade").value);
+        let preco = @Model.PrecoVenda;
+        let total = quantidade * preco;
+
+        let mensagem =
+            "🛍️ Novo Pedido - Paula Presentes\n\n" +
+
+            "👜 @Model.Nome\n" +
+            "Quantidade: " + quantidade + "\n" +
+            "Preço: R$ " + preco.toFixed(2) + "\n" +
+            "Subtotal: R$ " + total.toFixed(2) + "\n\n" +
+
+            "💰 Total: R$ " + total.toFixed(2);
+
+        let url =
+            "https://wa.me/" + telefone +
+            "?text=" + encodeURIComponent(mensagem);
+
+        window.open(url, "_blank");
     }
 </script>
