@@ -460,9 +460,11 @@ namespace PaulaPresentesWebMVC.Controllers
         public IActionResult RelatorioFinanceiro(DateTime? dataInicial, DateTime? dataFinal)
         {
             // PERÍODO PADRÃO = MÊS ATUAL
-            DateTime inicio = dataInicial ?? new DateTime(DateTime.UtcNow.Year, DateTime.UtcNow.Month, 1);
+            DateTime inicio = (dataInicial ?? new DateTime(DateTime.UtcNow.Year, DateTime.UtcNow.Month, 1))
+                .ToUniversalTime();
 
-            DateTime fim = dataFinal ?? DateTime.UtcNow;
+            DateTime fim = (dataFinal ?? DateTime.UtcNow)
+                .ToUniversalTime();
 
             // =========================
             // VENDAS
