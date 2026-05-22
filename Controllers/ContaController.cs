@@ -63,10 +63,9 @@ namespace PaulaPresentesWebMVC.Controllers
 
 
         [HttpPost]
-        //formulario de cadastro 
         public IActionResult Cadastro(Cliente cliente)
         {
-            // verifica se ja existe esse cadastro 
+            // verifica se já existe esse cadastro
             var existe = _context.Cliente
                 .FirstOrDefault(c => c.Email == cliente.Email);
 
@@ -75,6 +74,17 @@ namespace PaulaPresentesWebMVC.Controllers
                 ViewBag.ErroCadastro = "Este email já está cadastrado";
                 return View("Auth");
             }
+
+
+            if (cliente.DataNascimento.HasValue)
+            {
+                cliente.DataNascimento = DateTime.SpecifyKind(
+                    cliente.DataNascimento.Value,
+                    DateTimeKind.Utc
+                );
+            }
+
+            cliente.DataCadastroCliente = DateTime.UtcNow;
 
             _context.Cliente.Add(cliente);
             _context.SaveChanges();
