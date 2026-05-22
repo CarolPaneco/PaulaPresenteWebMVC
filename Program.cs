@@ -27,8 +27,6 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromHours(2);
 });
 
-// Supabase Service
-builder.Services.AddSingleton<SupabaseService>();
 
 // Database PostgreSQL
 builder.Services.AddDbContext<AppDbContext>(options =>
