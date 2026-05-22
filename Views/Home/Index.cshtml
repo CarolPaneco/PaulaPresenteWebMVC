@@ -1,18 +1,17 @@
 ﻿@model List<PaulaPresentesWebMVC.Models.Produto>
 
-<div class="relative w-full h-[870px] overflow-hidden">
+<div class="relative w-full h-[400px] sm:h-[600px] lg:h-[870px] overflow-hidden">
     <div id="carousel" class="flex h-full transition-transform duration-700 ease-in-out">
 
         <!-- SLIDE 1 -->
         <div class="min-w-full relative flex items-center justify-center bg-neutral-900">
             <div class="absolute inset-0 bg-black/30 z-10"></div>
 
-            <img class="absolute inset-0 w-full h-full object-cover"
-                src="/img/tela/image.png" />
+            <img class="absolute inset-0 w-full h-full object-cover" src="/img/tela/image.png" />
 
             <div class="relative z-20 text-center text-white px-4">
                 <span class="uppercase tracking-[0.3em] mb-4 block">Coleção Exclusiva</span>
-                <h1 class="text-5xl md:text-7xl mb-8">A Arte de Presentear</h1>
+                <h1 class="text-2xl sm:text-4xl md:text-7xl mb-8">A Arte de Presentear</h1>
             </div>
         </div>
 
@@ -20,12 +19,11 @@
         <div class="min-w-full relative flex items-center justify-center bg-neutral-900">
             <div class="absolute inset-0 bg-black/30 z-10"></div>
 
-            <img class="absolute inset-0 w-full h-full object-cover"
-                src="/img/tela/image2.png" />
+            <img class="absolute inset-0 w-full h-full object-cover" src="/img/tela/image2.png" />
 
             <div class="relative z-20 text-center text-white px-4">
                 <span class="uppercase tracking-[0.3em] mb-4 block">Elegância</span>
-                <h1 class="text-5xl md:text-7xl mb-8">Estilo Atemporal</h1>
+                <h1 class="text-2xl sm:text-4xl md:text-7xl mb-8">Estilo Atemporal</h1>
             </div>
         </div>
 
@@ -33,8 +31,7 @@
         <div class="min-w-full relative flex items-center justify-center bg-neutral-900">
             <div class="absolute inset-0 bg-black/30 z-10"></div>
 
-            <img class="absolute inset-0 w-full h-full object-cover"
-                src="/img/tela/image3.png" />
+            <img class="absolute inset-0 w-full h-full object-cover" src="/img/tela/image3.png" />
 
             <div class="relative z-20 text-center text-white px-4">
                 <span class="uppercase tracking-[0.3em] mb-4 block">Luxo</span>
@@ -96,7 +93,7 @@
     setInterval(nextSlide, 5000);
 </script>
 
-<main class="w-full px-16 mt-stack-lg mb-stack-lg flex gap-gutter">
+<main class="w-full px-4 sm:px-6 lg:px-16 mt-stack-lg mb-stack-lg flex flex-col lg:flex-row gap-gutter">
 
 
     <!-- SIDEBAR -->
@@ -223,14 +220,16 @@
 
 
     <!-- PRODUTOS -->
-    <section class="flex-1">
+    <section class="flex-1 w-full">
 
         <div class="flex justify-between items-end mb-12">
-            <h2 class="font-display-lg text-display-lg text-red-900">Novidades</h2>
+            <h2 class="font-display-lg text-2xl sm:text-3xl lg:text-display-lg text-red-900">
+                Novidades
+            </h2>
         </div>
 
         <!-- GRID -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-gutter gap-y-12">
+        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-gutter gap-y-12">
 
             @for (int i = 0; i < Model.Count; i++)
             {
@@ -243,9 +242,9 @@
                         <div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-4 relative">
 
                             <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            src="@(item.Imagens != null && item.Imagens.Any()
-                                ? "/img/produtos/" + item.Imagens.First().CaminhoImagem
-                                : "/images/produto.jpg")" />
+                                src="@(item.Imagens != null && item.Imagens.Any()
+                                                                                                ? "/img/produtos/" + item.Imagens.First().CaminhoImagem
+                                                                                                : "/images/produto.jpg")" />
 
                     </div>
 
@@ -284,10 +283,9 @@
         <div id="barra" class="h-full bg-primary" style="width:16%"></div>
     </div>
 
-    <button id="btnToggle"
-        onclick="mostrarMais()"
-        class="px-16 py-4 border border-primary text-primary font-label-caps tracking-widest hover:bg-primary hover:text-white transition-all duration-500">
-    VER MAIS
+    <button id="btnToggle" onclick="mostrarMais()"
+        class="px-6 sm:px-10 lg:px-16 py-3 sm:py-4 border border-primary text-primary font-label-caps tracking-widest hover:bg-primary hover:text-white transition-all duration-500">
+        VER MAIS
     </button>
 
 </div>
@@ -343,11 +341,21 @@
 
     }
 
+    function filtrarCategoria(categoria) {
+
+        if (!categoria) {
+            window.location.href = "/";
+            return;
+        }
+
+        window.location.href = "/Home?categoria=" + encodeURIComponent(categoria);
+    }
+
 </script>
 </section>
 <!-- Editorial Section -->
 <section class="w-full py-stack-lg bg-surface-container-low border-y border-neutral-100">
-    <div class="max-w-[1440px] mx-auto px-16 grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
         <div class="relative aspect-square">
             <img class="w-full h-full object-cover"
                 data-alt="A sophisticated lifestyle editorial shot featuring a woman in a tailored camel coat walking through a modern marble hall, carrying a burgundy Paula Presentes leather tote. The lighting is soft and ethereal, capturing a moment of quiet confidence and luxury. The color palette is composed of warm neutrals and rich reds, creating a cohesive brand story of high-end, functional fashion and timeless elegance."
@@ -355,7 +363,8 @@
         </div>
         <div class="pl-0 md:pl-16 flex flex-col items-start text-left">
             <span class="font-label-caps text-label-caps text-primary tracking-[0.4em] mb-6 block">MANIFESTO</span>
-            <h2 class="font-display-lg text-display-lg text-red-900 mb-8 max-w-md">Feito para os que valorizam o
+            <h2 class="font-display-lg text-xl sm:text-2xl lg:text-display-lg text-red-900 mb-8 max-w-md">Feito para os
+                que valorizam o
                 detalhe.</h2>
             <p class="font-body-lg text-neutral-600 mb-10 max-w-lg leading-relaxed">
                 A Paula Presentes nasceu do desejo de curar o extraordinário. Cada peça em nossa coleção é selecionada

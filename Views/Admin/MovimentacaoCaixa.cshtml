@@ -68,7 +68,8 @@
 <body class="bg-surface font-body min-h-screen">
 
     <!-- HEADER -->
-    <header class="h-20 bg-surface-container-lowest border-b border-surface-container flex items-center justify-between px-16 sticky top-0 z-40">
+    <header
+        class="h-20 bg-surface-container-lowest border-b border-surface-container flex items-center justify-between px-16 sticky top-0 z-40">
 
         <div class="flex items-center gap-4">
 
@@ -82,8 +83,7 @@
 
         </div>
 
-        <a href="/Admin"
-           class="flex items-center gap-2 text-outline hover:text-primary transition-colors duration-300">
+        <a href="/Admin" class="flex items-center gap-2 text-outline hover:text-primary transition-colors duration-300">
 
             <span class="material-symbols-outlined text-xl">
                 arrow_back
@@ -100,11 +100,11 @@
     <main class="max-w-[1600px] mx-auto px-16 py-16">
 
         <!-- TOPO -->
-        <div class="flex justify-between items-center mb-12">
+        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 mb-12">
 
             <div>
 
-                <h1 class="text-5xl font-bold text-on-surface font-headline">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-on-surface font-headline">
                     Movimentação Caixa
                 </h1>
 
@@ -114,17 +114,17 @@
 
             </div>
 
-            <div class="flex gap-4">
+            <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
 
                 <button onclick="abrirEntrada()"
-                    class="bg-green-600 hover:bg-green-700 text-white px-8 py-5 rounded-2xl font-bold text-lg shadow-xl transition">
+                    class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-8 py-5 rounded-2xl font-bold text-lg shadow-xl transition">
 
                     Nova Entrada
 
                 </button>
 
                 <button onclick="abrirSaida()"
-                    class="bg-red-600 hover:bg-red-700 text-white px-8 py-5 rounded-2xl font-bold text-lg shadow-xl transition">
+                    class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white px-8 py-5 rounded-2xl font-bold text-lg shadow-xl transition">
 
                     Nova Saída
 
@@ -148,15 +148,22 @@
                             Entradas
                         </p>
 
-                        <h2 class="text-5xl font-bold text-green-600 mt-4">
+                        <h2 class="mt-2 font-bold flex text-green-600 items-baseline gap-2 whitespace-nowrap">
 
-                            R$ @(((decimal)(ViewBag.TotalEntradas ?? 0)).ToString("N2"))
+                            <span class="text-lg sm:text-xl lg:text-2xl">
+                                R$
+                            </span>
+
+                            <span class="text-xl sm:text-3xl lg:text-5xl">
+                                @(((decimal)(ViewBag.TotalEntradas ?? 0)).ToString("N2"))
+                            </span>
 
                         </h2>
 
                     </div>
 
-                    <span class="material-symbols-outlined text-6xl text-green-600">
+                    <span
+                        class=" hidden md:inline material-symbols-outlined text-4xl lg:text-6xl text-green-600 shrink-0">
                         trending_up
                     </span>
 
@@ -175,15 +182,21 @@
                             Saídas
                         </p>
 
-                        <h2 class="text-5xl font-bold text-red-600 mt-4">
+                        <h2 class="mt-2 font-bold flex text-red-600 items-baseline gap-2 whitespace-nowrap">
 
-                            R$ @(((decimal)(ViewBag.TotalSaidas ?? 0)).ToString("N2"))
+                            <span class="text-lg sm:text-xl lg:text-2xl">
+                                R$
+                            </span>
+
+                            <span class="text-xl sm:text-3xl lg:text-5xl">
+                                @(((decimal)(ViewBag.TotalSaidas ?? 0)).ToString("N2"))
+                            </span>
 
                         </h2>
 
                     </div>
 
-                    <span class="material-symbols-outlined text-6xl text-red-600">
+                    <span class="hidden md:inline material-symbols-outlined text-4xl lg:text-6xl text-red-600 shrink-0">
                         trending_down
                     </span>
 
@@ -194,23 +207,29 @@
             <!-- SALDO -->
             <div class="bg-primary text-white rounded-3xl p-8 shadow-xl">
 
-                <div class="flex justify-between items-center">
+                <div class="flex items-start justify-between gap-4">
 
                     <div>
 
-                        <p class="opacity-80 text-lg">
+                        <p class="opacity-80 text-base sm:text-lg">
                             Saldo Atual
                         </p>
 
-                        <h2 class="text-5xl font-bold mt-4">
+                        <h2 class="mt-2 font-bold flex items-baseline gap-2 whitespace-nowrap">
 
-                            R$ @(((decimal)(ViewBag.Saldo ?? 0)).ToString("N2"))
+                            <span class="text-lg sm:text-xl lg:text-2xl">
+                                R$
+                            </span>
+
+                            <span class="text-xl sm:text-3xl lg:text-5xl">
+                                @(((decimal)(ViewBag.Saldo ?? 0)).ToString("N2"))
+                            </span>
 
                         </h2>
 
                     </div>
 
-                    <span class="material-symbols-outlined text-6xl">
+                    <span class=" hidden md:inline material-symbols-outlined text-4xl sm:text-5xl text-white">
                         account_balance_wallet
                     </span>
 
@@ -266,7 +285,7 @@
         <!-- TABELA -->
         <div class="bg-surface-container-lowest rounded-3xl shadow-xl overflow-hidden border border-outline-variant">
 
-            <div class="overflow-x-auto">
+            <div class="overflow-x-auto w-full">
 
                 <table class="w-full">
 
