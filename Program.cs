@@ -10,9 +10,9 @@ builder.Services.AddDistributedMemoryCache();
 
 builder.Services.AddSession();
 
-builder.Services.AddDataProtection()
-    .PersistKeysToFileSystem(new DirectoryInfo("/var/data/protection-keys"))
-    .SetApplicationName("PaulaPresentes");
+//builder.Services.AddDataProtection()
+//   .PersistKeysToFileSystem(new DirectoryInfo("/var/data/protection-keys"))
+//    .SetApplicationName("PaulaPresentes");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(
