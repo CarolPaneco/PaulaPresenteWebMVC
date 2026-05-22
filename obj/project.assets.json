@@ -2300,24 +2300,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alunofatec\\.nuget\\packages\\": {}
+    "C:\\Users\\Caroline\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alunofatec\\Downloads\\PaulaPresenteWebMVC\\PaulaPresentesWebMVC.csproj",
+      "projectUniqueName": "C:\\Users\\Caroline\\Downloads\\PaulaPresentes\\PaulaPresentesWebMVC.csproj",
       "projectName": "PaulaPresentesWebMVC",
-      "projectPath": "C:\\Users\\alunofatec\\Downloads\\PaulaPresenteWebMVC\\PaulaPresentesWebMVC.csproj",
-      "packagesPath": "C:\\Users\\alunofatec\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alunofatec\\Downloads\\PaulaPresenteWebMVC\\obj\\",
+      "projectPath": "C:\\Users\\Caroline\\Downloads\\PaulaPresentes\\PaulaPresentesWebMVC.csproj",
+      "packagesPath": "C:\\Users\\Caroline\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Caroline\\Downloads\\PaulaPresentes\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\alunofatec\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Caroline\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2372,7 +2380,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -4,28 +4,49 @@ using System.Security.Cryptography;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// ===============================
+// PORTA DO RAILWAY
+// ===============================
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+
+builder.WebHost.UseUrls($"http://*:{port}");
+
+// ===============================
+// SERVICES
+// ===============================
+
 builder.Services.AddControllersWithViews();
 
+// Session
 builder.Services.AddDistributedMemoryCache();
 
 builder.Services.AddSession(options =>
 {
-    options.Cookie.Name = ".PaulaPresentes.Session";
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
     options.IdleTimeout = TimeSpan.FromHours(2);
 });
 
+// Supabase Service
+builder.Services.AddSingleton<SupabaseService>();
+
+// Database PostgreSQL
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(
-        builder.Configuration.GetConnectionString("DefaultConnection")
-    ));
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        npgsqlOptions =>
+        {
+            npgsqlOptions.CommandTimeout(60);
+        }));
 
+// ===============================
+// BUILD
+// ===============================
 var app = builder.Build();
 
-var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
-
-app.Urls.Add($"http://*:{port}");
+// ===============================
+// MIDDLEWARES
+// ===============================
 
 if (!app.Environment.IsDevelopment())
 {
@@ -56,8 +77,16 @@ app.UseSession();
 
 app.UseAuthorization();
 
+// ===============================
+// ROUTES
+// ===============================
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+// ===============================
+// RUN
+// ===============================
 
 app.Run();
