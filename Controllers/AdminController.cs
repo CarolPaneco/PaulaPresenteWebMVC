@@ -730,6 +730,11 @@ namespace PaulaPresentesWebMVC.Controllers
                 viagem.CustoAlimentacao +
                 viagem.ValorTotalCompra;
 
+                viagem.DataViagem = DateTime.SpecifyKind(
+                viagem.DataViagem,
+                DateTimeKind.Utc
+            );
+
             _context.Viagem.Add(viagem);
 
             // 💸 SAÍDA NO CAIXA (VIAGEM)
