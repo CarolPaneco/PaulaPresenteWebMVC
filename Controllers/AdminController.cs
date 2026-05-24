@@ -6,16 +6,19 @@ using PaulaPresentesWebMVC.Data;
 using PaulaPresentesWebMVC.Models;
 using Microsoft.AspNetCore.Http;
 using System.Globalization;
+using System.Net.Http.Headers;
 
 namespace PaulaPresentesWebMVC.Controllers
 {
     public class AdminController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IConfiguration _configuration;
 
-        public AdminController(AppDbContext context)
+        public AdminController( AppDbContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
 
         public IActionResult Index()
@@ -79,7 +82,7 @@ namespace PaulaPresentesWebMVC.Controllers
                 estoque = produto.QuantidadeEstoque,
 
                 imagem = produto.Imagens?.FirstOrDefault() != null
-                ? "/img/produtos/" + produto.Imagens.First().CaminhoImagem
+                ? produto.Imagens.First().CaminhoImagem
                 : "/images/produto.jpg"
             });
         }
@@ -344,14 +347,11 @@ namespace PaulaPresentesWebMVC.Controllers
             // CODIGO DUPLICADO
 
             bool codigoExiste = _context.Produto
-            .Any(p =>
-
-                p.CodigoBarra == produto.CodigoBarra
-
-                &&
-
-                p.QuantidadeEstoque > 0
-            );
+                .Any(p =>
+                    p.CodigoBarra == produto.CodigoBarra
+                    &&
+                    p.QuantidadeEstoque > 0
+                );
 
             if (codigoExiste)
             {
@@ -377,19 +377,15 @@ namespace PaulaPresentesWebMVC.Controllers
 
             await _context.SaveChangesAsync();
 
-            // PASTA IMAGENS
+            // SUPABASE
 
-            string pastaImagens =
-                Path.Combine(
-                    Directory.GetCurrentDirectory(),
-                    "wwwroot/img/produtos");
+            var url = _configuration["Supabase:Url"];
 
-            if (!Directory.Exists(pastaImagens))
-            {
-                Directory.CreateDirectory(pastaImagens);
-            }
+            var key = _configuration["Supabase:Key"];
 
-            // SALVA IMAGENS
+            
+
+            // SALVA IMAGENS NO STORAGE
 
             foreach (var imagem in imagens)
             {
@@ -399,26 +395,61 @@ namespace PaulaPresentesWebMVC.Controllers
                         Guid.NewGuid().ToString()
                         + Path.GetExtension(imagem.FileName);
 
-                    string caminhoCompleto =
-                        Path.Combine(pastaImagens, nomeArquivo);
+                    using var httpClient = new HttpClient();
 
-                    using (var stream =
-                        new FileStream(caminhoCompleto, FileMode.Create))
+                    httpClient.DefaultRequestHeaders.Authorization =
+                        new AuthenticationHeaderValue("Bearer", key);
+
+                    httpClient.DefaultRequestHeaders.Add(
+                        "apikey",
+                        key
+                    );
+
+                    using var form =
+                        new MultipartFormDataContent();
+
+                    using var stream =
+                        imagem.OpenReadStream();
+
+                    using var streamContent =
+                        new StreamContent(stream);
+
+                    streamContent.Headers.ContentType =
+                        new MediaTypeHeaderValue(imagem.ContentType);
+
+                    form.Add(
+                        streamContent,
+                        "file",
+                        nomeArquivo
+                    );
+
+                    var response =
+                        await httpClient.PostAsync(
+                            $"{url}/storage/v1/object/produtos/{nomeArquivo}",
+                            form
+                        );
+
+                    if (!response.IsSuccessStatusCode)
                     {
-                        await imagem.CopyToAsync(stream);
+                        string erro =
+                            await response.Content.ReadAsStringAsync();
+
+                        throw new Exception(erro);
                     }
+
+                    string urlImagem =
+                        $"{url}/storage/v1/object/public/produtos/{nomeArquivo}";
 
                     ProdutoImagem produtoImagem =
                         new ProdutoImagem
                         {
                             IdProduto = produto.IdProduto,
-                            CaminhoImagem = nomeArquivo
+                            CaminhoImagem = urlImagem
                         };
 
                     _context.ProdutoImagem.Add(produtoImagem);
                 }
             }
-
             await _context.SaveChangesAsync();
 
             TempData["Mensagem"] =

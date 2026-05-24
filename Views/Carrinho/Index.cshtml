@@ -58,8 +58,8 @@
 
                             <img class="w-full h-full object-cover"
                                  src="@(item.Produto?.Imagens != null && item.Produto.Imagens.Any()
-                                 ? "/img/produtos/" + item.Produto.Imagens.First().CaminhoImagem
-                                 : "/images/produto.jpg")" />
+     ? item.Produto.Imagens.First().CaminhoImagem
+         : Url.Content("~/images/produto.jpg"))" />
 
                         </div>
 

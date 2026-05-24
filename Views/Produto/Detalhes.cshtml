@@ -15,8 +15,8 @@
                     foreach (var img in Model.Imagens)
                     {
                         <div class="w-16 sm:w-20 h-20 sm:h-24 border overflow-hidden rounded-lg flex-shrink-0">
-                            <img src="/img/produtos/@img.CaminhoImagem"
-                                 class="w-full h-full object-cover" />
+                            <img src="@img.CaminhoImagem"
+                        class="w-full h-full object-cover" />
                         </div>
                     }
                 }
@@ -34,9 +34,9 @@
             <div class="flex-1 aspect-[4/5] bg-gray-100 overflow-hidden rounded-xl">
 
                 <img src="@(Model.Imagens != null && Model.Imagens.Any()
-                    ? "/img/produtos/" + Model.Imagens.First().CaminhoImagem
-                    : "/images/produto.jpg")"
-                     class="w-full h-full object-cover" />
+                ? Model.Imagens.First().CaminhoImagem
+                : "/images/produto.jpg")"
+                class="w-full h-full object-cover" />
 
             </div>
 
@@ -61,7 +61,7 @@
             <div class="border-y py-4">
 
                 <p class="text-xl sm:text-2xl font-bold text-red-900">
-                    @(Model.PrecoVenda != null ? $"R$ {Model.PrecoVenda}" : "Preço indisponível")
+                    @(Model.PrecoVenda != null ? $"R$ {Model.PrecoVenda:F2}" : "Preço indisponível")
                 </p>
 
                 @{
@@ -189,9 +189,9 @@
                             <div class="aspect-[3/4] overflow-hidden rounded-xl bg-gray-100 mb-3">
 
                                 <img src="@(item.Imagens != null && item.Imagens.Any()
-                                    ? "/img/produtos/" + item.Imagens.First().CaminhoImagem
-                                    : "/images/produto.jpg")"
-                                     class="w-full h-full object-cover group-hover:scale-105 transition" />
+                                    ? item.Imagens.First().CaminhoImagem
+                                    : Url.Content("~/images/produto.jpg"))"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
                             </div>
 

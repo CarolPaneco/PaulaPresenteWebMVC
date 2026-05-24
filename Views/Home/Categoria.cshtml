@@ -121,10 +121,10 @@
                         <!-- IMAGEM -->
                         <div class="aspect-[3/4] overflow-hidden bg-neutral-100 mb-5 relative rounded-sm">
 
-                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                 src="@(item.Imagens != null && item.Imagens.Any()
-                                    ? "/img/produtos/" + item.Imagens.First().CaminhoImagem
-                                    : "/images/produto.jpg")" />
+                            <img src="@(item.Imagens != null && item.Imagens.Any()
+    ? item.Imagens.First().CaminhoImagem
+         : Url.Content("~/images/produto.jpg"))" 
+    class="w-full h-72 object-cover rounded-2xl mb-6" />
 
                         </div>
 

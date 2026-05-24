@@ -132,9 +132,9 @@
                 <div class="bg-white rounded-3xl shadow-xl p-6 flex flex-col">
 
                     <img src="@(item.Imagens != null && item.Imagens.Any()
-                                                                                                                                                 ? "/img/produtos/" + item.Imagens.First().CaminhoImagem
-                                                                                                                                                 : "/images/produto.jpg")"
-                        class="w-full h-72 object-cover rounded-2xl mb-6" />
+         ? item.Imagens.First().CaminhoImagem
+         : Url.Content("~/images/produto.jpg"))" 
+                    class="w-full h-72 object-cover rounded-2xl mb-6" />
 
                     <h2 class="text-2xl font-bold">
                         @item.Nome
@@ -177,12 +177,12 @@
                     <div class="mt-6 flex gap-2">
 
                         <button onclick="abrirEditar(
-                                        '@item.IdProduto',
-                                        '@item.Nome',
-                                        '@item.PrecoVenda',
-                                        '@item.PrecoCusto',
-                                        '@item.QuantidadeEstoque'
-                                    )" class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:opacity-90">
+                                            '@item.IdProduto',
+                                            '@item.Nome',
+                                            '@item.PrecoVenda',
+                                            '@item.PrecoCusto',
+                                            '@item.QuantidadeEstoque'
+                                        )" class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:opacity-90">
                             Editar
                         </button>
 

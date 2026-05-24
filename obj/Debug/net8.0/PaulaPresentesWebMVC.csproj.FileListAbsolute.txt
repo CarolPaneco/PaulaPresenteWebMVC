@@ -214,3 +214,8 @@ C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net8.0\refint\PaulaPresente
 C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net8.0\PaulaPresentesWebMVC.pdb
 C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net8.0\PaulaPresentesWebMVC.genruntimeconfig.cache
 C:\Users\Caroline\Downloads\PaulaPresentes\obj\Debug\net8.0\ref\PaulaPresentesWebMVC.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net8.0\MimeMapping.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net8.0\Supabase.Core.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net8.0\Supabase.Storage.dll
+C:\Users\Caroline\Downloads\PaulaPresentes\bin\Debug\net8.0\BirdMessenger.dll

@@ -187,9 +187,9 @@
                             <div class="flex gap-4">
 
                                 <img class="w-full h-full object-cover"
-                                src="@(item.Produto?.Imagens != null && item.Produto.Imagens.Any()
-                                    ? "/img/produtos/" + item.Produto.Imagens.First().CaminhoImagem
-                                    : "/images/produto.jpg")" />
+                               src="@(item.Produto?.Imagens != null && item.Produto.Imagens.Any()
+     ? item.Produto.Imagens.First().CaminhoImagem
+         : Url.Content("~/images/produto.jpg"))" />
 
                                 <div class="flex flex-col justify-between">
 

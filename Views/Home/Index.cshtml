@@ -230,6 +230,7 @@
 
         <!-- GRID -->
         <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-gutter gap-y-12">
+        
 
             @for (int i = 0; i < Model.Count; i++)
             {
@@ -241,10 +242,10 @@
 
                         <div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-4 relative">
 
-                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                src="@(item.Imagens != null && item.Imagens.Any()
-                                                                                                ? "/img/produtos/" + item.Imagens.First().CaminhoImagem
-                                                                                                : "/images/produto.jpg")" />
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-2xl mb-6"
+                            src="@(item.Imagens != null && item.Imagens.Any()
+                                ? item.Imagens.First().CaminhoImagem
+                                : Url.Content("~/images/produto.jpg"))" />
 
                     </div>
 
@@ -259,7 +260,9 @@
                         </h3>
 
                         <p class="font-body-md text-on-surface font-medium">
-                            @(item.PrecoVenda != null ? $"R$ {item.PrecoVenda}" : "Preço indisponível")
+                            @(item.PrecoVenda != null
+                            ? $"R$ {item.PrecoVenda:F2}"
+                            : "Preço indisponível")
                         </p>
 
                     </div>
