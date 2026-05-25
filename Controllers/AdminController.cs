@@ -211,22 +211,38 @@ namespace PaulaPresentesWebMVC.Controllers
                 TempData["Erro"] = "Senha de administrador incorreta!";
                 return RedirectToAction("ConsultarProdutos");
             }
-
-            var p = _context.Produto.FirstOrDefault(x => x.IdProduto == produto.IdProduto);
-
+        
+            var p = _context.Produto
+                .FirstOrDefault(x => x.IdProduto == produto.IdProduto);
+        
             if (p == null)
                 return NotFound();
-
+        
+            // Verifica se já existe OUTRO produto com o mesmo código de barras
+            // e com quantidade em estoque maior que 0
+            var codigoExistente = _context.Produto.Any(x =>
+                x.CodigoBarra == produto.CodigoBarra &&
+                x.IdProduto != produto.IdProduto &&
+                x.QuantidadeEstoque > 0
+            );
+        
+            if (codigoExistente)
+            {
+                TempData["Erro"] = "Já existe um produto com esse código de barras em estoque!";
+                return RedirectToAction("ConsultarProdutos");
+            }
+        
             p.Nome = produto.Nome;
             p.PrecoVenda = produto.PrecoVenda;
             p.PrecoCusto = produto.PrecoCusto;
             p.QuantidadeEstoque = produto.QuantidadeEstoque;
-
+            p.CodigoBarra = produto.CodigoBarra;
+        
             _context.SaveChanges();
-
+        
+            TempData["Sucesso"] = "Produto atualizado com sucesso!";
             return RedirectToAction("ConsultarProdutos");
         }
-
         public IActionResult Excluir(int id, string SenhaAdmin)
         {
             if (SenhaAdmin != "ritinha")
