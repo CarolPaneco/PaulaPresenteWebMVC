@@ -476,24 +476,30 @@ namespace PaulaPresentesWebMVC.Controllers
 
         // =========================================
         // TELA PRINCIPAL
-        // =========================================
         [HttpGet]
         public IActionResult MovimentacaoCaixa(DateTime? dataInicial, DateTime? dataFinal)
         {
             var movimentacoes = _context.MovimentacaoCaixa
                 .AsQueryable();
 
-            // FILTRO POR DATA
             if (dataInicial.HasValue)
             {
+                var inicioUtc = DateTime.SpecifyKind(
+                    dataInicial.Value,
+                    DateTimeKind.Utc);
+
                 movimentacoes = movimentacoes.Where(m =>
-                    m.DataMovimentacao >= dataInicial.Value);
+                    m.DataMovimentacao >= inicioUtc);
             }
 
             if (dataFinal.HasValue)
             {
+                var finalUtc = DateTime.SpecifyKind(
+                    dataFinal.Value,
+                    DateTimeKind.Utc);
+
                 movimentacoes = movimentacoes.Where(m =>
-                    m.DataMovimentacao <= dataFinal.Value);
+                    m.DataMovimentacao <= finalUtc);
             }
 
             movimentacoes = movimentacoes
@@ -507,7 +513,9 @@ namespace PaulaPresentesWebMVC.Controllers
                 .Where(m => m.Tipo == "SAIDA")
                 .Sum(m => m.Valor);
 
-            ViewBag.Saldo = (decimal)ViewBag.TotalEntradas - (decimal)ViewBag.TotalSaidas;
+            ViewBag.Saldo =
+                (decimal)ViewBag.TotalEntradas
+                - (decimal)ViewBag.TotalSaidas;
 
             return View(movimentacoes.ToList());
         }
