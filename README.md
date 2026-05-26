@@ -1,42 +1,48 @@
 # 🛍️ Paula Presentes - E-commerce Web
 
-Projeto em desenvolvimento de uma aplicação web completa para venda de produtos, com foco em design moderno, experiência do usuário e arquitetura escalável.
+Projeto de aplicação web completa para venda de produtos, com foco em design moderno, experiência do usuário e arquitetura escalável utilizando ASP.NET Core MVC.
+
+---
+
+## 🌐 Deploy em Produção
+
+O sistema já está **concluído e em funcionamento**, disponível publicamente no link:
+
+[paulapresentes.com](https://paulapresentes.com?utm_source=chatgpt.com)
+
+* 🛒 Acesso público ao e-commerce para clientes
+* 🔐 Área administrativa com acesso restrito apenas para funcionários da empresa
 
 ---
 
 ## 🎯 Objetivo
 
-O projeto **Paula Presentes** tem como objetivo construir uma plataforma de e-commerce funcional, permitindo:
+O projeto **Paula Presentes** tem como objetivo construir uma plataforma de e-commerce funcional e real, permitindo:
 
-- Visualização de produtos
-- Página detalhada com múltiplas imagens
-- Sistema de autenticação (login/cadastro)
-- Integração com banco de dados
-- Estrutura preparada para carrinho e finalização de compra
+* Visualização de produtos em catálogo dinâmico
+* Página detalhada de produtos com múltiplas imagens
+* Sistema de autenticação (login e cadastro de usuários)
+* Integração completa com banco de dados relacional
+* Carrinho de compras e fluxo de pedidos
+* Área administrativa para gestão da loja
 
-Além disso, o projeto busca simular um ambiente real de mercado, seguindo boas práticas de desenvolvimento.
+O sistema simula um ambiente real de mercado digital, aplicando boas práticas de desenvolvimento e arquitetura MVC.
 
 ---
 
 ## 🚧 Status do Projeto
 
-> ⚠️ Projeto em desenvolvimento
+> ✅ Projeto concluído e em produção
 
-Atualmente já possui:
+O sistema atualmente conta com:
 
-✔ Home com listagem de produtos  
-✔ Página de detalhes com carrossel de imagens  
-✔ Integração com banco de dados SQL Server  
-✔ Sistema de login e cadastro  
-✔ Estrutura MVC funcional  
-
-Próximas etapas:
-
-- 🛒 Carrinho de compras  
-- 💳 Finalização de pedido  
-- 📦 Controle de estoque  
-- 👤 Área do cliente  
-- 📊 Painel administrativo  
+✔ E-commerce funcional no ar
+✔ Página inicial com listagem dinâmica de produtos
+✔ Página de detalhes com carrossel de imagens
+✔ Sistema de login e cadastro de usuários
+✔ Estrutura MVC organizada (Models, Views e Controllers)
+✔ Carrinho de compras funcional
+✔ Área administrativa restrita para funcionários
 
 ---
 
@@ -46,95 +52,101 @@ O projeto segue o padrão:
 
 **MVC (Model - View - Controller)**
 
-- **Models:** Representação das entidades do banco de dados  
-- **Views:** Interface com o usuário (Razor + Bootstrap)  
-- **Controllers:** Lógica de negócio e fluxo da aplicação  
+* **Models:** Representam as entidades do sistema (Produto, Cliente, Pedido, etc.)
+* **Views:** Interface do usuário com Razor Pages e Bootstrap
+* **Controllers:** Regras de negócio e controle de fluxo da aplicação
 
 ---
 
 ## 💻 Tecnologias Utilizadas
 
 ### Backend
-- C#
-- ASP.NET Core MVC
-- Entity Framework Core
+
+* C#
+* ASP.NET Core MVC
+* Entity Framework Core
 
 ### Frontend
-- HTML5
-- CSS3
-- Bootstrap 5
-- Razor Pages
+
+* HTML5
+* CSS3
+* Tailwind
+* Razor Views
 
 ### Banco de Dados
-- SQL Server
+
+* PostgreSQL
 
 ---
 
 ## 🗄️ Banco de Dados
 
-O sistema está totalmente integrado com banco relacional, contendo entidades como:
+O sistema utiliza banco relacional estruturado e integrado ao Entity Framework Core, contendo:
 
-- Cliente  
-- Produto  
-- Pedido  
-- ItemVenda  
-- Pagamento  
-- ProdutoImagem (suporte a múltiplas imagens por produto)
+* Cliente
+* Produto
+* Venda
+* Item da Venda
+* Carrinho
+* Item do carrinho
+* Imagens de Produto
+* Movimentacao do Caixa
 
-A estrutura foi projetada para ser:
+---
 
-✔ Normalizada  
-✔ Escalável  
-✔ Preparada para crescimento  
+## 🧑‍💼 Área Administrativa
+
+A área administrativa é **restrita e protegida por autenticação**, permitindo apenas usuários autorizados da empresa.
+
+Funcionalidades:
+
+* Cadastro, edição e exclusão de produtos
+* Controle de estoque
+* Gerenciamento de Vendas
+* Gestão de clientes
+* Movimentação do caixa (entrada e saída)
 
 ---
 
 ## 🖼️ Funcionalidades em Destaque
 
-- 🎞️ Carrossel de imagens nos produtos  
-- 🧠 Cálculo automático de parcelamento  
-- 🎨 Interface com foco em estética moderna (tema luxo)  
-- 🔐 Sistema de autenticação com sessão  
-- 📦 Estrutura pronta para expansão (carrinho, pedidos, etc.)
+* 🎞️ Carrossel de imagens nos produtos
+* 🔐 Sistema de autenticação com controle de sessão
+* 🛒 Carrinho de compras funcional
+* 🎨 Interface moderna com foco em UX/UI
+* 🛠️ Estrutura escalável em MVC
 
 ---
 
 ## 🚀 Escalabilidade
 
-O projeto foi pensado para evolução futura, permitindo:
+O projeto foi desenvolvido para crescimento futuro, permitindo:
 
-- Integração com APIs externas  
-- Implementação de pagamentos online  
-- Expansão para mobile  
-- Separação futura em microsserviços  
-
----
-
-## 🔗 Integrações Futuras
-
-- Gateways de pagamento (ex: Stripe, Mercado Pago)  
-- Serviços de entrega  
-- APIs de autenticação  
-- Painel administrativo completo  
+* Integração com APIs externas
+* Pagamentos online (Mercado Pago, Stripe)
+* Aplicativo mobile
+* Migração para microsserviços
+* Deploy em nuvem (Azure/AWS)
 
 ---
 
 ## 🎨 Design
 
-A interface segue uma proposta:
+A interface segue uma identidade visual:
 
-- Minimalista  
-- Elegante (cores branco, preto e vinho)  
-- Inspirada em e-commerces modernos (ex: Zara, Shopee)  
+* Minimalista e elegante
+* Cores branco, preto e vinho
+* Inspiração em e-commerces modernos
+* Foco em experiência do usuário
 
 ---
 
 ## 📌 Observações
 
-Este projeto está sendo desenvolvido com foco em aprendizado prático e construção de portfólio profissional.
+Este projeto foi desenvolvido com foco em aprendizado prático, experiência real de mercado e construção de portfólio profissional.
 
 ---
 
 ## 👩‍💻 Desenvolvido por
 
-**Caroline Vitória Paneco**  
+**Caroline Vitória Paneco**
