@@ -8,128 +8,129 @@ build_property.ProjectTypeGuids =
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EntryPointFilePath = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PaulaPresentesWebMVC
 build_property.RootNamespace = PaulaPresentesWebMVC
-build_property.ProjectDir = C:\Users\Caroline\Downloads\PaulaPresentes\
+build_property.ProjectDir = C:\Users\cpane\Desktop\faculdade\Repo\PaulaPresenteWebMVC\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Caroline\Downloads\PaulaPresentes
+build_property.MSBuildProjectDirectory = C:\Users\cpane\Desktop\faculdade\Repo\PaulaPresenteWebMVC
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Admin/Clientes.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Admin/Clientes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2xpZW50ZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Admin/ConsultarEstoque.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Admin/ConsultarEstoque.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ29uc3VsdGFyRXN0b3F1ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Admin/ConsultarProdutos.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Admin/ConsultarProdutos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ29uc3VsdGFyUHJvZHV0b3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Admin/Index.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Admin/MovimentacaoCaixa.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Admin/MovimentacaoCaixa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTW92aW1lbnRhY2FvQ2FpeGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Admin/NovoProduto.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Admin/NovoProduto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTm92b1Byb2R1dG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Admin/Produtos.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Admin/Produtos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHV0b3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Admin/RegistrarVenda.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Admin/RegistrarVenda.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVnaXN0cmFyVmVuZGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Admin/RelatorioFinanceiro.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Admin/RelatorioFinanceiro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVsYXRvcmlvRmluYW5jZWlyby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Admin/Viagem.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Admin/Viagem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVmlhZ2VtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Admin/View.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Admin/View.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Carrinho/Index.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Carrinho/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FycmluaG9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Conta/Auth.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Conta/Auth.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFcQXV0aC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Conta/Cadastro.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Conta/Cadastro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFcQ2FkYXN0cm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Conta/Login.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Conta/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Conta/Perfil.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Conta/Perfil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFcUGVyZmlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Home/Categoria.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Home/Categoria.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRlZ29yaWEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Home/Index.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Home/Privacy.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Home/Sobre.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Home/Sobre.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTb2JyZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Pedido/Checkout.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Pedido/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXENoZWNrb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Produto/Detalhes.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Produto/Detalhes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xEZXRhbGhlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Produto/Index.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Produto/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Shared/Error.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/_ViewImports.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/_ViewStart.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caroline/Downloads/PaulaPresentes/Views/Shared/_Layout.cshtml]
+[C:/Users/cpane/Desktop/faculdade/Repo/PaulaPresenteWebMVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-dvf1bpj3ap

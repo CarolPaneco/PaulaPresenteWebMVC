@@ -244,8 +244,8 @@
 
                             <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-2xl mb-6"
                             src="@(item.Imagens != null && item.Imagens.Any()
-                                ? item.Imagens.First().CaminhoImagem
-                                : Url.Content("~/images/produto.jpg"))" />
+                            ? item.Imagens.First().CaminhoImagem
+                            : "/images/produto.jpg")" />
 
                     </div>
 
