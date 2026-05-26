@@ -240,14 +240,14 @@
 
                     <a href="/Produto/Detalhes/@item.IdProduto">
 
-                        <div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-4 relative">
+                        <div class="flex-1 aspect-[4/5] bg-gray-100 overflow-hidden rounded-xl">
 
-                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-2xl mb-6"
-                            src="@(item.Imagens != null && item.Imagens.Any()
-                            ? item.Imagens.First().CaminhoImagem
-                            : "/images/produto.jpg")" />
+                            <img src="@(item.Imagens != null && item.Imagens.Any()
+                            ? item.Imagens.OrderBy(x => x.IdImagem).First().CaminhoImagem
+                            : "/images/produto.jpg")"
+                            class="w-full h-full object-cover" />
 
-                    </div>
+                        </div>
 
                     <div class="flex flex-col gap-1">
 
