@@ -244,16 +244,27 @@ namespace PaulaPresentesWebMVC.Controllers
             // Verifica se já existe OUTRO produto com o mesmo código de barras
             // e com quantidade em estoque maior que 0
             var codigoExistente = _context.Produto.Any(x =>
-                x.CodigoBarra == produto.CodigoBarra &&
-                x.IdProduto != produto.IdProduto &&
-                x.QuantidadeEstoque > 0
-            );
-        
-            if (codigoExistente)
-            {
-                TempData["Erro"] = "Já existe um produto com esse código de barras em estoque!";
-                return RedirectToAction("ConsultarProdutos");
-            }
+            x.CodigoBarra == produto.CodigoBarra
+            &&
+            x.IdProduto != produto.IdProduto
+            &&
+            x.QuantidadeEstoque > 0
+            &&
+            (
+                x.Nome != produto.Nome
+                ||
+                x.Marca != produto.Marca
+                ||
+                x.PrecoVenda != produto.PrecoVenda
+            )
+        );
+
+        if (codigoExistente)
+        {
+            TempData["Erro"] = "Já existe um produto diferente usando esse código de barras!";
+            
+            return RedirectToAction("ConsultarProdutos");
+        }
         
             p.Nome = produto.Nome;
             p.PrecoVenda = produto.PrecoVenda;
