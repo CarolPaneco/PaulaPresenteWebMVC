@@ -374,13 +374,37 @@
 
                         <div class="mt-4 flex gap-4 flex-wrap">
 
-                            <span class="bg-surface-container px-4 py-2 rounded-xl text-sm">
+                            <span class="estoque-texto bg-surface-container px-4 py-2 rounded-xl text-sm">
                                 Estoque: ${produto.estoque}
                             </span>
 
-                            <span class="bg-surface-container px-4 py-2 rounded-xl text-sm font-semibold text-primary">
+                            <span class="preco-texto bg-surface-container px-4 py-2 rounded-xl text-sm font-semibold text-primary">
                                 R$ ${produto.preco}
                             </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4">
+
+                        <p class="font-semibold mb-2">
+                            Cores disponíveis
+                        </p>
+
+                        <div class="flex gap-2 flex-wrap">
+
+                            ${produto.coresDisponiveis.map(cor => `
+
+                                <button type="button"
+                                        onclick='selecionarCor(this, ${JSON.stringify(cor)})'
+                                        class="border px-4 py-2 rounded-xl hover:bg-black hover:text-white transition">
+
+                                    ${cor.cor}
+
+                                </button>
+
+                            `).join('')}
 
                         </div>
 
@@ -437,6 +461,30 @@
 
             botao.closest(".admin-card-shadow").remove();
 
+        }
+
+        function selecionarCor(botao, cor) {
+
+            const card = botao.closest(".admin-card-shadow");
+
+            // imagem
+            card.querySelector("img").src = cor.imagem;
+
+            // estoque
+            card.querySelector(".estoque-texto").innerText =
+                `Estoque: ${cor.estoque}`;
+
+            // preço
+            card.querySelector(".preco-texto").innerText =
+                `R$ ${cor.preco}`;
+
+            // hidden input
+            card.querySelector('input[name="idProduto"]').value =
+                cor.idProduto;
+
+            // quantidade max
+            card.querySelector(".quantidade-input").max =
+                cor.estoque;
         }
 
         function calcularTotal() {

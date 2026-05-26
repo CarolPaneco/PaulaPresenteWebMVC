@@ -42,7 +42,12 @@ namespace PaulaPresentesWebMVC.Controllers
         {
             var produto = _context.Produto
                 .Include(p => p.Imagens)
-                .FirstOrDefault(p => p.CodigoBarra == codigoBarra);
+                .Where(p =>
+                    p.CodigoBarra == codigoBarra
+                    &&
+                    p.QuantidadeEstoque > 0
+                )
+                .ToList();
 
             // PRODUTO NÃO EXISTE
             if (produto == null)
@@ -54,8 +59,7 @@ namespace PaulaPresentesWebMVC.Controllers
                 });
             }
 
-            // SEM ESTOQUE
-            if (produto.QuantidadeEstoque <= 0)
+            if (!produto.Any())
             {
                 return Json(new
                 {
@@ -64,26 +68,45 @@ namespace PaulaPresentesWebMVC.Controllers
                 });
             }
 
+            var produtoPrincipal = produto
+            .OrderByDescending(p => p.QuantidadeEstoque)
+            .First();
+
             // PRODUTO OK
             return Json(new
             {
                 sucesso = true,
 
-                idProduto = produto.IdProduto,
+                idProduto = produtoPrincipal.IdProduto,
 
-                nome = produto.Nome,
+                nome = produtoPrincipal.Nome,
 
-                marca = produto.Marca,
+                marca = produtoPrincipal.Marca,
 
-                cor = produto.Cor,
+                cor = produtoPrincipal.Cor,
 
-                preco = produto.PrecoVenda ?? 0,
+                preco = produtoPrincipal.PrecoVenda ?? 0,
 
-                estoque = produto.QuantidadeEstoque,
+                estoque = produtoPrincipal.QuantidadeEstoque,
 
-                imagem = produto.Imagens?.FirstOrDefault() != null
-                ? produto.Imagens.First().CaminhoImagem
-                : "/images/produto.jpg"
+                imagem = produtoPrincipal.Imagens?.FirstOrDefault() != null
+                ? produtoPrincipal.Imagens.First().CaminhoImagem
+                : "/images/produto.jpg",
+
+                coresDisponiveis = produto.Select(p => new
+                {
+                    idProduto = p.IdProduto,
+
+                    cor = p.Cor,
+
+                    estoque = p.QuantidadeEstoque,
+
+                    preco = p.PrecoVenda ?? 0,
+
+                    imagem = p.Imagens?.FirstOrDefault() != null
+                        ? p.Imagens.First().CaminhoImagem
+                        : "/images/produto.jpg"
+                })
             });
         }
 
@@ -363,15 +386,23 @@ namespace PaulaPresentesWebMVC.Controllers
             // CODIGO DUPLICADO
 
             bool codigoExiste = _context.Produto
-                .Any(p =>
-                    p.CodigoBarra == produto.CodigoBarra
-                    &&
-                    p.QuantidadeEstoque > 0
-                );
+            .Any(p =>
+                p.CodigoBarra == produto.CodigoBarra
+                &&
+                p.QuantidadeEstoque > 0
+                &&
+                (
+                    p.Nome != produto.Nome
+                    ||
+                    p.Marca != produto.Marca
+                    ||
+                    p.PrecoVenda != produto.PrecoVenda
+                )
+            );
 
             if (codigoExiste)
             {
-                ModelState.AddModelError("", "Código de barras já existe.");
+                ModelState.AddModelError("", "Código de barras já pertence a outro produto.");
             }
 
             // RETORNA VIEW
