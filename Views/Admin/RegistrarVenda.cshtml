@@ -417,14 +417,14 @@
         Quantidade
         </label>
 
-        <input type="number"
-        value="1"
-        min="1"
-        max="${produto.estoque}"
-        name="quantidade"
-        data-preco="${produto.preco}"
-        class="quantidade-input w-full rounded-2xl border border-outline-variant bg-surface p-4 mt-3 text-lg"
-        oninput="calcularTotal()">
+                <input type="number"
+                value="1"
+                min="1"
+                max="${produto.estoque}"
+                name="quantidade"
+                data-preco="${produto.preco}"
+                class="quantidade-input w-full rounded-2xl border border-outline-variant bg-surface p-4 mt-3 text-lg"
+                oninput="calcularTotal()">
 
         </div>
 
@@ -466,56 +466,61 @@
 
         function selecionarCor(botao, cor) {
 
-        const card = botao.closest(".admin-card-shadow");
+            const card = botao.closest(".admin-card-shadow");
 
-        // REMOVE seleção dos outros botões
-        card.querySelectorAll(".botao-cor").forEach(btn => {
+            // REMOVE seleção dos outros botões
+            card.querySelectorAll(".botao-cor").forEach(btn => {
 
-        btn.classList.remove(
-        "bg-[#570013]",
-        "text-white",
-        "border-[#570013]"
-        );
+                btn.classList.remove(
+                    "bg-[#570013]",
+                    "text-white",
+                    "border-[#570013]"
+                );
 
-        });
+            });
 
-        // ADICIONA seleção no botão atual
-        botao.classList.add(
-        "bg-[#570013]",
-        "text-white",
-        "border-[#570013]"
-        );
+            // ADICIONA seleção no botão atual
+            botao.classList.add(
+                "bg-[#570013]",
+                "text-white",
+                "border-[#570013]"
+            );
 
-        // IMAGEM
-        card.querySelector("img").src = cor.imagem;
+            // IMAGEM
+            card.querySelector("img").src = cor.imagem;
 
-        // ESTOQUE
-        card.querySelector(".estoque-texto").innerText =
-        `Estoque: ${cor.estoque}`;
+            // ESTOQUE
+            card.querySelector(".estoque-texto").innerText =
+                `Estoque: ${cor.estoque}`;
 
-        // PREÇO
-        card.querySelector(".preco-texto").innerText =
-        `R$ ${cor.preco}`;
+            // PREÇO
+            card.querySelector(".preco-texto").innerText =
+                `R$ ${cor.preco}`;
 
-        // COR TEXTO
-        const marca = cor.marca ?? "";
+            // TEXTO MARCA + COR
+            const marca = cor.marca ?? "";
 
-        card.querySelector(".cor-texto").innerText =
-        `${marca} • ${cor.cor}`;
+            card.querySelector(".cor-texto").innerText =
+                `${marca} • ${cor.cor}`;
 
-        // INPUT HIDDEN
-        card.querySelector('input[name="idProduto"]').value =
-        cor.idProduto;
+            // INPUT HIDDEN
+            card.querySelector('input[name="idProduto"]').value =
+                cor.idProduto;
 
-        // QUANTIDADE MAX
-        card.querySelector(".quantidade-input").max =
-        cor.estoque;
+            // INPUT QUANTIDADE
+            const inputQuantidade =
+                card.querySelector(".quantidade-input");
 
-        // PREÇO INPUT
-        card.querySelector(".quantidade-input")
-        .dataset.preco = cor.preco;
+            // ATUALIZA ESTOQUE MÁXIMO
+            inputQuantidade.max = cor.estoque;
 
-        calcularTotal();
+            // VOLTA PRA 1
+            inputQuantidade.value = 1;
+
+            // ATUALIZA PREÇO DO INPUT
+            inputQuantidade.dataset.preco = cor.preco;
+
+            calcularTotal();
         }
 
         function calcularTotal() {
