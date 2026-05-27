@@ -254,6 +254,26 @@
                         </span>
                     </a>
                 </li>
+                <li>
+                    <a href="/Home?categoria=Chaveiros" class="flex items-center gap-3 group">
+
+                        <div
+                            class="w-4 h-4 border flex items-center justify-center
+                            @(ViewBag.CategoriaSelecionada == "Chaveiros" ? "bg-primary border-primary" : "border-neutral-300")">
+
+                            @if (ViewBag.CategoriaSelecionada == "Chaveiros")
+                            {
+                                <span class="text-white text-xs">✓</span>
+                            }
+                        </div>
+
+                        <span
+                            class="font-label-caps text-label-caps
+                            @(ViewBag.CategoriaSelecionada == "Chaveiros" ? "text-primary" : "text-neutral-600 group-hover:text-primary")">
+                            Chaveiros
+                        </span>
+                    </a>
+                </li>
 
             </ul>
         </div>
@@ -267,43 +287,48 @@
             <ul class="space-y-4">
 
                 <li>
-                    <a href="/Home?preco=0-50" class="text-neutral-600 hover:text-primary transition">
-
-                        Até R$ 50
-
-                    </a>
+                    <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=0-50"
+                       class="
+                    @(ViewBag.PrecoSelecionado == "0-50"
+                              ? "text-[#570013] font-bold"
+                              : "text-neutral-600 hover:text-primary")
+                    transition" Até R$ 50 </a>
                 </li>
 
                 <li>
-                    <a href="/Home?preco=50-100" class="text-neutral-600 hover:text-primary transition">
-
-                        R$ 50 até R$ 100
-
-                    </a>
+                    <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=50-100"
+                       class="
+                    @(ViewBag.PrecoSelecionado == "0-50"
+                              ? "text-[#570013] font-bold"
+                              : "text-neutral-600 hover:text-primary")
+                    transition" R$ 50 até R$ 100 </a>
                 </li>
 
                 <li>
-                    <a href="/Home?preco=100-200" class="text-neutral-600 hover:text-primary transition">
-
-                        R$ 100 até R$ 200
-
-                    </a>
+                    <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=100-200"
+                       class="
+                    @(ViewBag.PrecoSelecionado == "0-50"
+                              ? "text-[#570013] font-bold"
+                              : "text-neutral-600 hover:text-primary")
+                    transition" R$ 100 até R$ 200 </a>
                 </li>
 
                 <li>
-                    <a href="/Home?preco=200-500" class="text-neutral-600 hover:text-primary transition">
-
-                        R$ 200 até R$ 500
-
-                    </a>
+                    <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=200-500"
+                       class="
+                    @(ViewBag.PrecoSelecionado == "0-50"
+                              ? "text-[#570013] font-bold"
+                              : "text-neutral-600 hover:text-primary")
+                    transition" R$ 200 até R$ 500 </a>
                 </li>
 
                 <li>
-                    <a href="/Home?preco=500+" class="text-neutral-600 hover:text-primary transition">
-
-                        Acima de R$ 500
-
-                    </a>
+                    <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=500+"
+                       class="
+                    @(ViewBag.PrecoSelecionado == "0-50"
+                              ? "text-[#570013] font-bold"
+                              : "text-neutral-600 hover:text-primary")
+                    transition" Acima de R$ 500 </a>
                 </li>
 
             </ul>
@@ -343,8 +368,8 @@
                 {
                     <a href="/Home?cor=@cor" class="px-4 py-2 border rounded-2xl text-sm transition
                         @(ViewBag.CorSelecionada == cor
-                            ? "bg-[#570013] text-white border-[#570013]"
-                            : "hover:bg-[#570013] hover:text-white")">
+                          ? "bg-[#570013] text-white border-[#570013]"
+                          : "hover:bg-[#570013] hover:text-white")">
 
                         @cor
 
@@ -352,6 +377,16 @@
                 }
 
             </div>
+
+        </div>
+        <div class="pt-6 border-t border-neutral-200">
+
+            <a href="/Home"
+               class="w-full flex items-center justify-center bg-[#570013] text-white px-6 py-4 rounded-2xl font-semibold hover:opacity-90 transition">
+
+                Remover Filtros
+
+            </a>
 
         </div>
 
@@ -375,15 +410,16 @@
             {
                 var item = Model[i];
 
-                <div class="produto group relative flex flex-col @(i >= 8 ? "hidden" : "")">
+                <div class="produto group relative flex flex-col @(i >= 12 ? "hidden" : "")">
 
                     <a href="/Produto/Detalhes/@item.IdProduto">
 
                         <div class="flex-1 aspect-[4/5] bg-gray-100 overflow-hidden rounded-xl">
 
                             <img src="@(item.Imagens != null && item.Imagens.Any()
-                                                             ? item.Imagens.OrderBy(x => x.IdImagem).First().CaminhoImagem
-                                                             : "/images/produto.jpg")" class="w-full h-full object-cover" />
+                                                                                                                               ? item.Imagens.OrderBy(x => x.IdImagem).First().CaminhoImagem
+                                                                                                                               : "/images/produto.jpg")"
+                 class="w-full h-full object-cover" />
 
         </div>
 
@@ -432,11 +468,11 @@
 </div>
 <script>
 
-    let quantidadeVisivel = 8;
+    let quantidadeVisivel = 12;
 
     function mostrarMais() {
 
-        quantidadeVisivel += 8;
+        quantidadeVisivel += 12;
 
         const produtos = document.querySelectorAll(".produto");
 

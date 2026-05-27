@@ -19,7 +19,11 @@ namespace PaulaPresentesWebMVC.Controllers
         }
 
         // tela principaç
-        public IActionResult Index(string categoria)
+        public IActionResult Index(
+            string categoria,
+            string cor,
+            string preco
+        )
         {
             var produto = _context.Produto
                 .Include(p => p.Imagens)
@@ -30,14 +34,57 @@ namespace PaulaPresentesWebMVC.Controllers
                 produto = produto.Where(p => p.Categoria == categoria);
             }
 
-            // 🔥 ORDENAR PELO MAIS RECENTE
             produto = produto.OrderByDescending(p => p.DataCompra);
 
-            var lista = produto.ToList();
+            if (!string.IsNullOrEmpty(cor))
+            {
+                produto = produto.Where(p =>
+                    p.Cor == cor);
+            }
+
+            // PREÇO
+            if (!string.IsNullOrEmpty(preco))
+            {
+                switch(preco)
+                {
+                    case "0-50":
+                        produto = produto.Where(p =>
+                            p.PrecoVenda <= 50);
+                        break;
+
+                    case "50-100":
+                        produto = produto.Where(p =>
+                            p.PrecoVenda >= 50
+                            &&
+                            p.PrecoVenda <= 100);
+                        break;
+
+                    case "100-200":
+                        produto = produto.Where(p =>
+                            p.PrecoVenda >= 100
+                            &&
+                            p.PrecoVenda <= 200);
+                        break;
+
+                    case "200-500":
+                        produto = produto.Where(p =>
+                            p.PrecoVenda >= 200
+                            &&
+                            p.PrecoVenda <= 500);
+                        break;
+
+                    case "500+":
+                        produto = produto.Where(p =>
+                            p.PrecoVenda >= 500);
+                        break;
+                }
+            }
 
             ViewBag.CategoriaSelecionada = categoria;
+            ViewBag.CorSelecionada = cor;
+            ViewBag.PrecoSelecionado = preco;
 
-            return View(lista);
+            return View(produto.ToList());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
