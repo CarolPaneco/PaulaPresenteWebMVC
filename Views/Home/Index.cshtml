@@ -288,47 +288,57 @@
 
                 <li>
                     <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=0-50"
-                       class="
-                    @(ViewBag.PrecoSelecionado == "0-50"
-                              ? "text-[#570013] font-bold"
-                              : "text-neutral-600 hover:text-primary")
-                    transition" Até R$ 50 </a>
+                       class="@(ViewBag.PrecoSelecionado == "0-50"
+                                           ? "text-[#570013] font-bold"
+                                           : "text-neutral-600 hover:text-primary") transition">
+
+                        Até R$ 50
+
+                    </a>
                 </li>
 
                 <li>
                     <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=50-100"
-                       class="
-                    @(ViewBag.PrecoSelecionado == "0-50"
-                              ? "text-[#570013] font-bold"
-                              : "text-neutral-600 hover:text-primary")
-                    transition" R$ 50 até R$ 100 </a>
+                       class="@(ViewBag.PrecoSelecionado == "50-100"
+                                           ? "text-[#570013] font-bold"
+                                           : "text-neutral-600 hover:text-primary") transition">
+
+                        R$ 50 até R$ 100
+
+                    </a>
                 </li>
 
                 <li>
                     <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=100-200"
-                       class="
-                    @(ViewBag.PrecoSelecionado == "0-50"
-                              ? "text-[#570013] font-bold"
-                              : "text-neutral-600 hover:text-primary")
-                    transition" R$ 100 até R$ 200 </a>
+                       class="@(ViewBag.PrecoSelecionado == "100-200"
+                                           ? "text-[#570013] font-bold"
+                                           : "text-neutral-600 hover:text-primary") transition">
+
+                        R$ 100 até R$ 200
+
+                    </a>
                 </li>
 
                 <li>
                     <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=200-500"
-                       class="
-                    @(ViewBag.PrecoSelecionado == "0-50"
-                              ? "text-[#570013] font-bold"
-                              : "text-neutral-600 hover:text-primary")
-                    transition" R$ 200 até R$ 500 </a>
+                       class="@(ViewBag.PrecoSelecionado == "200-400"
+                                           ? "text-[#570013] font-bold"
+                                           : "text-neutral-600 hover:text-primary") transition">
+
+                        R$ 200 até R$ 400
+
+                    </a>
                 </li>
 
                 <li>
                     <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=500+"
-                       class="
-                    @(ViewBag.PrecoSelecionado == "0-50"
-                              ? "text-[#570013] font-bold"
-                              : "text-neutral-600 hover:text-primary")
-                    transition" Acima de R$ 500 </a>
+                       class="@(ViewBag.PrecoSelecionado == "400+"
+                                           ? "text-[#570013] font-bold"
+                                           : "text-neutral-600 hover:text-primary") transition">
+
+                        Acima de R$ 400
+
+                    </a>
                 </li>
 
             </ul>
@@ -368,8 +378,8 @@
                 {
                     <a href="/Home?cor=@cor" class="px-4 py-2 border rounded-2xl text-sm transition
                         @(ViewBag.CorSelecionada == cor
-                          ? "bg-[#570013] text-white border-[#570013]"
-                          : "hover:bg-[#570013] hover:text-white")">
+                         ? "bg-[#570013] text-white border-[#570013]"
+                         : "hover:bg-[#570013] hover:text-white")">
 
                         @cor
 
@@ -417,8 +427,8 @@
                         <div class="flex-1 aspect-[4/5] bg-gray-100 overflow-hidden rounded-xl">
 
                             <img src="@(item.Imagens != null && item.Imagens.Any()
-                                                                                                                               ? item.Imagens.OrderBy(x => x.IdImagem).First().CaminhoImagem
-                                                                                                                               : "/images/produto.jpg")"
+                                                                                                                                                                ? item.Imagens.OrderBy(x => x.IdImagem).First().CaminhoImagem
+                                                                                                                                                                : "/images/produto.jpg")"
                  class="w-full h-full object-cover" />
 
         </div>

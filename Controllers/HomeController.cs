@@ -27,6 +27,7 @@ namespace PaulaPresentesWebMVC.Controllers
         {
             var produto = _context.Produto
                 .Include(p => p.Imagens)
+                .Where(p => p.QuantidadeEstoque > 0)
                 .AsQueryable();
 
             // CATEGORIA
