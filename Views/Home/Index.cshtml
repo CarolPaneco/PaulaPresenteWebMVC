@@ -213,7 +213,146 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="/Home?categoria=Carteira" class="flex items-center gap-3 group">
+
+                        <div
+                            class="w-4 h-4 border flex items-center justify-center
+                            @(ViewBag.CategoriaSelecionada == "Carteira" ? "bg-primary border-primary" : "border-neutral-300")">
+
+                            @if (ViewBag.CategoriaSelecionada == "Carteira")
+                            {
+                                <span class="text-white text-xs">✓</span>
+                            }
+                        </div>
+
+                        <span
+                            class="font-label-caps text-label-caps
+                            @(ViewBag.CategoriaSelecionada == "Carteira" ? "text-primary" : "text-neutral-600 group-hover:text-primary")">
+                            Carteiras
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Home?categoria=Necessaire" class="flex items-center gap-3 group">
+
+                        <div
+                            class="w-4 h-4 border flex items-center justify-center
+                            @(ViewBag.CategoriaSelecionada == "Necessaire " ? "bg-primary border-primary" : "border-neutral-300")">
+
+                            @if (ViewBag.CategoriaSelecionada == "Necessaire ")
+                            {
+                                <span class="text-white text-xs">✓</span>
+                            }
+                        </div>
+
+                        <span
+                            class="font-label-caps text-label-caps
+                            @(ViewBag.CategoriaSelecionada == "Necessaire " ? "text-primary" : "text-neutral-600 group-hover:text-primary")">
+                            Necessaire
+                        </span>
+                    </a>
+                </li>
+
             </ul>
+        </div>
+
+        <div class="mb-10">
+
+            <h3 class="font-headline-md text-headline-md mb-6 text-red-900">
+                Faixa de Preço
+            </h3>
+
+            <ul class="space-y-4">
+
+                <li>
+                    <a href="/Home?preco=0-50" class="text-neutral-600 hover:text-primary transition">
+
+                        Até R$ 50
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Home?preco=50-100" class="text-neutral-600 hover:text-primary transition">
+
+                        R$ 50 até R$ 100
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Home?preco=100-200" class="text-neutral-600 hover:text-primary transition">
+
+                        R$ 100 até R$ 200
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Home?preco=200-500" class="text-neutral-600 hover:text-primary transition">
+
+                        R$ 200 até R$ 500
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Home?preco=500+" class="text-neutral-600 hover:text-primary transition">
+
+                        Acima de R$ 500
+
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="mb-10">
+
+            <h3 class="font-headline-md text-headline-md mb-6 text-red-900">
+                Cores
+            </h3>
+
+            <div class="flex flex-wrap gap-3">
+
+                @{
+                    var cores = new List<string>
+            {
+                "Preto",
+                "Branco",
+                "Marrom",
+                "Bege",
+                "Caramelo",
+                "Off White",
+                "Rosa",
+                "Azul",
+                "Vermelho",
+                "Verde",
+                "Cinza",
+                "Dourado",
+                "Vinho",
+                "Prata",
+                "Café"
+            };
+                }
+
+                @foreach (var cor in cores)
+                {
+                    <a href="/Home?cor=@cor" class="px-4 py-2 border rounded-2xl text-sm transition
+                        @(ViewBag.CorSelecionada == cor
+                            ? "bg-[#570013] text-white border-[#570013]"
+                            : "hover:bg-[#570013] hover:text-white")">
+
+                        @cor
+
+                    </a>
+                }
+
+            </div>
+
         </div>
 
     </aside>
@@ -230,8 +369,8 @@
 
         <!-- GRID -->
         <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-gutter gap-y-12">
-        
 
+        
             @for (int i = 0; i < Model.Count; i++)
             {
                 var item = Model[i];
@@ -243,37 +382,36 @@
                         <div class="flex-1 aspect-[4/5] bg-gray-100 overflow-hidden rounded-xl">
 
                             <img src="@(item.Imagens != null && item.Imagens.Any()
-                            ? item.Imagens.OrderBy(x => x.IdImagem).First().CaminhoImagem
-                            : "/images/produto.jpg")"
-                            class="w-full h-full object-cover" />
+                                                             ? item.Imagens.OrderBy(x => x.IdImagem).First().CaminhoImagem
+                                                             : "/images/produto.jpg")" class="w-full h-full object-cover" />
 
-                        </div>
-
-                    <div class="flex flex-col gap-1">
-
-                        <span class="font-label-caps text-[10px] text-neutral-400 uppercase tracking-widest">
-                            @item.Categoria
-                        </span>
-
-                        <h3 class="font-headline-md text-body-lg text-red-900">
-                            @(string.IsNullOrEmpty(item.Nome) ? "Produto" : item.Nome)
-                        </h3>
-
-                        <p class="font-body-md text-on-surface font-medium">
-                            @(item.PrecoVenda != null
-                            ? $"R$ {item.PrecoVenda:F2}"
-                            : "Preço indisponível")
-                        </p>
-
-                    </div>
-
-                </a>
-
-            </div>
-                        }
         </div>
 
-    </section>
+        <div class="flex flex-col gap-1">
+
+            <span class="font-label-caps text-[10px] text-neutral-400 uppercase tracking-widest">
+                @item.Categoria
+            </span>
+
+            <h3 class="font-headline-md text-body-lg text-red-900">
+                @(string.IsNullOrEmpty(item.Nome) ? "Produto" : item.Nome)
+            </h3>
+
+            <p class="font-body-md text-on-surface font-medium">
+                @(item.PrecoVenda != null
+                ? $"R$ {item.PrecoVenda:F2}"
+                : "Preço indisponível")
+            </p>
+
+        </div>
+
+    </a>
+
+</div>
+                        }
+</div>
+
+</section>
 </main>
 
 <div class="mt-stack-lg flex flex-col items-center gap-6">
@@ -287,7 +425,7 @@
     </div>
 
     <button id="btnToggle" onclick="mostrarMais()"
-        class="px-6 sm:px-10 lg:px-16 py-3 sm:py-4 border border-primary text-primary font-label-caps tracking-widest hover:bg-primary hover:text-white transition-all duration-500">
+            class="px-6 sm:px-10 lg:px-16 py-3 sm:py-4 border border-primary text-primary font-label-caps tracking-widest hover:bg-primary hover:text-white transition-all duration-500">
         VER MAIS
     </button>
 
@@ -361,27 +499,26 @@
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
         <div class="relative aspect-square">
             <img class="w-full h-full object-cover"
-                data-alt="A sophisticated lifestyle editorial shot featuring a woman in a tailored camel coat walking through a modern marble hall, carrying a burgundy Paula Presentes leather tote. The lighting is soft and ethereal, capturing a moment of quiet confidence and luxury. The color palette is composed of warm neutrals and rich reds, creating a cohesive brand story of high-end, functional fashion and timeless elegance."
-                src="/img/tela/image3.png" />
+                 data-alt="A sophisticated lifestyle editorial shot featuring a woman in a tailored camel coat walking through a modern marble hall, carrying a burgundy Paula Presentes leather tote. The lighting is soft and ethereal, capturing a moment of quiet confidence and luxury. The color palette is composed of warm neutrals and rich reds, creating a cohesive brand story of high-end, functional fashion and timeless elegance."
+                 src="/img/tela/image3.png" />
         </div>
         <div class="pl-0 md:pl-16 flex flex-col items-start text-left">
             <span class="font-label-caps text-label-caps text-primary tracking-[0.4em] mb-6 block">MANIFESTO</span>
             <h2 class="font-display-lg text-xl sm:text-2xl lg:text-display-lg text-red-900 mb-8 max-w-md">Feito para os
                 que valorizam o
                 detalhe.</h2>
-            <p class="font-body-lg text-neutral-600 mb-10 max-w-lg leading-relaxed">
-                A Paula Presentes nasceu do desejo de curar o extraordinário. Cada peça em nossa coleção é selecionada
-                por sua qualidade impecável e design atemporal, transformando cada presente em uma memória eterna.
-            </p>
-            <a asp-controller="Home"
-            asp-action="Sobre"
-            class="inline-flex items-center justify-center px-6 py-3 bg-[#570013] text-white rounded-2xl font-semibold tracking-wide hover:bg-red-900 transition-all duration-300 shadow-md hover:shadow-xl">
+                <p class="font-body-lg text-neutral-600 mb-10 max-w-lg leading-relaxed">
+                    A Paula Presentes nasceu do desejo de curar o extraordinário. Cada peça em nossa coleção é selecionada
+                    por sua qualidade impecável e design atemporal, transformando cada presente em uma memória eterna.
+                </p>
+                <a asp-controller="Home" asp-action="Sobre"
+                   class="inline-flex items-center justify-center px-6 py-3 bg-[#570013] text-white rounded-2xl font-semibold tracking-wide hover:bg-red-900 transition-all duration-300 shadow-md hover:shadow-xl">
 
-                CONHEÇA NOSSA HISTÓRIA
+                    CONHEÇA NOSSA HISTÓRIA
 
-            </a>
+                </a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 </main>
