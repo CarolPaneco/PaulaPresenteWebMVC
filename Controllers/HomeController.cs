@@ -19,25 +19,73 @@ namespace PaulaPresentesWebMVC.Controllers
         }
 
         // tela principaç
-        public IActionResult Index(string categoria)
+        public IActionResult Index(
+            string categoria,
+            string cor,
+            string preco
+        )
         {
-            var produto = _context.Produto
+            var produtos = _context.Produto
                 .Include(p => p.Imagens)
                 .AsQueryable();
 
+            // CATEGORIA
             if (!string.IsNullOrEmpty(categoria))
             {
-                produto = produto.Where(p => p.Categoria == categoria);
+                produtos = produtos.Where(p =>
+                    p.Categoria == categoria);
             }
 
-            // 🔥 ORDENAR PELO MAIS RECENTE
-            produto = produto.OrderByDescending(p => p.DataCompra);
+            // COR
+            if (!string.IsNullOrEmpty(cor))
+            {
+                produtos = produtos.Where(p =>
+                    p.Cor == cor);
+            }
 
-            var lista = produto.ToList();
+            // PREÇO
+            if (!string.IsNullOrEmpty(preco))
+            {
+                switch(preco)
+                {
+                    case "0-50":
+                        produtos = produtos.Where(p =>
+                            p.PrecoVenda <= 50);
+                        break;
+
+                    case "50-100":
+                        produtos = produtos.Where(p =>
+                            p.PrecoVenda >= 50
+                            &&
+                            p.PrecoVenda <= 100);
+                        break;
+
+                    case "100-200":
+                        produtos = produtos.Where(p =>
+                            p.PrecoVenda >= 100
+                            &&
+                            p.PrecoVenda <= 200);
+                        break;
+
+                    case "200-500":
+                        produtos = produtos.Where(p =>
+                            p.PrecoVenda >= 200
+                            &&
+                            p.PrecoVenda <= 500);
+                        break;
+
+                    case "500+":
+                        produtos = produtos.Where(p =>
+                            p.PrecoVenda >= 500);
+                        break;
+                }
+            }
 
             ViewBag.CategoriaSelecionada = categoria;
+            ViewBag.CorSelecionada = cor;
+            ViewBag.PrecoSelecionado = preco;
 
-            return View(lista);
+            return View(produtos.ToList());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
