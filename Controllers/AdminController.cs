@@ -214,16 +214,14 @@ namespace PaulaPresentesWebMVC.Controllers
             if (!string.IsNullOrEmpty(pesquisa))
             {
                 produtos = produtos.Where(p =>
-
                     p.CodigoBarra.Contains(pesquisa)
-
                     || p.Cor.Contains(pesquisa)
-
                     || p.Categoria.Contains(pesquisa)
-
                     || p.Nome.Contains(pesquisa)
                 );
             }
+
+            produtos = produtos.OrderByDescending(p => p.IdProduto);
 
             return View(produtos.ToList());
         }

@@ -278,72 +278,7 @@
             </ul>
         </div>
 
-        <div class="mb-10">
-
-            <h3 class="font-headline-md text-headline-md mb-6 text-red-900">
-                Faixa de Preço
-            </h3>
-
-            <ul class="space-y-4">
-
-                <li>
-                    <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=0-50"
-                       class="@(ViewBag.PrecoSelecionado == "0-50"
-                                           ? "text-[#570013] font-bold"
-                                           : "text-neutral-600 hover:text-primary") transition">
-
-                        Até R$ 50
-
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=50-100"
-                       class="@(ViewBag.PrecoSelecionado == "50-100"
-                                           ? "text-[#570013] font-bold"
-                                           : "text-neutral-600 hover:text-primary") transition">
-
-                        R$ 50 até R$ 100
-
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=100-200"
-                       class="@(ViewBag.PrecoSelecionado == "100-200"
-                                           ? "text-[#570013] font-bold"
-                                           : "text-neutral-600 hover:text-primary") transition">
-
-                        R$ 100 até R$ 200
-
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=200-500"
-                       class="@(ViewBag.PrecoSelecionado == "200-400"
-                                           ? "text-[#570013] font-bold"
-                                           : "text-neutral-600 hover:text-primary") transition">
-
-                        R$ 200 até R$ 400
-
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=500+"
-                       class="@(ViewBag.PrecoSelecionado == "400+"
-                                           ? "text-[#570013] font-bold"
-                                           : "text-neutral-600 hover:text-primary") transition">
-
-                        Acima de R$ 400
-
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
+        
 
         <div class="mb-10">
 
@@ -389,6 +324,74 @@
             </div>
 
         </div>
+
+        <div class="mb-10">
+
+            <h3 class="font-headline-md text-headline-md mb-6 text-red-900">
+                Faixa de Preço
+            </h3>
+
+            <ul class="space-y-4">
+
+                <li>
+                    <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=0-50"
+                       class="@(ViewBag.PrecoSelecionado == "0-50"
+                                           ? "text-[#570013] font-bold"
+                                           : "text-neutral-600 hover:text-primary") transition">
+
+                        Até R$ 50
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=50-100"
+                       class="@(ViewBag.PrecoSelecionado == "50-100"
+                                           ? "text-[#570013] font-bold"
+                                           : "text-neutral-600 hover:text-primary") transition">
+
+                        R$ 50 até R$ 100
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=100-200"
+                       class="@(ViewBag.PrecoSelecionado == "100-200"
+                                           ? "text-[#570013] font-bold"
+                                           : "text-neutral-600 hover:text-primary") transition">
+
+                        R$ 100 até R$ 200
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=200-400"
+                       class="@(ViewBag.PrecoSelecionado == "200-400"
+                                           ? "text-[#570013] font-bold"
+                                           : "text-neutral-600 hover:text-primary") transition">
+
+                        R$ 200 até R$ 400
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Home?categoria=@ViewBag.CategoriaSelecionada&cor=@ViewBag.CorSelecionada&preco=400+"
+                       class="@(ViewBag.PrecoSelecionado == "400+"
+                                           ? "text-[#570013] font-bold"
+                                           : "text-neutral-600 hover:text-primary") transition">
+
+                        Acima de R$ 400
+
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
         <div class="pt-6 border-t border-neutral-200">
 
             <a href="/Home"
@@ -463,7 +466,7 @@
 <div class="mt-stack-lg flex flex-col items-center gap-6">
 
     <p class="font-label-caps text-[10px] text-neutral-400">
-        EXIBINDO <span id="contador">8</span> DE @Model.Count PRODUTOS
+        EXIBINDO <span id="contador">12</span> DE @Model.Count PRODUTOS
     </p>
 
     <div class="w-full max-w-xs h-[1px] bg-neutral-200">
