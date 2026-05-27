@@ -243,7 +243,7 @@ namespace PaulaPresentesWebMVC.Controllers
         
             // Verifica se já existe OUTRO produto com o mesmo código de barras
             // e com quantidade em estoque maior que 0
-            var codigoExistente = _context.Produto.Any(x =>
+        var codigoExistente = _context.Produto.Any(x =>
             x.CodigoBarra == produto.CodigoBarra
             &&
             x.IdProduto != produto.IdProduto
@@ -251,11 +251,9 @@ namespace PaulaPresentesWebMVC.Controllers
             x.QuantidadeEstoque > 0
             &&
             (
-                x.Nome != produto.Nome
+                x.Nome != p.Nome
                 ||
-                x.Marca != produto.Marca
-                ||
-                x.PrecoVenda != produto.PrecoVenda
+                x.Marca != p.Marca
             )
         );
 
