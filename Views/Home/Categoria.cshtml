@@ -122,7 +122,7 @@
                         <div class="aspect-[3/4] overflow-hidden bg-neutral-100 mb-5 relative rounded-sm">
 
                             <img src="@(item.Imagens != null && item.Imagens.Any()
-                            ? item.Imagens.First().CaminhoImagem
+                            ? item.Imagens.OrderBy(x => x.IdImagem).First().CaminhoImagem
                                 : Url.Content("~/images/produto.jpg"))" 
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-2xl mb-6" />
 
