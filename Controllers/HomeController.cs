@@ -29,9 +29,11 @@ namespace PaulaPresentesWebMVC.Controllers
                 .Include(p => p.Imagens)
                 .AsQueryable();
 
+            // CATEGORIA
             if (!string.IsNullOrEmpty(categoria))
             {
-                produto = produto.Where(p => p.Categoria == categoria);
+                produto = produto.Where(p =>
+                    p.Categoria == categoria);
             }
 
             produto = produto.OrderByDescending(p => p.DataCompra);
