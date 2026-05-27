@@ -99,6 +99,8 @@ namespace PaulaPresentesWebMVC.Controllers
 
                     cor = p.Cor,
 
+                    marca = p.Marca,
+
                     estoque = p.QuantidadeEstoque,
 
                     preco = p.PrecoVenda ?? 0,
