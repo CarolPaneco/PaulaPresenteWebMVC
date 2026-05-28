@@ -7,40 +7,57 @@
         <!-- GALERIA -->
         <div class="lg:col-span-7 flex flex-col md:flex-row gap-4">
 
-            <!-- THUMBNAILS -->
-            <div class="flex md:flex-col gap-3 overflow-x-auto md:overflow-y-auto md:max-h-[500px]">
+    <!-- THUMBNAILS -->
+    <div class="flex md:flex-col gap-3 overflow-x-auto md:overflow-y-auto md:max-h-[500px]">
 
-                @if (Model.Imagens != null && Model.Imagens.Any())
-                {
-                    foreach (var img in Model.Imagens)
-                    {
-                        <div class="w-16 sm:w-20 h-20 sm:h-24 border overflow-hidden rounded-lg flex-shrink-0">
-                            <img src="@img.CaminhoImagem"
-                        class="w-full h-full object-cover" />
-                        </div>
-                    }
-                }
-                else
-                {
-                    <div class="w-16 sm:w-20 h-20 sm:h-24 border overflow-hidden rounded-lg flex-shrink-0">
-                        <img src="/images/produto.jpg"
-                             class="w-full h-full object-cover" />
-                    </div>
-                }
+        @if (Model.Imagens != null && Model.Imagens.Any())
+        {
+            foreach (var img in Model.Imagens)
+            {
+                <div class="w-16 sm:w-20 h-20 sm:h-24 border overflow-hidden rounded-lg flex-shrink-0 cursor-pointer thumbnail">
 
-            </div>
+                    <img src="@img.CaminhoImagem"
+                         class="w-full h-full object-cover"
+                         onclick="trocarImagem('@img.CaminhoImagem')" />
 
-            <!-- IMAGEM PRINCIPAL -->
-            <div class="flex-1 aspect-[4/5] bg-gray-100 overflow-hidden rounded-xl">
+                </div>
+            }
+        }
+        else
+        {
+            <div class="w-16 sm:w-20 h-20 sm:h-24 border overflow-hidden rounded-lg flex-shrink-0">
 
-                <img src="@(Model.Imagens != null && Model.Imagens.Any()
-                ? Model.Imagens.First().CaminhoImagem
-                : "/images/produto.jpg")"
-                class="w-full h-full object-cover" />
+                <img src="/images/produto.jpg"
+                     class="w-full h-full object-cover" />
 
             </div>
+        }
 
-        </div>
+    </div>
+
+    <!-- IMAGEM PRINCIPAL -->
+    <div class="flex-1 aspect-[4/5] bg-gray-100 overflow-hidden rounded-xl relative">
+
+        <img id="imagemPrincipal"
+             src="@(Model.Imagens != null && Model.Imagens.Any()
+             ? Model.Imagens.First().CaminhoImagem
+             : "/images/produto.jpg")"
+             class="w-full h-full object-cover transition-all duration-300" />
+
+    </div>
+
+</div>
+
+<script>
+
+    function trocarImagem(src) {
+
+        document
+            .getElementById("imagemPrincipal")
+            .src = src;
+    }
+
+</script>
 
         <!-- INFO -->
         <div class="lg:col-span-5 flex flex-col gap-5 sm:gap-6">
