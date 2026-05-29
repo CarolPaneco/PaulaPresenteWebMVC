@@ -21,7 +21,17 @@ namespace PaulaPresentesWebMVC.Models
         [Column("total")]
         public decimal Total { get; set; }
 
+        [Column("forma_pagamento")]
+        public string? FormaPagamento { get; set; }
+
         [Column("funcionario")]
         public string? Funcionario { get; set; }
+        
+         [Column("id_cliente")]
+        public int? IdCliente { get; set; }
+
+        [ForeignKey("IdCliente")]
+        public Cliente? Cliente { get; set; }
+
     }
 }

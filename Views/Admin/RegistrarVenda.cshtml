@@ -211,17 +211,50 @@
                             Forma de Pagamento
                         </label>
 
-                        <select name="formaPagamento"
+                        <select id="formaPagamento"
+                                name="formaPagamento"
                                 class="w-full rounded-2xl border border-outline-variant bg-surface p-5 mt-3 text-lg focus:outline-none focus:border-primary">
 
                             <option>Pix</option>
                             <option>Dinheiro</option>
                             <option>Cartão Débito</option>
                             <option>Cartão Crédito</option>
+                            <option>Crediário</option>
 
                         </select>
 
                     </div>
+
+                    <div id="clienteContainer" class="hidden mt-5">
+
+    <label class="font-semibold text-lg">
+        Cliente
+    </label>
+
+    <div class="flex gap-3 mt-3">
+
+        <select name="clienteId"
+                class="flex-1 rounded-2xl border border-outline-variant bg-surface p-5 text-lg">
+
+            <option value="">Selecione um cliente</option>
+
+            @foreach (var cliente in ViewBag.Clientes)
+            {
+                <option value="@cliente.Id">
+                    @cliente.Nome
+                </option>
+            }
+
+        </select>
+
+        <a href="/Cliente/Create"
+           class="bg-primary text-white px-5 rounded-2xl flex items-center">
+            Novo Cliente
+        </a>
+
+    </div>
+
+</div>
 
                     <!-- VENDEDOR -->
                     <div>
@@ -561,6 +594,20 @@
 
         document.getElementById("total").value = total;
         }
+
+        const formaPagamento = document.getElementById("formaPagamento");
+    const clienteContainer = document.getElementById("clienteContainer");
+
+    formaPagamento.addEventListener("change", function () {
+
+        if (this.value === "Fiado") {
+            clienteContainer.classList.remove("hidden");
+        }
+        else {
+            clienteContainer.classList.add("hidden");
+        }
+
+    });
 
     </script>
 

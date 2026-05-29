@@ -115,30 +115,98 @@
         </div>
 
         <!-- GRID CLIENTES -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 
-            @foreach (var c in Model)
-            {
-                <div class="cliente-card bg-white p-5 sm:p-6 rounded-2xl shadow hover:shadow-lg transition"
-                    data-nome="@c.Nome" data-telefone="@c.Telefone"
-                    data-nascimento="@c.DataNascimento?.ToString("dd/MM/yyyy")">
+    @foreach (var c in Model)
+    {
+        <div class="cliente-card bg-white p-5 sm:p-6 rounded-2xl shadow hover:shadow-lg transition border border-gray-200"
+             data-nome="@c.Nome"
+             data-telefone="@c.Telefone"
+             data-nascimento="@c.DataNascimento?.ToString("dd/MM/yyyy")">
 
-                    <h2 class="text-lg sm:text-xl font-bold text-[#570013]">
-                        @c.Nome
-                    </h2>
+            <!-- NOME -->
+            <div class="flex items-start justify-between gap-3">
 
-                    <p class="text-sm text-gray-600 mt-2">
-                        📞 @c.Telefone
+                <h2 class="text-lg sm:text-xl font-bold text-[#570013]">
+                    @c.Nome
+                </h2>
+
+                @if (c.ValorDevido > 0)
+                {
+                    <span class="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full">
+                        DEVENDO
+                    </span>
+                }
+                else
+                {
+                    <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">
+                        EM DIA
+                    </span>
+                }
+
+            </div>
+
+            <!-- TELEFONE -->
+            <p class="text-sm text-gray-600 mt-4">
+                📞 @c.Telefone
+            </p>
+
+            <!-- NASCIMENTO -->
+            <p class="text-sm text-gray-500 mt-1">
+                🎂 @(c.DataNascimento?.ToString("dd/MM/yyyy"))
+            </p>
+
+            <!-- VALOR DEVIDO -->
+            <div class="mt-5 bg-gray-50 rounded-2xl p-4">
+
+                <p class="text-sm text-gray-500">
+                    Valor em aberto
+                </p>
+
+                @if (c.ValorDevido > 0)
+                {
+                    <p class="text-2xl font-bold text-red-600 mt-1">
+                        R$ @c.ValorDevido.ToString("N2")
                     </p>
-
-                    <p class="text-sm text-gray-500 mt-1">
-                        🎂 @(c.DataNascimento?.ToString("dd/MM/yyyy"))
+                }
+                else
+                {
+                    <p class="text-2xl font-bold text-green-600 mt-1">
+                        R$ 0,00
                     </p>
+                }
 
-                </div>
-            }
+            </div>
+
+            <!-- AÇÕES -->
+            <div class="mt-5 flex flex-col sm:flex-row gap-3">
+
+                <!-- ABATER -->
+                <a asp-controller="Cliente"
+                   asp-action="Abater"
+                   asp-route-id="@c.IdCliente"
+                   class="flex-1 text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl transition">
+
+                    Abater
+
+                </a>
+
+                <!-- HISTÓRICO -->
+                <a asp-controller="Cliente"
+                   asp-action="Historico"
+                   asp-route-id="@c.IdCliente"
+                   class="flex-1 text-center bg-[#570013] hover:bg-[#75001a] text-white font-semibold py-3 rounded-xl transition">
+
+                    Histórico
+
+                </a>
+
+            </div>
 
         </div>
+    }
+
+</div>
 
     </main>
 

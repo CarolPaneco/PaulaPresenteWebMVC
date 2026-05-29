@@ -55,6 +55,8 @@ namespace PaulaPresentesWebMVC.Models
         [Column("ativo")]
         public bool? Ativo { get; set; }
 
+        [Column("valor_devido")]
+        public decimal ValorDevido { get; set; }
 
     }
 }
