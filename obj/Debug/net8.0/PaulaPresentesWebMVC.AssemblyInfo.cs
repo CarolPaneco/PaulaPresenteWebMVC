@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PaulaPresentesWebMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab8e9d8b43de120133494f7856c35e947b6c6381")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20350b072ccebb891e5e250b9615dcc4276448e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("PaulaPresentesWebMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PaulaPresentesWebMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
