@@ -117,137 +117,135 @@ namespace PaulaPresentesWebMVC.Controllers
         // FINALIZAR VENDA
         // ============================
         [HttpPost]
-public IActionResult FinalizarVenda(
-    List<int> idProduto,
-    List<int> quantidade,
-    string subtotal,
-    string desconto,
-    string total,
-    string formaPagamento,
-    string vendedor,
-    int? clienteId)
-{
-    // =========================
-    // CONVERSÕES
-    // =========================
-
-    decimal subtotalConvertido =
-        decimal.Parse(subtotal, CultureInfo.InvariantCulture);
-
-    decimal descontoConvertido =
-        decimal.Parse(desconto, CultureInfo.InvariantCulture);
-
-    decimal totalConvertido =
-        decimal.Parse(total, CultureInfo.InvariantCulture);
-
-    // =========================
-    // CRIAR VENDA
-    // =========================
-
-    var venda = new Venda
-    {
-        DataVenda = DateTime.UtcNow,
-        Subtotal = subtotalConvertido,
-        Desconto = descontoConvertido,
-        Total = totalConvertido,
-        FormaPagamento = formaPagamento,
-        Funcionario = vendedor,
-        IdCliente = clienteId
-    };
-
-    _context.Venda.Add(venda);
-
-    // Salva primeiro para gerar IdVenda
-    _context.SaveChanges();
-
-    // =========================
-    // CREDIÁRIO
-    // =========================
-
-    if (formaPagamento == "Crediario" && clienteId.HasValue)
-    {
-        var cliente = _context.Cliente
-            .FirstOrDefault(c => c.IdCliente == clienteId.Value);
-
-        if (cliente != null)
+        public IActionResult FinalizarVenda(
+            List<int> idProduto,
+            List<int> quantidade,
+            string subtotal,
+            string desconto,
+            string total,
+            string formaPagamento,
+            string vendedor,
+            int? clienteId)
         {
-            cliente.ValorDevido += totalConvertido;
+            // =========================
+            // CONVERSÕES
+            // =========================
+
+            decimal subtotalConvertido =
+                decimal.Parse(subtotal, CultureInfo.InvariantCulture);
+
+            decimal descontoConvertido =
+                decimal.Parse(desconto, CultureInfo.InvariantCulture);
+
+            decimal totalConvertido =
+                decimal.Parse(total, CultureInfo.InvariantCulture);
+
+            // =========================
+            // CRIAR VENDA
+            // =========================
+
+            var venda = new Venda
+            {
+                DataVenda = DateTime.UtcNow,
+                Subtotal = subtotalConvertido,
+                Desconto = descontoConvertido,
+                Total = totalConvertido,
+                FormaPagamento = formaPagamento,
+                Funcionario = vendedor,
+                IdCliente = clienteId
+            };
+
+            _context.Venda.Add(venda);
+
+            // Salva primeiro para gerar IdVenda
+            _context.SaveChanges();
+
+            // =========================
+            // CREDIÁRIO
+            // =========================
+
+            if (formaPagamento == "Crediario" && clienteId.HasValue)
+            {
+                var cliente = _context.Cliente
+                    .FirstOrDefault(c => c.IdCliente == clienteId.Value);
+
+                if (cliente != null)
+                {
+                    cliente.ValorDevido += totalConvertido;
+                }
+            }
+
+            // =========================
+            // ITENS DA VENDA
+            // =========================
+
+            for (int i = 0; i < idProduto.Count; i++)
+            {
+                var produto = _context.Produto
+                    .FirstOrDefault(p => p.IdProduto == idProduto[i]);
+
+                if (produto == null)
+                    continue;
+
+                // Atualiza estoque
+                produto.QuantidadeEstoque -= quantidade[i];
+
+                // Atualiza quantidade vendida
+                produto.QuantidadeVendida += quantidade[i];
+
+                // Cria item da venda
+                var vendaItem = new VendaItem
+                {
+                    IdVenda = venda.IdVenda,
+                    IdProduto = produto.IdProduto,
+                    Quantidade = quantidade[i],
+                    PrecoUnitario = produto.PrecoVenda ?? 0,
+                    Subtotal = (produto.PrecoVenda ?? 0) * quantidade[i]
+                };
+
+                _context.VendaItem.Add(vendaItem);
+            }
+
+            // =========================
+            // MOVIMENTAÇÃO DE CAIXA
+            // =========================
+
+            var entradaCaixa = new MovimentacaoCaixa
+            {
+                Tipo = "ENTRADA",
+                Categoria = "Venda",
+                Descricao =
+                    $"Venda #{venda.IdVenda} - {vendedor} - {formaPagamento}",
+
+                Valor = totalConvertido,
+                DataMovimentacao = DateTime.UtcNow
+            };
+
+            _context.MovimentacaoCaixa.Add(entradaCaixa);
+
+            // =========================
+            // HISTÓRICO RECENTE
+            // =========================
+
+            var historico = _context.MovimentacaoCaixa
+                .OrderByDescending(m => m.DataMovimentacao)
+                .Take(3)
+                .ToList();
+
+            ViewBag.Historico = historico;
+
+            // =========================
+            // SALVAR ALTERAÇÕES
+            // =========================
+
+            _context.SaveChanges();
+
+            // =========================
+            // REDIRECIONAR
+            // =========================
+
+            return RedirectToAction("RegistrarVenda");
         }
-    }
-
-    // =========================
-    // ITENS DA VENDA
-    // =========================
-
-    for (int i = 0; i < idProduto.Count; i++)
-    {
-        var produto = _context.Produto
-            .FirstOrDefault(p => p.IdProduto == idProduto[i]);
-
-        if (produto == null)
-            continue;
-
-        // Atualiza estoque
-        produto.QuantidadeEstoque -= quantidade[i];
-
-        // Atualiza quantidade vendida
-        produto.QuantidadeVendida += quantidade[i];
-
-        // Cria item da venda
-        var vendaItem = new VendaItem
-        {
-            IdVenda = venda.IdVenda,
-            IdProduto = produto.IdProduto,
-            Quantidade = quantidade[i],
-            PrecoUnitario = produto.PrecoVenda ?? 0,
-            Subtotal = (produto.PrecoVenda ?? 0) * quantidade[i]
-        };
-
-        _context.VendaItem.Add(vendaItem);
-    }
-
-    // =========================
-    // MOVIMENTAÇÃO DE CAIXA
-    // =========================
-
-    var entradaCaixa = new MovimentacaoCaixa
-    {
-        Tipo = "ENTRADA",
-        Categoria = "Venda",
-        Descricao =
-            $"Venda #{venda.IdVenda} - {vendedor} - {formaPagamento}",
-
-        Valor = totalConvertido,
-        DataMovimentacao = DateTime.UtcNow
-    };
-
-    _context.MovimentacaoCaixa.Add(entradaCaixa);
-
-    // =========================
-    // HISTÓRICO RECENTE
-    // =========================
-
-    var historico = _context.MovimentacaoCaixa
-        .OrderByDescending(m => m.DataMovimentacao)
-        .Take(3)
-        .ToList();
-
-    ViewBag.Historico = historico;
-
-    // =========================
-    // SALVAR ALTERAÇÕES
-    // =========================
-
-    _context.SaveChanges();
-
-    // =========================
-    // REDIRECIONAR
-    // =========================
-
-    return RedirectToAction("RegistrarVenda");
-}
-
-
 
         public IActionResult Produtos()
         {

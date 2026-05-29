@@ -264,9 +264,125 @@
 
                             </select>
 
-                            <a href="/Cliente/Create" class="bg-primary text-white px-5 rounded-2xl flex items-center">
+                            <!-- BOTÃO -->
+                            <button type="button" onclick="abrirModalCliente()"
+                                    class="bg-primary text-white px-5 rounded-2xl flex items-center justify-center">
+
                                 Novo Cliente
-                            </a>
+
+                            </button>
+
+                            <!-- MODAL -->
+                            <div id="modalCliente"
+                                 class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+
+                                <div class="bg-white rounded-3xl w-full max-w-lg p-8">
+
+                                    <!-- TOPO -->
+                                    <div class="flex items-center justify-between mb-6">
+
+                                        <div>
+
+                                            <h2 class="text-3xl font-bold text-[#570013]">
+                                                Novo Cliente
+                                            </h2>
+
+                                            <p class="text-gray-500 mt-1">
+                                                Cadastro rápido para crediário
+                                            </p>
+
+                                        </div>
+
+                                        <button type="button" onclick="fecharModalCliente()"
+                                                class="text-3xl text-gray-500 hover:text-black">
+
+                                            ✕
+
+                                        </button>
+
+                                    </div>
+
+                                    <!-- FORM -->
+                                    <form method="post" action="/Cliente/Create">
+
+                                        <!-- NOME -->
+                                        <div class="mb-5">
+
+                                            <label class="font-semibold text-lg">
+                                                Nome *
+                                            </label>
+
+                                            <input type="text" name="Nome" required
+                                                   class="w-full rounded-2xl border border-outline-variant p-4 mt-2 focus:outline-none focus:border-primary">
+
+                                        </div>
+
+                                        <!-- TELEFONE -->
+                                        <div class="mb-5">
+
+                                            <label class="font-semibold text-lg">
+                                                Telefone *
+                                            </label>
+
+                                            <input type="text" name="Telefone" required
+                                                   class="w-full rounded-2xl border border-outline-variant p-4 mt-2 focus:outline-none focus:border-primary">
+
+                                        </div>
+
+                                        <!-- NASCIMENTO -->
+                                        <div class="mb-8">
+
+                                            <label class="font-semibold text-lg">
+                                                Data de Nascimento
+                                            </label>
+
+                                            <input type="date" name="DataNascimento"
+                                                   class="w-full rounded-2xl border border-outline-variant p-4 mt-2 focus:outline-none focus:border-primary">
+
+                                        </div>
+
+                                        <!-- BOTÕES -->
+                                        <div class="flex gap-4">
+
+                                            <button type="button" onclick="fecharModalCliente()"
+                                                    class="flex-1 border border-gray-300 py-4 rounded-2xl font-semibold hover:bg-gray-100 transition">
+
+                                                Cancelar
+
+                                            </button>
+
+                                            <button type="submit"
+                                                    class="flex-1 bg-primary text-white py-4 rounded-2xl font-semibold hover:opacity-90 transition">
+
+                                                Cadastrar
+
+                                            </button>
+
+                                        </div>
+
+                                    </form>
+
+                                </div>
+
+                            </div>
+
+                            <script>
+
+                                function abrirModalCliente() {
+
+                                document.getElementById("modalCliente")
+                                .classList.remove("hidden");
+
+                                }
+
+                                function fecharModalCliente() {
+
+                                document.getElementById("modalCliente")
+                                .classList.add("hidden");
+
+                                }
+
+                            </script>
 
                         </div>
 
@@ -612,67 +728,67 @@
         }
 
         // =========================
-    // MOSTRAR CLIENTE NO CREDIÁRIO
-    // =========================
+        // MOSTRAR CLIENTE NO CREDIÁRIO
+        // =========================
 
-    const formaPagamento =
+        const formaPagamento =
         document.getElementById("formaPagamento");
 
-    const clienteContainer =
+        const clienteContainer =
         document.getElementById("clienteContainer");
 
-    formaPagamento.addEventListener("change", function () {
+        formaPagamento.addEventListener("change", function () {
 
         if (this.value === "Crediário") {
-            clienteContainer.classList.remove("hidden");
+        clienteContainer.classList.remove("hidden");
         }
         else {
-            clienteContainer.classList.add("hidden");
+        clienteContainer.classList.add("hidden");
         }
 
-    });
+        });
 
-    // =========================
-    // VALIDAR VENDA
-    // =========================
+        // =========================
+        // VALIDAR VENDA
+        // =========================
 
-    function validarVenda() {
+        function validarVenda() {
 
         const produtos =
-            document.querySelectorAll("#listaProdutos .produto-item");
+        document.querySelectorAll("#listaProdutos .produto-item");
 
         // VERIFICA PRODUTOS
         if (produtos.length === 0) {
 
-            alert("Adicione pelo menos um produto na venda.");
+        alert("Adicione pelo menos um produto na venda.");
 
-            return false;
+        return false;
         }
 
         // VERIFICA PAGAMENTO
         if (formaPagamento.value === "") {
 
-            alert("Selecione a forma de pagamento.");
+        alert("Selecione a forma de pagamento.");
 
-            return false;
+        return false;
         }
 
         // VERIFICA CLIENTE NO CREDIÁRIO
         if (formaPagamento.value === "Crediário") {
 
-            const cliente =
-                document.querySelector("[name='clienteId']");
+        const cliente =
+        document.querySelector("[name='clienteId']");
 
-            if (cliente.value === "") {
+        if (cliente.value === "") {
 
-                alert("Selecione um cliente para o crediário.");
+        alert("Selecione um cliente para o crediário.");
 
-                return false;
-            }
+        return false;
+        }
         }
 
         return true;
-    }
+        }
 
     </script>
 
