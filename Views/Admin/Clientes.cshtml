@@ -14,30 +14,30 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap"
-        rel="stylesheet" />
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
 
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
     <script>
         tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#570013",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-container": "#eeeeee",
-                        "on-surface": "#1b1b1b",
-                        "on-surface-variant": "#584141",
-                        outline: "#8c7071"
-                    },
-                    fontFamily: {
-                        body: ["Inter"],
-                        headline: ["Noto Serif"]
-                    }
-                }
-            }
+        darkMode: "class",
+        theme: {
+        extend: {
+        colors: {
+        primary: "#570013",
+        "surface-container-lowest": "#ffffff",
+        "surface-container": "#eeeeee",
+        "on-surface": "#1b1b1b",
+        "on-surface-variant": "#584141",
+        outline: "#8c7071"
+        },
+        fontFamily: {
+        body: ["Inter"],
+        headline: ["Noto Serif"]
+        }
+        }
+        }
         }
     </script>
 </head>
@@ -78,10 +78,10 @@
             <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
 
                 <input id="searchInput" onkeyup="filtrarClientes()" placeholder="Buscar cliente..."
-                    class="border rounded-xl px-4 py-2 w-full sm:w-72 focus:outline-none" />
+                       class="border rounded-xl px-4 py-2 w-full sm:w-72 focus:outline-none" />
 
                 <button onclick="abrirModal()"
-                    class="bg-[#570013] text-white px-5 py-2 rounded-xl font-semibold hover:opacity-90 w-full sm:w-auto">
+                        class="bg-[#570013] text-white px-5 py-2 rounded-xl font-semibold hover:opacity-90 w-full sm:w-auto">
                     + Novo Cliente
                 </button>
 
@@ -103,7 +103,7 @@
                 foreach (var c in (List<Cliente>)ViewBag.Aniversariantes)
                 {
                     <span class="font-bold">@c.Nome</span>
-            
+
                     <br />
                 }
             }
@@ -115,98 +115,282 @@
         </div>
 
         <!-- GRID CLIENTES -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 
-    @foreach (var c in Model)
-    {
-        <div class="cliente-card bg-white p-5 sm:p-6 rounded-2xl shadow hover:shadow-lg transition border border-gray-200"
-             data-nome="@c.Nome"
-             data-telefone="@c.Telefone"
-             data-nascimento="@c.DataNascimento?.ToString("dd/MM/yyyy")">
+            @foreach (var c in Model)
+            {
+                <div class="cliente-card bg-white p-5 sm:p-6 rounded-2xl shadow hover:shadow-lg transition border border-gray-200"
+                     data-nome="@c.Nome" data-telefone="@c.Telefone"
+                     data-nascimento="@c.DataNascimento?.ToString("dd/MM/yyyy")">
 
-            <!-- NOME -->
-            <div class="flex items-start justify-between gap-3">
+                    <!-- TOPO -->
+                    <div class="flex items-start justify-between gap-3">
 
-                <h2 class="text-lg sm:text-xl font-bold text-[#570013]">
-                    @c.Nome
-                </h2>
+                        <h2 class="text-lg sm:text-xl font-bold text-[#570013]">
+                            @c.Nome
+                        </h2>
 
-                @if (c.ValorDevido > 0)
-                {
-                    <span class="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full">
-                        DEVENDO
-                    </span>
-                }
-                else
-                {
-                    <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">
-                        EM DIA
-                    </span>
-                }
+                        @if (c.ValorDevido > 0)
+                        {
+                            <span class="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full">
+                                DEVENDO
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">
+                                EM DIA
+                            </span>
+                        }
 
-            </div>
+                    </div>
 
-            <!-- TELEFONE -->
-            <p class="text-sm text-gray-600 mt-4">
-                📞 @c.Telefone
-            </p>
-
-            <!-- NASCIMENTO -->
-            <p class="text-sm text-gray-500 mt-1">
-                🎂 @(c.DataNascimento?.ToString("dd/MM/yyyy"))
-            </p>
-
-            <!-- VALOR DEVIDO -->
-            <div class="mt-5 bg-gray-50 rounded-2xl p-4">
-
-                <p class="text-sm text-gray-500">
-                    Valor em aberto
-                </p>
-
-                @if (c.ValorDevido > 0)
-                {
-                    <p class="text-2xl font-bold text-red-600 mt-1">
-                        R$ @c.ValorDevido.ToString("N2")
+                    <!-- TELEFONE -->
+                    <p class="text-sm text-gray-600 mt-4">
+                        📞 @c.Telefone
                     </p>
-                }
-                else
-                {
-                    <p class="text-2xl font-bold text-green-600 mt-1">
-                        R$ 0,00
+
+                    <!-- NASCIMENTO -->
+                    <p class="text-sm text-gray-500 mt-1">
+                        🎂 @(c.DataNascimento?.ToString("dd/MM/yyyy"))
                     </p>
-                }
 
-            </div>
+                    <!-- MOSTRA SOMENTE SE ESTIVER DEVENDO -->
+                    @if (c.ValorDevido > 0)
+                    {
+                        <!-- VALOR -->
+                        <div class="mt-5 bg-red-50 rounded-2xl p-4 border border-red-100">
 
-            <!-- AÇÕES -->
-            <div class="mt-5 flex flex-col sm:flex-row gap-3">
+                            <p class="text-sm text-red-500">
+                                Valor em aberto
+                            </p>
 
-                <!-- ABATER -->
-                <a asp-controller="Cliente"
-                   asp-action="Abater"
-                   asp-route-id="@c.IdCliente"
-                   class="flex-1 text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl transition">
+                            <p class="text-3xl font-bold text-red-600 mt-1">
+                                R$ @c.ValorDevido.ToString("N2")
+                            </p>
 
-                    Abater
+                        </div>
 
-                </a>
+                        <!-- BOTÕES -->
+                        <div class="mt-5 flex flex-col sm:flex-row gap-3">
+
+                            <!-- VISUALIZAR CONTA -->
+                            <button type="button" onclick="abrirConta(
+                                '@c.IdCliente',
+                                '@c.Nome',
+                                '@c.ValorDevido.ToString("N2")'
+                                )"
+                                    class="flex-1 bg-[#570013] hover:bg-[#75001a] text-white font-semibold py-3 rounded-xl transition">
+
+                                Visualizar Conta
+
+                            </button>
+
+                            <!-- ABATER -->
+                            <button type="button" onclick="abrirAbater(
+                                '@c.IdCliente',
+                                '@c.Nome',
+                                '@c.ValorDevido'
+                                )"
+                                    class="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl transition">
+
+                                Abater
+
+                            </button>
+
+                        </div>
+                    }
+
+                </div>
+            }
+
+        </div>
+
+        <!-- MODAL CONTA -->
+        <div id="modalConta" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+
+            <div class="bg-white rounded-3xl w-full max-w-4xl p-8 max-h-[90vh] overflow-y-auto">
+
+                <div class="flex items-center justify-between mb-6">
+
+                    <div>
+                        <h2 id="nomeClienteConta" class="text-3xl font-bold text-[#570013]">
+                        </h2>
+
+                        <p class="text-gray-500 mt-1">
+                            Histórico do crediário
+                        </p>
+                    </div>
+
+                    <button onclick="fecharConta()" class="text-3xl">
+                        ✕
+                    </button>
+
+                </div>
+
+                <!-- VALOR -->
+                <div class="bg-red-50 border border-red-100 rounded-2xl p-5 mb-6">
+
+                    <p class="text-sm text-red-500">
+                        Valor em aberto
+                    </p>
+
+                    <h2 id="valorConta" class="text-4xl font-bold text-red-600">
+                    </h2>
+
+                </div>
 
                 <!-- HISTÓRICO -->
-                <a asp-controller="Cliente"
-                   asp-action="Historico"
-                   asp-route-id="@c.IdCliente"
-                   class="flex-1 text-center bg-[#570013] hover:bg-[#75001a] text-white font-semibold py-3 rounded-xl transition">
+                <div class="space-y-4">
 
-                    Histórico
+                    <!-- EXEMPLO -->
+                    <div class="border rounded-2xl p-4">
 
-                </a>
+                        <div class="flex justify-between">
+
+                            <div>
+                                <h3 class="font-bold">
+                                    Venda no crediário
+                                </h3>
+
+                                <p class="text-sm text-gray-500">
+                                    Funcionário: Carol
+                                </p>
+
+                                <p class="text-sm text-gray-500">
+                                    29/05/2026 14:30
+                                </p>
+                            </div>
+
+                            <span class="text-red-600 font-bold">
+                                + R$ 120,00
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- PAGAMENTO -->
+                    <div class="border rounded-2xl p-4 bg-green-50">
+
+                        <div class="flex justify-between">
+
+                            <div>
+                                <h3 class="font-bold">
+                                    Pagamento
+                                </h3>
+
+                                <p class="text-sm text-gray-500">
+                                    Pix
+                                </p>
+
+                                <p class="text-sm text-gray-500">
+                                    29/05/2026 18:15
+                                </p>
+                            </div>
+
+                            <span class="text-green-600 font-bold">
+                                - R$ 50,00
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
-    }
 
-</div>
+        <!-- MODAL ABATER -->
+        <div id="modalAbater" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+
+            <div class="bg-white rounded-3xl w-full max-w-lg p-8">
+
+                <div class="flex items-center justify-between mb-6">
+
+                    <h2 class="text-3xl font-bold text-[#570013]">
+                        Abater Valor
+                    </h2>
+
+                    <button onclick="fecharAbater()" class="text-3xl">
+                        ✕
+                    </button>
+
+                </div>
+
+                <form method="post" action="/Cliente/Abater">
+
+                    <input type="hidden" name="idCliente" id="abaterClienteId">
+
+                    <input type="hidden" id="valorMaximo">
+
+                    <!-- CLIENTE -->
+                    <div class="mb-5">
+
+                        <label class="font-semibold">
+                            Cliente
+                        </label>
+
+                        <input type="text" id="abaterClienteNome" readonly
+                               class="w-full rounded-2xl border p-4 mt-2 bg-gray-100">
+
+                    </div>
+
+                    <!-- VALOR -->
+                    <div class="mb-5">
+
+                        <label class="font-semibold">
+                            Valor
+                        </label>
+
+                        <input type="number" step="0.01" name="valor" id="valorAbater" required
+                               class="w-full rounded-2xl border p-4 mt-2">
+
+                    </div>
+
+                    <!-- PAGAMENTO -->
+                    <div class="mb-6">
+
+                        <label class="font-semibold">
+                            Meio de pagamento
+                        </label>
+
+                        <select name="formaPagamento" required class="w-full rounded-2xl border p-4 mt-2">
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option>
+                                Pix
+                            </option>
+
+                            <option>
+                                Dinheiro
+                            </option>
+
+                            <option>
+                                Cartão Débito
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <button type="submit"
+                            class="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-2xl font-bold">
+
+                        Confirmar Pagamento
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
 
     </main>
 
@@ -233,7 +417,7 @@
                 <div class="flex flex-col sm:flex-row justify-end gap-3 pt-4">
 
                     <button type="button" onclick="fecharModal()"
-                        class="px-4 py-2 bg-gray-300 rounded-xl w-full sm:w-auto">
+                            class="px-4 py-2 bg-gray-300 rounded-xl w-full sm:w-auto">
                         Cancelar
                     </button>
 
@@ -252,46 +436,128 @@
     <script>
 
         function abrirModal() {
-            document.getElementById("modalCliente").classList.remove("hidden");
+        document.getElementById("modalCliente").classList.remove("hidden");
         }
 
         function fecharModal() {
-            document.getElementById("modalCliente").classList.add("hidden");
+        document.getElementById("modalCliente").classList.add("hidden");
         }
 
         function filtrarClientes() {
-            let input = document.getElementById("searchInput").value.toLowerCase();
-            let cards = document.querySelectorAll(".cliente-card");
+        let input = document.getElementById("searchInput").value.toLowerCase();
+        let cards = document.querySelectorAll(".cliente-card");
 
-            cards.forEach(card => {
-                let nome = card.dataset.nome.toLowerCase();
-                let tel = card.dataset.telefone.toLowerCase();
-                let nasc = card.dataset.nascimento.toLowerCase();
+        cards.forEach(card => {
+        let nome = card.dataset.nome.toLowerCase();
+        let tel = card.dataset.telefone.toLowerCase();
+        let nasc = card.dataset.nascimento.toLowerCase();
 
-                card.style.display =
-                    nome.includes(input) || tel.includes(input) || nasc.includes(input)
-                        ? "block"
-                        : "none";
-            });
+        card.style.display =
+        nome.includes(input) || tel.includes(input) || nasc.includes(input)
+        ? "block"
+        : "none";
+        });
         }
 
 
-function validarFormulario() {
+        function validarFormulario() {
 
-    const nome = document.getElementById("nome").value.trim();
-    const telefone = document.getElementById("telefone").value.trim();
-    const nascimento = document.getElementById("nascimento").value;
+        const nome = document.getElementById("nome").value.trim();
+        const telefone = document.getElementById("telefone").value.trim();
+        const nascimento = document.getElementById("nascimento").value;
 
-    const erro = document.getElementById("erroForm");
+        const erro = document.getElementById("erroForm");
 
-    if (nome === "" || telefone === "" || nascimento === "") {
+        if (nome === "" || telefone === "" || nascimento === "") {
         erro.classList.remove("hidden");
         return false; // bloqueia envio
-    }
+        }
 
-    erro.classList.add("hidden");
-    return true; // permite envio
-}
+        erro.classList.add("hidden");
+        return true; // permite envio
+        }
+
+
+
+        // =========================
+        // MODAL CONTA
+        // =========================
+
+        function abrirConta(id, nome, valor) {
+
+        document.getElementById("modalConta")
+        .classList.remove("hidden");
+
+        document.getElementById("nomeClienteConta")
+        .innerText = nome;
+
+        document.getElementById("valorConta")
+        .innerText = "R$ " + valor;
+
+        // AQUI VOCÊ PODE BUSCAR VIA AJAX
+        // O HISTÓRICO REAL DO CLIENTE
+
+        }
+
+        function fecharConta() {
+
+        document.getElementById("modalConta")
+        .classList.add("hidden");
+
+        }
+
+        // =========================
+        // MODAL ABATER
+        // =========================
+
+        function abrirAbater(id, nome, valorDevido) {
+
+        document.getElementById("modalAbater")
+        .classList.remove("hidden");
+
+        document.getElementById("abaterClienteId")
+        .value = id;
+
+        document.getElementById("abaterClienteNome")
+        .value = nome;
+
+        document.getElementById("valorMaximo")
+        .value = valorDevido;
+
+        }
+
+        function fecharAbater() {
+
+        document.getElementById("modalAbater")
+        .classList.add("hidden");
+
+        }
+
+        // =========================
+        // VALIDAR VALOR
+        // =========================
+
+        document.getElementById("valorAbater")
+        .addEventListener("input", function () {
+
+        const maximo =
+        parseFloat(
+        document.getElementById("valorMaximo").value
+        );
+
+        const valor =
+        parseFloat(this.value);
+
+        if (valor > maximo) {
+
+        alert("O valor não pode ser maior que a dívida.");
+
+        this.value = maximo;
+
+        }
+
+        });
+
 
     </script>
 

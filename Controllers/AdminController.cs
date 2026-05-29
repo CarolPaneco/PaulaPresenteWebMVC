@@ -161,10 +161,10 @@ public IActionResult FinalizarVenda(
     _context.SaveChanges();
 
     // =========================
-    // FIADO / CREDIÁRIO
+    // CREDIÁRIO
     // =========================
 
-    if (formaPagamento == "Fiado" && clienteId.HasValue)
+    if (formaPagamento == "Crediario" && clienteId.HasValue)
     {
         var cliente = _context.Cliente
             .FirstOrDefault(c => c.IdCliente == clienteId.Value);
@@ -939,5 +939,89 @@ public IActionResult FinalizarVenda(
             return RedirectToAction("Clientes");
         }
 
+        [HttpPost]
+        public IActionResult Abater(
+            int idCliente,
+            decimal valor,
+            string formaPagamento)
+        {
+            // =========================
+            // BUSCAR CLIENTE
+            // =========================
+
+            var cliente = _context.Cliente
+                .FirstOrDefault(c => c.IdCliente == idCliente);
+
+            if (cliente == null)
+            {
+                TempData["Erro"] = "Cliente não encontrado.";
+
+                return RedirectToAction("Index");
+            }
+
+            // =========================
+            // VALIDAR VALOR
+            // =========================
+
+            if (valor <= 0)
+            {
+                TempData["Erro"] = "Valor inválido.";
+
+                return RedirectToAction("Index");
+            }
+
+            if (valor > cliente.ValorDevido)
+            {
+                TempData["Erro"] =
+                    "O valor não pode ser maior que a dívida.";
+
+                return RedirectToAction("Index");
+            }
+
+            // =========================
+            // ABATER VALOR
+            // =========================
+
+            cliente.ValorDevido -= valor;
+
+            // Evita negativo
+            if (cliente.ValorDevido < 0)
+            {
+                cliente.ValorDevido = 0;
+            }
+
+            // =========================
+            // MOVIMENTAÇÃO DE CAIXA
+            // =========================
+
+            var entradaCaixa = new MovimentacaoCaixa
+            {
+                Tipo = "ENTRADA",
+
+                Categoria = "Crediario",
+
+                Descricao =
+                    $"Pagamento crediário - {cliente.Nome} - {formaPagamento}",
+
+                Valor = valor,
+
+                DataMovimentacao = DateTime.UtcNow
+            };
+
+            _context.MovimentacaoCaixa.Add(entradaCaixa);
+
+            // =========================
+            // SALVAR
+            // =========================
+
+            _context.SaveChanges();
+
+            TempData["Sucesso"] =
+                "Pagamento realizado com sucesso.";
+
+            return RedirectToAction("Index");
+        }
+
     }
+    
 }

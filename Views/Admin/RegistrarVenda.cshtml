@@ -151,7 +151,7 @@
 
         </section>
 
-        <form method="post" action="/Admin/FinalizarVenda">
+        <form method="post" action="/Admin/FinalizarVenda" onsubmit="return validarVenda()">
 
             <!-- ADICIONAR PRODUTO -->
             <div
@@ -211,15 +211,32 @@
                             Forma de Pagamento
                         </label>
 
-                        <select id="formaPagamento"
-                                name="formaPagamento"
+                        <select id="formaPagamento" name="formaPagamento" required
                                 class="w-full rounded-2xl border border-outline-variant bg-surface p-5 mt-3 text-lg focus:outline-none focus:border-primary">
 
-                            <option>Pix</option>
-                            <option>Dinheiro</option>
-                            <option>Cartão Débito</option>
-                            <option>Cartão Crédito</option>
-                            <option>Crediário</option>
+                            <option value="" selected disabled>
+                                Selecione a forma de pagamento
+                            </option>
+
+                            <option value="Pix">
+                                Pix
+                            </option>
+
+                            <option value="Dinheiro">
+                                Dinheiro
+                            </option>
+
+                            <option value="Cartão Débito">
+                                Cartão Débito
+                            </option>
+
+                            <option value="Cartão Crédito">
+                                Cartão Crédito
+                            </option>
+
+                            <option value="Crediário">
+                                Crediário
+                            </option>
 
                         </select>
 
@@ -227,34 +244,33 @@
 
                     <div id="clienteContainer" class="hidden mt-5">
 
-    <label class="font-semibold text-lg">
-        Cliente
-    </label>
+                        <label class="font-semibold text-lg">
+                            Cliente
+                        </label>
 
-    <div class="flex gap-3 mt-3">
+                        <div class="flex gap-3 mt-3">
 
-        <select name="clienteId"
-                class="flex-1 rounded-2xl border border-outline-variant bg-surface p-5 text-lg">
+                            <select name="clienteId"
+                                    class="flex-1 rounded-2xl border border-outline-variant bg-surface p-5 text-lg">
 
-            <option value="">Selecione um cliente</option>
+                                <option value="">Selecione um cliente</option>
 
-            @foreach (var cliente in ViewBag.Clientes)
-            {
-                <option value="@cliente.IdCliente">
-                    @cliente.Nome
-                </option>
-            }
+                                @foreach (var cliente in ViewBag.Clientes)
+                                {
+                                    <option value="@cliente.IdCliente">
+                                        @cliente.Nome
+                                    </option>
+                                }
 
-        </select>
+                            </select>
 
-        <a href="/Cliente/Create"
-           class="bg-primary text-white px-5 rounded-2xl flex items-center">
-            Novo Cliente
-        </a>
+                            <a href="/Cliente/Create" class="bg-primary text-white px-5 rounded-2xl flex items-center">
+                                Novo Cliente
+                            </a>
 
-    </div>
+                        </div>
 
-</div>
+                    </div>
 
                     <!-- VENDEDOR -->
                     <div>
@@ -392,7 +408,7 @@
 
         const html = `
 
-        <div class="bg-surface-container-lowest rounded-3xl p-6 border border-outline-variant admin-card-shadow">
+        <div class="produto-item bg-surface-container-lowest rounded-3xl p-6 border border-outline-variant admin-card-shadow">
 
         <div class="flex flex-col lg:flex-row gap-4 lg:gap-8 items-start lg:items-center gap-8 items-center">
 
@@ -431,20 +447,20 @@
 
         <div class="flex gap-2 flex-wrap">
 
-            ${produto.coresDisponiveis.map(cor => `
+        ${produto.coresDisponiveis.map(cor => `
 
-                <button type="button"
-                        onclick='selecionarCor(this, ${JSON.stringify(cor)})'
-                        class="botao-cor border px-5 py-3 text-sm font-medium rounded-2xl transition
-                        ${cor.cor == produto.cor 
-                            ? 'bg-[#570013] text-white border-[#570013]' 
-                            : 'hover:bg-[#570013] hover:text-white'}">
+        <button type="button"
+        onclick='selecionarCor(this, ${JSON.stringify(cor)})'
+        class="botao-cor border px-5 py-3 text-sm font-medium rounded-2xl transition
+        ${cor.cor == produto.cor
+        ? 'bg-[#570013] text-white border-[#570013]'
+        : 'hover:bg-[#570013] hover:text-white'}">
 
-                    ${cor.cor}
+        ${cor.cor}
 
-                </button>
+        </button>
 
-            `).join('')}
+        `).join('')}
 
         </div>
 
@@ -454,14 +470,14 @@
         Quantidade
         </label>
 
-                <input type="number"
-                value="1"
-                min="1"
-                max="${produto.estoque}"
-                name="quantidade"
-                data-preco="${produto.preco}"
-                class="quantidade-input w-full rounded-2xl border border-outline-variant bg-surface p-4 mt-3 text-lg"
-                oninput="calcularTotal()">
+        <input type="number"
+        value="1"
+        min="1"
+        max="${produto.estoque}"
+        name="quantidade"
+        data-preco="${produto.preco}"
+        class="quantidade-input w-full rounded-2xl border border-outline-variant bg-surface p-4 mt-3 text-lg"
+        oninput="calcularTotal()">
 
         </div>
 
@@ -503,61 +519,61 @@
 
         function selecionarCor(botao, cor) {
 
-            const card = botao.closest(".admin-card-shadow");
+        const card = botao.closest(".admin-card-shadow");
 
-            // REMOVE seleção dos outros botões
-            card.querySelectorAll(".botao-cor").forEach(btn => {
+        // REMOVE seleção dos outros botões
+        card.querySelectorAll(".botao-cor").forEach(btn => {
 
-                btn.classList.remove(
-                    "bg-[#570013]",
-                    "text-white",
-                    "border-[#570013]"
-                );
+        btn.classList.remove(
+        "bg-[#570013]",
+        "text-white",
+        "border-[#570013]"
+        );
 
-            });
+        });
 
-            // ADICIONA seleção no botão atual
-            botao.classList.add(
-                "bg-[#570013]",
-                "text-white",
-                "border-[#570013]"
-            );
+        // ADICIONA seleção no botão atual
+        botao.classList.add(
+        "bg-[#570013]",
+        "text-white",
+        "border-[#570013]"
+        );
 
-            // IMAGEM
-            card.querySelector("img").src = cor.imagem;
+        // IMAGEM
+        card.querySelector("img").src = cor.imagem;
 
-            // ESTOQUE
-            card.querySelector(".estoque-texto").innerText =
-                `Estoque: ${cor.estoque}`;
+        // ESTOQUE
+        card.querySelector(".estoque-texto").innerText =
+        `Estoque: ${cor.estoque}`;
 
-            // PREÇO
-            card.querySelector(".preco-texto").innerText =
-                `R$ ${cor.preco}`;
+        // PREÇO
+        card.querySelector(".preco-texto").innerText =
+        `R$ ${cor.preco}`;
 
-            // TEXTO MARCA + COR
-            const marca = cor.marca ?? "";
+        // TEXTO MARCA + COR
+        const marca = cor.marca ?? "";
 
-            card.querySelector(".cor-texto").innerText =
-                `${marca} • ${cor.cor}`;
+        card.querySelector(".cor-texto").innerText =
+        `${marca} • ${cor.cor}`;
 
-            // INPUT HIDDEN
-            card.querySelector('input[name="idProduto"]').value =
-                cor.idProduto;
+        // INPUT HIDDEN
+        card.querySelector('input[name="idProduto"]').value =
+        cor.idProduto;
 
-            // INPUT QUANTIDADE
-            const inputQuantidade =
-                card.querySelector(".quantidade-input");
+        // INPUT QUANTIDADE
+        const inputQuantidade =
+        card.querySelector(".quantidade-input");
 
-            // ATUALIZA ESTOQUE MÁXIMO
-            inputQuantidade.max = cor.estoque;
+        // ATUALIZA ESTOQUE MÁXIMO
+        inputQuantidade.max = cor.estoque;
 
-            // VOLTA PRA 1
-            inputQuantidade.value = 1;
+        // VOLTA PRA 1
+        inputQuantidade.value = 1;
 
-            // ATUALIZA PREÇO DO INPUT
-            inputQuantidade.dataset.preco = cor.preco;
+        // ATUALIZA PREÇO DO INPUT
+        inputQuantidade.dataset.preco = cor.preco;
 
-            calcularTotal();
+        calcularTotal();
         }
 
         function calcularTotal() {
@@ -595,12 +611,19 @@
         document.getElementById("total").value = total;
         }
 
-        const formaPagamento = document.getElementById("formaPagamento");
-    const clienteContainer = document.getElementById("clienteContainer");
+        // =========================
+    // MOSTRAR CLIENTE NO CREDIÁRIO
+    // =========================
+
+    const formaPagamento =
+        document.getElementById("formaPagamento");
+
+    const clienteContainer =
+        document.getElementById("clienteContainer");
 
     formaPagamento.addEventListener("change", function () {
 
-        if (this.value === "Fiado") {
+        if (this.value === "Crediário") {
             clienteContainer.classList.remove("hidden");
         }
         else {
@@ -608,6 +631,48 @@
         }
 
     });
+
+    // =========================
+    // VALIDAR VENDA
+    // =========================
+
+    function validarVenda() {
+
+        const produtos =
+            document.querySelectorAll("#listaProdutos .produto-item");
+
+        // VERIFICA PRODUTOS
+        if (produtos.length === 0) {
+
+            alert("Adicione pelo menos um produto na venda.");
+
+            return false;
+        }
+
+        // VERIFICA PAGAMENTO
+        if (formaPagamento.value === "") {
+
+            alert("Selecione a forma de pagamento.");
+
+            return false;
+        }
+
+        // VERIFICA CLIENTE NO CREDIÁRIO
+        if (formaPagamento.value === "Crediário") {
+
+            const cliente =
+                document.querySelector("[name='clienteId']");
+
+            if (cliente.value === "") {
+
+                alert("Selecione um cliente para o crediário.");
+
+                return false;
+            }
+        }
+
+        return true;
+    }
 
     </script>
 

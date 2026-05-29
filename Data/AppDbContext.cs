@@ -15,6 +15,7 @@ namespace PaulaPresentesWebMVC.Data
         public DbSet<Cupom> Cupom { get; set; }
         public DbSet<Venda> Venda { get; set; }
         public DbSet<VendaItem> VendaItem { get; set; }
+        public DbSet<HistoricoCrediario> HistoricoCrediario { get; set; }
         public DbSet<Viagem> Viagem { get; set; }
         public DbSet<MovimentacaoCaixa> MovimentacaoCaixa { get; set; }
         public DbSet<MovimentacaoEstoque> MovimentacaoEstoque { get; set; }
