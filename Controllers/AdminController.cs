@@ -1020,6 +1020,52 @@ namespace PaulaPresentesWebMVC.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public IActionResult Create(
+            string nome,
+            string telefone,
+            DateTime? dataNascimento)
+        {
+            // =========================
+            // VALIDAÇÕES
+            // =========================
+
+            if (string.IsNullOrWhiteSpace(nome))
+            {
+                TempData["Erro"] = "O nome é obrigatório.";
+
+                return RedirectToAction("Index");
+            }
+
+            if (string.IsNullOrWhiteSpace(telefone))
+            {
+                TempData["Erro"] = "O telefone é obrigatório.";
+
+                return RedirectToAction("Index");
+            }
+
+            // =========================
+            // CRIAR CLIENTE
+            // =========================
+
+            var cliente = new Cliente
+            {
+                Nome = nome,
+                Telefone = telefone,
+                DataNascimento = dataNascimento,
+                ValorDevido = 0
+            };
+
+            _context.Cliente.Add(cliente);
+
+            _context.SaveChanges();
+
+            TempData["Sucesso"] =
+                "Cliente cadastrado com sucesso.";
+
+            return RedirectToAction("Index");
+        }
+
     }
     
 }
