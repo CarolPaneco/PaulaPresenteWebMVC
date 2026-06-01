@@ -1034,14 +1034,26 @@ namespace PaulaPresentesWebMVC.Controllers
             {
                 TempData["Erro"] = "O nome é obrigatório.";
 
-                return RedirectToAction("Index");
+                return RedirectToAction("RegistrarVenda");
             }
 
             if (string.IsNullOrWhiteSpace(telefone))
             {
                 TempData["Erro"] = "O telefone é obrigatório.";
 
-                return RedirectToAction("Index");
+                return RedirectToAction("RegistrarVenda");
+            }
+
+            DateTime? dataNascimentoUtc = dataNascimento.HasValue
+            ? DateTime.SpecifyKind(dataNascimento.Value.Date, DateTimeKind.Utc)
+            : null;
+
+            if (dataNascimento.HasValue)
+            {
+                dataNascimentoUtc = DateTime.SpecifyKind(
+                    dataNascimento.Value,
+                    DateTimeKind.Utc
+                );
             }
 
             // =========================
@@ -1052,7 +1064,7 @@ namespace PaulaPresentesWebMVC.Controllers
             {
                 Nome = nome,
                 Telefone = telefone,
-                DataNascimento = dataNascimento,
+                DataNascimento = dataNascimentoUtc,
                 ValorDevido = 0
             };
 
@@ -1063,7 +1075,7 @@ namespace PaulaPresentesWebMVC.Controllers
             TempData["Sucesso"] =
                 "Cliente cadastrado com sucesso.";
 
-            return RedirectToAction("Index");
+            return RedirectToAction("RegistrarVenda");
         }
 
     }
