@@ -607,10 +607,11 @@
 
                     </div>
 
-                    <div class="mt-4">
+                    <div class="mt-4 flex flex-col items-start gap-4">
 
+                        <div>
                             <p class="font-semibold mb-2">
-                            Cores disponíveis
+                                Cores disponíveis
                             </p>
 
                             <div class="flex gap-2 flex-wrap">
@@ -628,25 +629,23 @@
 
                                     </button>
 
-                                `).join('')
-                                }
-                            </div>
+                                `).join('')}
 
+                            </div>
                         </div>
 
-                    <div>
+                        <div class="pt-2">
+                            <input type="hidden"
+                                name="idProduto"
+                                value="${produto.idProduto}">
 
-                        <input type="hidden"
-                               name="idProduto"
-                               value="${produto.idProduto}">
+                            <button type="button"
+                                    onclick="removerProduto(this)"
+                                    class="bg-red-600 hover:bg-red-700 text-white px-6 py-4 rounded-2xl font-semibold transition-all">
 
-                        <button type="button"
-                                onclick="removerProduto(this)"
-                                class="bg-red-600 hover:bg-red-700 text-white px-6 py-4 rounded-2xl font-semibold transition-all">
-
-                            Remover
-
-                        </button>
+                                Remover
+                            </button>
+                        </div>
 
                     </div>
 
