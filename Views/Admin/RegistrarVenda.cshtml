@@ -586,6 +586,33 @@
 
                         </div>
 
+                        <div class="mt-4">
+
+                            <p class="font-semibold mb-2">
+                            Cores disponíveis
+                            </p>
+
+                            <div class="flex gap-2 flex-wrap">
+
+                                ${produto.coresDisponiveis.map(cor => `
+
+                                    <button type="button"
+                                            onclick='selecionarCor(this, ${JSON.stringify(cor)})'
+                                            class="botao-cor border px-5 py-3 text-sm font-medium rounded-2xl transition
+                                            ${cor.cor == produto.cor 
+                                                ? 'bg-[#570013] text-white border-[#570013]' 
+                                                : 'hover:bg-[#570013] hover:text-white'}">
+
+                                        ${cor.cor}
+
+                                    </button>
+
+                                `).join('')
+                                }
+                            </div>
+
+                        </div>
+
                         <div class="mt-5">
 
                             <label class="font-semibold">
