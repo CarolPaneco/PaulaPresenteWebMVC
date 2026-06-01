@@ -954,7 +954,7 @@ namespace PaulaPresentesWebMVC.Controllers
             {
                 TempData["Erro"] = "Cliente não encontrado.";
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Clientes");
             }
 
             // =========================
@@ -1017,7 +1017,7 @@ namespace PaulaPresentesWebMVC.Controllers
             TempData["Sucesso"] =
                 "Pagamento realizado com sucesso.";
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Clientes");
         }
 
         [HttpPost]
