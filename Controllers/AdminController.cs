@@ -7,6 +7,7 @@ using PaulaPresentesWebMVC.Models;
 using Microsoft.AspNetCore.Http;
 using System.Globalization;
 using System.Net.Http.Headers;
+using System.Text.Json;
 
 namespace PaulaPresentesWebMVC.Controllers
 {
@@ -210,18 +211,21 @@ namespace PaulaPresentesWebMVC.Controllers
             // MOVIMENTAÇÃO DE CAIXA
             // =========================
 
-            var entradaCaixa = new MovimentacaoCaixa
-            {
-                Tipo = "ENTRADA",
-                Categoria = "Venda",
-                Descricao =
-                    $"Venda #{venda.IdVenda} - {vendedor} - {formaPagamento}",
+            if (formaPagamento != "Crediario")
+                {
+                    var entradaCaixa = new MovimentacaoCaixa
+                    {
+                        Tipo = "ENTRADA",
+                        Categoria = "Venda",
+                        Descricao =
+                            $"Venda #{venda.IdVenda} - {vendedor} - {formaPagamento}",
 
-                Valor = totalConvertido,
-                DataMovimentacao = DateTime.UtcNow
-            };
+                        Valor = totalConvertido,
+                        DataMovimentacao = DateTime.UtcNow
+                    };
 
-            _context.MovimentacaoCaixa.Add(entradaCaixa);
+                    _context.MovimentacaoCaixa.Add(entradaCaixa);
+                }
 
             // =========================
             // HISTÓRICO RECENTE
@@ -778,6 +782,55 @@ namespace PaulaPresentesWebMVC.Controllers
 
             ViewBag.DataFinal = fim.ToString("yyyy-MM-dd");
 
+            var quantidadeDias = (fim.Date - inicio.Date).Days + 1;
+
+            var dadosGrafico = Enumerable.Range(0, quantidadeDias)
+                .Select(i =>
+                {
+                    var data = inicio.Date.AddDays(i);
+
+                    decimal entradaDia = movimentacoes
+                        .Where(m =>
+                            m.Tipo == "ENTRADA" &&
+                            m.DataMovimentacao.Date == data)
+                        .Sum(m => m.Valor);
+
+                    decimal saidaDia = movimentacoes
+                        .Where(m =>
+                            m.Tipo == "SAIDA" &&
+                            m.DataMovimentacao.Date == data)
+                        .Sum(m => m.Valor);
+
+                    return new
+                    {
+                        Data = data.ToString("dd/MM"),
+                        Entradas = entradaDia,
+                        Saidas = saidaDia
+                    };
+                })
+                .ToList();
+
+                decimal margemLucro = 0;
+
+if (faturamento > 0)
+{
+    margemLucro = (lucro / faturamento) * 100;
+}
+
+                ViewBag.GraficoLabels =
+                JsonSerializer.Serialize(
+                    dadosGrafico.Select(x => x.Data));
+
+            ViewBag.GraficoEntradas =
+                JsonSerializer.Serialize(
+                    dadosGrafico.Select(x => x.Entradas));
+
+            ViewBag.GraficoSaidas =
+                JsonSerializer.Serialize(
+                    dadosGrafico.Select(x => x.Saidas));
+
+                    ViewBag.MargemLucro = margemLucro;
+
             return View();
         }
 
@@ -1077,6 +1130,63 @@ namespace PaulaPresentesWebMVC.Controllers
 
             return RedirectToAction("RegistrarVenda");
         }
+
+        [HttpGet]
+public JsonResult CalcularPrecoSugerido(decimal precoCusto)
+{
+    try
+    {
+        var inicio = DateTime.UtcNow.AddDays(-30);
+
+        var movimentacoes = _context.MovimentacaoCaixa
+            .Where(m => m.DataMovimentacao >= inicio)
+            .AsNoTracking()
+            .ToList();
+
+        decimal entradas = movimentacoes
+            .Where(m => m.Tipo == "ENTRADA")
+            .Sum(m => m.Valor);
+
+        decimal saidas = movimentacoes
+            .Where(m => m.Tipo == "SAIDA")
+            .Sum(m => m.Valor);
+
+        decimal percentualDespesas = 0;
+
+        if (entradas > 0)
+        {
+            percentualDespesas = saidas / entradas;
+        }
+
+        decimal custoOperacional =
+            precoCusto * percentualDespesas;
+
+        decimal custoReal =
+            precoCusto + custoOperacional;
+
+        decimal margemLucro = 80m;
+
+        decimal precoSugerido =
+            custoReal * (1 + margemLucro / 100);
+
+        return Json(new
+        {
+            percentualDespesas = Math.Round(percentualDespesas * 100, 2),
+            custoOperacional = Math.Round(custoOperacional, 2),
+            custoReal = Math.Round(custoReal, 2),
+            margemLucro,
+            precoSugerido = Math.Round(precoSugerido, 2)
+        });
+    }
+    catch (Exception ex)
+    {
+        return Json(new
+        {
+            erro = ex.Message,
+            stack = ex.StackTrace
+        });
+    }
+}
 
     }
     

@@ -104,7 +104,7 @@
 </form>
 
 <!-- CARDS -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10 sm:mb-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-12">
 
     <!-- FATURAMENTO -->
     <div class="bg-[#570013] text-white rounded-3xl p-6 sm:p-8 shadow-xl">
@@ -135,17 +135,6 @@
 
         <h2 class="text-2xl sm:text-3xl lg:text-5xl font-bold text-red-600 mt-3">
             R$ @(((decimal)(ViewBag.Saidas ?? 0)).ToString("N2"))
-        </h2>
-
-    </div>
-
-    <!-- TICKET -->
-    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl">
-
-        <p class="text-gray-500 text-sm sm:text-lg">Ticket Médio</p>
-
-        <h2 class="text-2xl sm:text-3xl lg:text-5xl font-bold mt-3">
-            R$ @(((decimal)(ViewBag.TicketMedio ?? 0)).ToString("N2"))
         </h2>
 
     </div>
@@ -204,59 +193,68 @@
 
 </div>
 
-<!-- GRID -->
+<!-- GRID FINANCEIRO -->
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
 
-    <!-- MAIS VENDIDOS -->
+    <!-- FLUXO DE CAIXA -->
     <div class="bg-white rounded-3xl shadow-xl p-6 sm:p-10">
 
-        <h2 class="text-xl sm:text-3xl font-bold mb-6">Produtos Mais Vendidos</h2>
+        <h2 class="text-xl sm:text-3xl font-bold mb-8">
+            Fluxo de Caixa
+        </h2>
 
-        <div class="space-y-4">
+        <div class="space-y-5">
 
-            @foreach (var produto in produtosMaisVendidos)
-            {
-                <div class="flex justify-between items-center border-b pb-3">
+            <div class="flex justify-between items-center">
 
-                    <div>
-                        <h3 class="text-sm sm:text-xl font-bold">@produto.Nome</h3>
-                        <p class="text-xs sm:text-sm text-gray-500">@produto.Categoria</p>
-                    </div>
+                <span class="text-base sm:text-xl">
+                    Entradas
+                </span>
 
-                    <span class="bg-[#570013] text-white px-3 sm:px-5 py-2 rounded-2xl text-xs sm:text-sm font-bold">
-                        @produto.QuantidadeVendida
-                    </span>
+                <span class="font-bold text-green-600 text-lg sm:text-2xl">
+                    R$ @(((decimal)(ViewBag.Entradas ?? 0)).ToString("N2"))
+                </span>
 
-                </div>
-            }
+            </div>
+
+            <div class="flex justify-between items-center">
+
+                <span class="text-base sm:text-xl">
+                    Saídas
+                </span>
+
+                <span class="font-bold text-red-600 text-lg sm:text-2xl">
+                    R$ @(((decimal)(ViewBag.Saidas ?? 0)).ToString("N2"))
+                </span>
+
+            </div>
+
+
+            <div class="flex justify-between items-center">
+
+                <span class="font-bold text-lg sm:text-2xl">
+                    Saldo
+                </span>
+
+                <span class="font-bold text-[#570013] text-xl sm:text-3xl">
+                    R$ @(((decimal)(ViewBag.Lucro ?? 0)).ToString("N2"))
+                </span>
+
+            </div>
 
         </div>
 
     </div>
 
-    <!-- ESTOQUE -->
+<!-- GRÁFICO -->
     <div class="bg-white rounded-3xl shadow-xl p-6 sm:p-10">
 
-        <h2 class="text-xl sm:text-3xl font-bold mb-6 text-red-600">Estoque Baixo</h2>
+        <h2 class="text-xl sm:text-3xl font-bold mb-8">
+            Fluxo Financeiro do Período
+        </h2>
 
-        <div class="space-y-4">
-
-            @foreach (var produto in estoqueBaixo)
-            {
-                <div class="flex justify-between items-center border-b pb-3">
-
-                    <div>
-                        <h3 class="text-sm sm:text-xl font-bold">@produto.Nome</h3>
-                        <p class="text-xs sm:text-sm text-gray-500">@produto.CodigoBarra</p>
-                    </div>
-
-                    <span class="bg-red-100 text-red-700 px-3 sm:px-5 py-2 rounded-2xl text-xs sm:text-sm font-bold">
-                        @produto.QuantidadeEstoque
-                    </span>
-
-                </div>
-            }
-
+        <div style="height:400px;">
+            <canvas id="graficoVendas"></canvas>
         </div>
 
     </div>
@@ -264,6 +262,46 @@
 </div>
 
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+    const labels = @Html.Raw(ViewBag.GraficoLabels);
+
+    const entradas = @Html.Raw(ViewBag.GraficoEntradas);
+
+    const saidas = @Html.Raw(ViewBag.GraficoSaidas);
+
+    new Chart(
+        document.getElementById('graficoVendas'),
+        {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Entradas',
+                        data: entradas,
+                        borderWidth: 3,
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Saídas',
+                        data: saidas,
+                        borderWidth: 3,
+                        tension: 0.4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        }
+    );
+
+</script>
 
 </body>
 </html>

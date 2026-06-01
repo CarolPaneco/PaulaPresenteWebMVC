@@ -231,35 +231,65 @@
 
                     </div>
 
-                    <!-- PREÇO VENDA -->
-                    <div>
-
-                        <label class="font-semibold">
-                            Preço Venda
-                        </label>
-
-                        <input asp-for="PrecoVenda"
-                               type="number"
-                               step="0.01"
-                               min="0"
-                               required
-                               class="w-full border border-gray-300 rounded-2xl p-4 mt-3" />
-
-                    </div>
-
                     <!-- PREÇO CUSTO -->
                     <div>
-
                         <label class="font-semibold">
                             Preço Custo
                         </label>
 
                         <input asp-for="PrecoCusto"
-                               type="number"
-                               step="0.01"
-                               min="0"
-                               required
-                               class="w-full border border-gray-300 rounded-2xl p-4 mt-3" />
+                            id="precoCusto"
+                            type="number"
+                            step="0.01"
+                            min="0"
+                            required
+                            class="w-full border border-gray-300 rounded-2xl p-4 mt-3" />
+                    </div>
+
+                    <div>
+                        <label class="font-semibold">
+                            Preço Venda
+                        </label>
+
+                        <input asp-for="PrecoVenda"
+                            id="precoVenda"
+                            type="number"
+                            step="0.01"
+                            min="0"
+                            required
+                            class="w-full border border-gray-300 rounded-2xl p-4 mt-3" />
+                    </div>
+
+                    <div class="bg-blue-50 border border-blue-300 rounded-2xl p-5 mt-4">
+
+                        <h3 class="font-bold mb-3">
+                            Cálculo automático
+                        </h3>
+
+                        <p>
+                            Despesas operacionais:
+                            <span id="percentualDespesas">0%</span>
+                        </p>
+
+                        <p>
+                            Custo operacional:
+                            R$ <span id="custoOperacional">0,00</span>
+                        </p>
+
+                        <p>
+                            Custo real:
+                            R$ <span id="custoReal">0,00</span>
+                        </p>
+
+                        <p>
+                            Margem aplicada:
+                            <span id="margemLucro">80%</span>
+                        </p>
+
+                        <p class="font-bold text-green-700 mt-2">
+                            Preço sugerido:
+                            R$ <span id="precoSugerido">0,00</span>
+                        </p>
 
                     </div>
 
@@ -523,6 +553,49 @@
             atualizarPreview();
         }
 
+        async function calcularPreco() {
+
+            let precoCusto =
+                document.getElementById("precoCusto").value;
+
+            if (!precoCusto || precoCusto <= 0)
+                return;
+
+            let response =
+                await fetch(`/Admin/CalcularPrecoSugerido?precoCusto=${precoCusto}`);
+
+            
+
+            let data = await response.json();
+
+            if (data.erro) {
+                console.error(data.erro);
+                return;
+            }
+
+            document.getElementById("percentualDespesas")
+                .innerText = data.percentualDespesas + "%";
+
+            document.getElementById("custoOperacional")
+                .innerText = data.custoOperacional.toFixed(2);
+
+            document.getElementById("custoReal")
+                .innerText = data.custoReal.toFixed(2);
+
+            document.getElementById("margemLucro")
+                .innerText = data.margemLucro + "%";
+
+            document.getElementById("precoSugerido")
+                .innerText = data.precoSugerido.toFixed(2);
+
+            // Preenche automaticamente
+            document.getElementById("precoVenda")
+                .value = data.precoSugerido.toFixed(2);
+        }
+
+        document
+            .getElementById("precoCusto")
+            .addEventListener("input", calcularPreco);
     </script>
 
 </body>
